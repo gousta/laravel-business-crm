@@ -69,7 +69,7 @@ class Labor extends Model
             ->groupBy('date')
             ->first();
 
-        return (int) round($res->average);
+        return isset($res->average) ? (int) round($res->average):0;
     }
 
     public function scopeAverageCustomersPerDay($q)
