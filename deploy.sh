@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Reset if changes happened on the server
-git reset --hard
-
 # Pull from master
 git pull origin master
 
