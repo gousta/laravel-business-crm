@@ -65,21 +65,21 @@ class Labor extends Model
     public function scopeAveragePerDay($q)
     {
         $res = $q->selectRaw('avg(sum(price)) over () as average')
-            ->where('date', '>=', $this->dateStart)
+            ->where('date', '>=', START_DATE)
             ->groupBy('date')
             ->first();
 
-        return isset($res->average) ? (int) round($res->average):0;
+        return $res ? (int) round($res->average) : 0;
     }
 
     public function scopeAverageCustomersPerDay($q)
     {
-        $res = $q->where('date', '>=', $this->dateStart)
+        $res = $q->where('date', '>=', START_DATE)
             ->groupBy('date')
             ->distinct('client_id')
             ->count('client_id');
 
-        return (int) round($res);
+        return $res ? (int) round($res) : 0;
     }
 
     public function scopeAveragePerDayOfWeek($q)
@@ -100,7 +100,7 @@ class Labor extends Model
     public function scopeSumPerMonth($q)
     {
         $q->selectRaw("date_trunc('month', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
-            ->where('date', '>=', $this->dateStart)
+            ->where('date', '>=', START_DATE)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
@@ -108,7 +108,7 @@ class Labor extends Model
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
-            ->where('date', '>=', $this->dateStart)
+            ->where('date', '>=', START_DATE)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
@@ -130,6 +130,41 @@ class Labor extends Model
             ->join('catalog', 'catalog.id', '=', 'labor.catalog_id')
             ->groupBy('catalog.cat')
             ->orderBy('sum', 'desc');
+    }
+
+    public static function averagePerDayForYear($year)
+    {
+        $res = static::selectRaw('avg(sum(price)) over () as average')
+            ->whereYear('date', $year)
+            ->groupBy('date')
+            ->first();
+        $res = $res ? $res->average:null;
+
+        return $res ? (int) round($res) : 0;
+    }
+
+    public static function averageCustomersPerDayForYear($year)
+    {
+        $res = static::groupBy('date')
+            ->whereYear('date', $year)
+            ->distinct('client_id')
+            ->count('client_id');
+
+        return $res ? (int) round($res) : 0;
+    }
+
+    public static function getAveragePerDayYears() {
+        $startYear = env('APP_START_YEAR', '2016');
+        $d = [];
+        
+        for($y = $startYear; $y <= date('Y'); $y++) {
+            $d[$y] = [
+                'amount' => static::averagePerDayForYear($y),
+                'customers' => static::averageCustomersPerDayForYear($y),
+            ];
+        }
+
+        return $d;
     }
 
     public function getTimeagoAttribute()

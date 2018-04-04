@@ -52,10 +52,24 @@
       <div class="card">
           <div class="card-header"><h2>Ημερήσιος μέσος όρος πελατών/τζίρου</h2></div>
           <div class="card-body card-padding p-b-0">
-            <div class="visitors-stats-item p-l-10 p-r-10 m-b-20">
-              <strong><i class="zmdi zmdi-male-alt"></i> {{ $data['all']['average_customers_per_day'] }}</strong>
-              <strong class="pull-right f-500 c-cyan">&euro; {{ $data['all']['average_per_day'] }}</strong>
+            <div class="visitors-stats-item p-l-10 p-r-10 m-b-10">
+              <strong class="c-gray p-r-10">ΟΛΑ ΤΑ ΧΡΟΝΙΑ</strong>
+              <span class="pull-right">
+                <strong><i class="zmdi zmdi-male-alt"></i> {{ $data['all']['average_customers_per_day'] }}</strong>
+                <strong class="p-l-10 f-500 c-cyan">&euro; {{ $data['all']['average_per_day'] }}</strong>
+              </span>
             </div>
+
+            @foreach($data['all']['average_per_day_yearly'] as $year => $yearAveragePerDay)
+              <div class="visitors-stats-item p-l-10 p-r-10 m-b-10">
+                <strong class="c-gray p-r-10">{{ $year }}</strong>
+                <span class="pull-right">
+                  <strong><i class="zmdi zmdi-male-alt"></i> {{ $yearAveragePerDay['customers'] }}</strong>
+                  <strong class="p-l-10 f-500 c-cyan">&euro; {{ $yearAveragePerDay['amount'] or '' }}</strong>
+                </span>
+              </div>
+            @endforeach
+
           </div>
           <div class="card-header"><h2>Μέσος όρος τζίρου ανά ημέρα της εβδομάδας</h2></div>
           <table class="table table-inner table-vmiddle table-condensed">
@@ -215,7 +229,7 @@
                 <tr>
                   <td>{{ $labor->item->name or '' }}</td>
                   <td class="text-right">
-                    <span class="f-300 c-black p-r-10"><i class="zmdi zmdi-play"></i> {{ $labor->count or '' }}</span>
+                    <span class="f-300 c-black p-r-10"><i class="zmdi zmdi-check-all"></i> {{ $labor->count or '' }}</span>
                     <span class="f-500 c-cyan">&euro; {{ $labor->sum or '' }}</span>
                   </td>
                 </tr>
