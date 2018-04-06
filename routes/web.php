@@ -12,6 +12,7 @@ Route::group([
 
     Route::resource('catalog', 'CatalogController');
     Route::resource('expense', 'ExpenseController');
+    Route::resource('vat', 'VatController');
 
     Route::post('/client/{id}/labor', 'ClientController@laborStore')->name('client.labor.store');
     Route::get('/client/{id}/labor/{lid}/edit', 'ClientController@laborEdit')->name('client.labor.edit');

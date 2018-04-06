@@ -54,6 +54,9 @@
 
                         @if(Auth::user()->role === 'admin')
                         <li>
+                            <a href="{{ route('vat.index') }}"><i class="him-icon zmdi zmdi-receipt"></i> ΦΠΑ</a>
+                        </li>
+                        <li>
                             <a href="{{ route('stat.index') }}"><i class="him-icon zmdi zmdi-equalizer"></i> Σύνοψη</a>
                         </li>
                         @endif

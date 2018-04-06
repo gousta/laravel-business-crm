@@ -95,6 +95,10 @@ body.modal-open {
     padding: 15px 26px;
 }
 
+.card-filter {
+    padding: 15px 18px;
+}
+
 @media (max-width: 1025) {
 
     .container, .container-fluid {
@@ -122,6 +126,10 @@ body.modal-open {
 
     .card .card-header {
         padding: 18px 18px;
+    }
+
+    .card .card-filter {
+        padding: 15px 18px;
     }
 
     .card .card-body.card-padding {
@@ -160,6 +168,10 @@ body.modal-open {
 
     .card .card-header {
         padding: 12px 12px;
+    }
+
+    .card .card-filter {
+        padding: 1px 12px;
     }
 
     .card .card-body.card-padding {
