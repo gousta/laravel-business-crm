@@ -22,6 +22,7 @@ class Vat extends Model
     protected $fillable = [
         'cashier',
         'invoice',
+        'date',
     ];
 
     /**
@@ -39,13 +40,23 @@ class Vat extends Model
      * @var array
      */
     protected $dates = [
-        'created_at',
-        'updated_at',
+        'date',
     ];
 
-    public function scopeFilterMonth($q, $month) {
-        $boom = explode('-', $month);
-        $q->whereYear('created_at', $boom[0])->whereMonth('created_at', $boom[1]);
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    public function scopeFilterDate($q, $date) {
+        $s = explode('-', $date);
+        $q->whereYear('date', $s[0])->whereMonth('date', $s[1]);
+    }
+
+    public function scopeTotal($q) {
+        $q->selectRaw('sum(cashier) as cashier, sum(invoice) as invoice');
     }
 
     // public function scopeSumPerMonth($q)
@@ -62,13 +73,25 @@ class Vat extends Model
     //         ->orderBy('txn_date', 'desc');
     // }
 
-    public function getCreatedAtAttribute($v)
-    {
-        return Carbon::parse($v)->setTimezone('Europe/Athens')->format('d/m/Y');
-    }
-
     public function getResultAttribute()
     {
         return $this->cashier - $this->invoice;
+    }
+
+    public function setDateAttribute($v)
+    {
+        $this->attributes['date'] = $v . '-01'; // appends 01 as day for Y-m-d format of date in postgres
+    }
+
+    public function getCashierPercentageAttribute()
+    {
+        $total = $this->cashier + $this->invoice;
+        return $total > 0 ? ($this->cashier / $total) * 100 : 0;
+    }
+
+    public function getInvoicePercentageAttribute()
+    {
+        $total = $this->cashier + $this->invoice;
+        return $total > 0 ? ($this->invoice / $total) * 100 : 0;
     }
 }

@@ -1403,7 +1403,7 @@ html {
 
 body {
   font-family: 'Helvetica Neue', 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.42857143;
   color: #5E5E5E;
   background-color: #f3f3f3;
@@ -11259,7 +11259,7 @@ h6 small,
 }
 
 .card .card-body.card-padding {
-  padding: 26px 30px;
+  padding: 15px;
 }
 
 .card .card-body.card-padding-sm {
@@ -12719,7 +12719,7 @@ h6 small,
 .table > thead > tr > td:first-child,
 .table > tbody > tr > td:first-child,
 .table > tfoot > tr > td:first-child {
-  padding-left: 30px;
+  padding-left: 15px;
 }
 
 .table > thead > tr > th:last-child,
@@ -12728,7 +12728,7 @@ h6 small,
 .table > thead > tr > td:last-child,
 .table > tbody > tr > td:last-child,
 .table > tfoot > tr > td:last-child {
-  padding-right: 30px;
+  padding-right: 15px;
 }
 
 .table > tbody > tr.active > td,
@@ -12742,11 +12742,6 @@ h6 small,
 .table > tbody > tr.danger > td,
 .table > tfoot > tr.danger > td {
   border: 0;
-}
-
-.table > tbody > tr:last-child > td,
-.table > tfoot > tr:last-child > td {
-  padding-bottom: 20px;
 }
 
 .table-striped td,

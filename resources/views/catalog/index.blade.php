@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div>
-            <ul class="tab-nav">
+            <ul class="tab-nav" data-tab-color="black">
                 <li class="active">
                     <a href="#" class="a-prevent filter-by-category" data-category="">ΟΛΑ</a>
                 </li>

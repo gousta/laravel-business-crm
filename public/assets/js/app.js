@@ -31,13 +31,12 @@ function gd(year, month, day) {
 }
 
 $(window).load(function() {
-    //Welcome Message (not for login page)
-
-    // if (!$('.login-content')[0]) {
-    //     notify('Welcome back Mallinda Hollaway', 'inverse');
-    // }
-
-
+    
+    if ($(".tab-nav li.active") && $(".tab-nav li.active").get(0)) {
+        $(".tab-nav li.active").get(0).scrollIntoView({
+            block: 'center'
+        });
+    }
 
     if ($('#growl-alert').val() && $('#growl-alert').val() !== '') {
         notify($('#growl-alert').val(), 'inverse');

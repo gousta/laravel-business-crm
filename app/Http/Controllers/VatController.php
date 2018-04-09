@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 class VatController extends Controller
 {
-    private function getFilterRange() {
+    private function getDateRange() {
         $dt = Carbon::now();
         $range = [];
 
-        for ($i = 0; $i <= 12; $i++) {
+        for ($i = 0; $i <= 6; $i++) {
             $range[] = [
-                'value' => $dt->format('Y-m'),
-                'label' => $dt->formatLocalized('%B %Y'),
+                'value' => (string) $dt->format('Y-m'),
+                'label' => (string) $dt->formatLocalized('%B %Y'),
             ];
             $dt->subMonth();
         }
@@ -31,14 +31,15 @@ class VatController extends Controller
      */
     public function index(Request $request)
     {
-        $month = $request->input('month', date('Y-m'));
+        $date = $request->input('date', date('Y-m'));
 
         return view('vat.index', [
-            'vats' => Vat::filterMonth($month)->orderBy('id', 'desc')->get(),
+            'vats' => Vat::filterDate($date)->orderBy('id', 'desc')->get(),
             'filter' => [
-                'monthValue' => $month,
-                'range' => $this->getFilterRange()
-            ]
+                'date' => (string) $date,
+                'range' => $this->getDateRange()
+            ],
+            'total' => Vat::filterDate($date)->total()->first(),
         ]);
     }
 
@@ -50,6 +51,7 @@ class VatController extends Controller
     public function create(Request $request)
     {
         return view('vat.create', [
+            'range' => $this->getDateRange(),
             'vat' => $request->old(),
         ]);
     }
@@ -77,6 +79,7 @@ class VatController extends Controller
      */
     public function show($id)
     {
+        abort(404);
     }
 
     /**
@@ -89,6 +92,7 @@ class VatController extends Controller
     public function edit($id)
     {
         return view('vat.edit', [
+            'range' => $this->getDateRange(),
             'vat' => Vat::findOrFail($id),
         ]);
     }
@@ -118,6 +122,9 @@ class VatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vat = Vat::findOrFail($id);
+        $vat->delete();
+
+        return redirect()->route('vat.index')->with('status', $this->deleted);
     }
 }

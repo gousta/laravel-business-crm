@@ -2,40 +2,45 @@
 
 @push('actionbutton')
     <li>
-        <a href="{{ route('vat.create') }}"><i class="him-icon zmdi zmdi-plus-circle"></i></a>
+        <a href="{{ route('vat.create', Request::all()) }}"><i class="him-icon zmdi zmdi-plus-circle"></i></a>
     </li>
 @endpush
 
 @section('content')
     <div class="card">
-        <div class="row">
-            <div class="col-xs-6">
-                <div class="card-header">
-                    <h2>ΦΠΑ</h2>
+        <div class="">
+            <ul class="tab-nav" data-tab-color="black">
+                @foreach($filter['range'] as $ri)
+                    <li{!! $ri['value'] === $filter['date'] ? ' class="active"':'' !!}>
+                        <a href="{{ route('vat.index', ['date' => $ri['value']]) }}">{{ $ri['label'] }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+
+        <div class="card-body card-padding">
+            <div class="row m-b-15">
+                <div class="col-xs-6">
+                    <span class="f-700 c-lightgreen">ΤΙΜΟΛΟΓΙΑ &euro; {!! $total->invoice or '0' !!}</span>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <span class="f-700 c-brown">&euro; {!! $total->cashier or '0' !!} ΤΑΜΕΙΑΚΗ</span>
                 </div>
             </div>
-            <div class="col-xs-6">
-                <div class="card-filter">
-                    <div class="select">
-                        <form id="range-form">
-                            <select name="month" data-filter="range" class="form-control">
-                                @foreach($filter['range'] as $ri)
-                                    <option value="{{ $ri['value'] }}" {{ $ri['value'] === $filter['monthValue'] ? 'selected':''}}>
-                                        {{ $ri['label'] }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </form>
-                    </div>
-                </div>
+            <div class="progress progress-sweet">
+                <div class="progress-bar bgm-lightgreen" style="width: {!! $total->invoicePercentage !!}%;"></div>
+                <div class="progress-bar bgm-brown" style="width: {!! $total->cashierPercentage !!}%;"></div>
             </div>
+        </div>
+
+        <div class="card-body card-padding">
+            <span class="f-700 c-black">{!! $total->result > 0 ? 'ΧΡΕΟΣ' : 'ΕΞΤΡΑ' !!} &euro; {!! abs($total->result) !!}</span>
         </div>
 
         <div class="table-responsive">
             <table class="table table-hover table-condensed">
                 <thead>
                     <tr>
-                        <th width="10%">ΗΜΕΡΟΜΗΝΙΑ</th>
                         <th>ΤΑΜΕΙΑΚΗ</th>
                         <th>ΤΙΜΟΛΟΓΙΑ</th>
                         <th>ΑΠΟΤΕΛΕΣΜΑ</th>
@@ -44,15 +49,10 @@
                 <tbody>
                     @foreach($vats as $item)
                         <tr data-href="{{ route('vat.edit', $item->id) }}">
-                            <td class="vamiddle">{{ $item->created_at }}</td>
-                            <td class="vamiddle">&euro; {{ $item->cashier or '' }}</td>
-                            <td class="vamiddle">&euro; {{ $item->invoice or '' }}</td>
+                            <td class="vamiddle">&euro; {{ $item->cashier or '0' }}</td>
+                            <td class="vamiddle">&euro; {{ $item->invoice or '0' }}</td>
                             <td class="vamiddle">
-                                @if($item->result > 0)
-                                    <strong class="c-red">&euro; {{ $item->result or '' }}</strong>
-                                @else
-                                    <strong class="c-green">&euro; {{ $item->result or '' }}</strong>
-                                @endif
+                                <strong class="{!! ($item->result > 0) ? 'c-brown':'c-lightgreen' !!}">&euro; {{ abs($item->result) }}</strong>
                             </td>
                         </tr>
                     @endforeach

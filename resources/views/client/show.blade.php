@@ -39,15 +39,7 @@
 
   <div class="card">
     <div class="card-body card-padding f-400 c-gray">
-      @if (count($errors) > 0)
-        <div class="alert alert-danger">
-          <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </div>
-      @endif
+      @include('layouts.error')
       ΣΗΜΕΡΑ
     </div>
     @if(isset($labor['today']) && count($labor['today']) > 0)
@@ -150,7 +142,7 @@
       <div class="modal-content">
         {!! Form::open(['url' => route('client.labor.store', $client->id), 'method' => 'POST', 'class' => 'form-store-labor']) !!}
           <div role="tabpanel">
-            <ul class="tab-nav" role="tablist">
+            <ul class="tab-nav" data-tab-color="black" role="tablist">
               @foreach($catalog->groupBy('cat') as $categoryName => $items)
                 <li class="{{ $loop->first ? 'active':'' }}">
                   <a href="#tabCat{{ $loop->iteration }}" aria-controls="tabCat{{ $loop->iteration }}" role="tab" data-toggle="tab">

@@ -24,8 +24,23 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
+            'date' => 'required',
             'cashier' => 'required',
             'invoice' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'date.required' => 'Το πεδίο ΜΗΝΑΣ είναι απαραίτητο.',
+            'cashier.required' => 'Το πεδίο ΦΠΑ ΤΑΜΕΙΑΚΗΣ είναι απαραίτητο.',
+            'invoice.required' => 'Το πεδίο ΦΠΑ ΑΠΟ ΤΙΜΟΛΟΓΙΑ είναι απαραίτητο.',
         ];
     }
 }

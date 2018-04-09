@@ -2108,7 +2108,7 @@ hr.fc-divider {
 }
 
 table.dataTable {
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 table.dataTable thead [class*="sorting"] {
@@ -2121,7 +2121,7 @@ table.dataTable.no-footer {
 
 .dataTables_length,
 .dataTables_filter {
-  padding: 20px 30px;
+  padding: 15px;
 }
 
 .dataTables_length label,
@@ -2249,7 +2249,7 @@ table.dataTable.no-footer {
 
 .dataTables_info,
 .dataTables_paginate {
-  padding: 30px;
+  padding: 15px;
 }
 
 @media (max-width: 767px) {

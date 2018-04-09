@@ -493,3 +493,7 @@ table.dataTable thead [class*="sorting"] {
 .mdnsign .mdnbody {  }
 .mdnsign .mdnbody .mdnbodyinner { max-width: 600px;margin: 0 auto }
 
+.progress-sweet {
+    border-radius: 2px;
+    height: 15px;
+}
