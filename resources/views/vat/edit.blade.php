@@ -4,7 +4,7 @@
     <li>
         <ul class="hi-menu">
             <li>
-                <a href="{{ route('vat.index') }}"><i class="him-icon zmdi zmdi-arrow-left"></i></a>
+                <a href="{{ route('vat.index', Request::only('date')) }}"><i class="him-icon zmdi zmdi-arrow-left"></i></a>
             </li>
         </ul>
     </li>
@@ -12,11 +12,8 @@
 
 @section('content')
     <div class="card">
-
         <div class="card-body card-padding">
-            {!! Form::open(['url' => route('vat.update', $vat->id), 'method' => 'PUT']) !!}
-                @include('vat.shared.form')
-            {!! Form::close() !!}
+            @include('vat.shared.form')
         </div>
     </div>
 @stop

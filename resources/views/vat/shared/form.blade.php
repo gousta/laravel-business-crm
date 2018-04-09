@@ -32,16 +32,14 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-xs-6">
-        @if($vat)
-            {{ Form::open(['method'  => 'DELETE', 'route' => ['vat.destroy', $vat->id]]) }}
-            {{ Form::button('ΔΙΑΓΡΑΦΗ', ['type' => 'submit', 'class' => 'btn btn-link c-red']) }}
-            {{ Form::close() }}
-        @endif
-    </div>
 
-    <div class="col-xs-6 text-right">
+<div class="text-right">
+    @if($vat)
+        {{ Form::open(['method'  => 'DELETE', 'route' => ['vat.destroy', $vat->id]]) }}
+        {{ Form::hidden('date', Request::input('date')) }}
+        {{ Form::button('ΔΙΑΓΡΑΦΗ', ['type' => 'submit', 'class' => 'btn btn-link c-red']) }}
+        {{ Form::close() }}
+    @else
         <button class="btn bgm-black">ΑΠΟΘΗΚΕΥΣΗ</button>
-    </div>
+    @endif
 </div>

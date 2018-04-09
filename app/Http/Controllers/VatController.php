@@ -67,7 +67,7 @@ class VatController extends Controller
     {
         $vat = Vat::create($request->all());
 
-        return redirect()->route('vat.index')->with('status', $this->ok);
+        return redirect()->route('vat.index', ['date' => $request->input('date')])->with('status', $this->ok);
     }
 
     /**
@@ -110,7 +110,7 @@ class VatController extends Controller
         $vat = Vat::findOrFail($id);
         $vat->update($request->all());
 
-        return redirect()->route('vat.index')->with('status', $this->ok);
+        return redirect()->route('vat.index', ['date' => $request->input('date')])->with('status', $this->ok);
     }
 
     /**
@@ -120,11 +120,11 @@ class VatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $vat = Vat::findOrFail($id);
         $vat->delete();
 
-        return redirect()->route('vat.index')->with('status', $this->deleted);
+        return redirect()->route('vat.index', ['date' => $request->input('date')])->with('status', $this->deleted);
     }
 }

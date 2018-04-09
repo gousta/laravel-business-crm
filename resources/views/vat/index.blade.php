@@ -48,7 +48,7 @@
                 </thead>
                 <tbody>
                     @foreach($vats as $item)
-                        <tr data-href="{{ route('vat.edit', $item->id) }}">
+                        <tr data-href="{{ route('vat.edit', ['id' => $item->id, 'date' => Request::input('date')]) }}">
                             <td class="vamiddle">&euro; {{ $item->cashier or '0' }}</td>
                             <td class="vamiddle">&euro; {{ $item->invoice or '0' }}</td>
                             <td class="vamiddle">
