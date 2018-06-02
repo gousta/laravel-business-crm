@@ -33,14 +33,14 @@ body.modal-open {
 
 .modal.fullscreen .modal-dialog {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     vertical-align: top;
     margin: 0;
 }
 
 .modal.fullscreen .modal-content {
     border-radius: 0;
-    height: 100vh;
+    height: 100%;
 }
 
 @media (max-width: 991px) {
