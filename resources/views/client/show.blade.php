@@ -154,56 +154,58 @@
             <div class="tab-content p-l-15 p-r-15">
               @foreach($catalog->groupBy('cat') as $categoryName => $items)
                 <div role="tabpanel" class="tab-pane {{ $loop->first ? 'active':'' }}" id="tabCat{{ $loop->iteration }}">
-                  <div class="row">
-                    @foreach($items as $item)
-                      <div class="col-md-4 col-xs-12">
-                        <div class="list-group">
-                          <div class="a-hover a-prevent list-group-item set-active-item p-t-10 p-b-10 p-l-0 p-r-0" data-price="{{ $item->price or '' }}" data-name="{{ $item->name or '' }}" data-id="{{ $item->id or '' }}">
-                            <div class="media-body">
-                              <div class="lgi-heading">{{ $item->name or '' }}</div>
-                            </div>
-                          </div>
+                  @foreach($items->groupBy('brand') as $brand => $items)
+                    @if(!empty($brand))
+                      <div class="f-700 c-black m-b-10 {{ $loop->first ? '':'m-t-15' }}">{{ $brand or '-' }}</div>
+                    @endif
+                    
+                    <div class="row">
+                      @foreach($items->sortBy('name') as $item)
+                        <div class="col-xs-12 col-sm-6 col-md-4 a-hover p-b-5 p-t-5 brd-2 catalog-item" data-item data-price="{{ $item->price or '' }}" data-name="{{ $item->name or '' }}" data-id="{{ $item->id or '' }}">
+                          {{ $item->name or '' }} <span class="pull-right">&euro;{{ $item->price or '' }}</span>
                         </div>
-                      </div>
-                    @endforeach
-                  </div>
+                      @endforeach
+                    </div>
+                  @endforeach
                 </div>
               @endforeach
             </div>
           </div>
           
-          <div class="m-l-15 m-r-15">
-            <div class="row">
-              <div class="col-md-2 col-xs-12 m-b-15">
-                <div class="fg-line">
-                  <label for="date">ΗΜΕΡΟΜΗΝΙΑ</label>
-                  <input id="date" type="text" name="date" class="form-control input-mask" data-mask="00/00/0000" placeholder="dd/mm/yyyy" value="{{ date('d-m-Y') }}" autocomplete="off" required="required">
+          <div class="bgm-lightgray p-t-15">
+            <div class="m-l-15 m-r-15">
+              <div class="row">
+                <div class="col-md-2 col-xs-12 m-b-15">
+                  <div class="fg-line">
+                    <label for="date">ΗΜΕΡΟΜΗΝΙΑ</label>
+                    <input id="date" type="text" name="date" class="form-control input-mask" data-mask="00/00/0000" placeholder="dd/mm/yyyy" value="{{ date('d-m-Y') }}" autocomplete="off" required="required">
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-1 col-xs-12 m-b-15">
-                <div class="fg-line">
-                  <label for="price">ΤΙΜΗ</label>
-                  <input id="price" name="price" type="number" class="form-control item-price" value="{{ Request::old('price') }}" required="required">
+                <div class="col-md-1 col-xs-12 m-b-15">
+                  <div class="fg-line">
+                    <label for="price">ΤΙΜΗ</label>
+                    <input id="price" name="price" type="number" class="form-control item-price" value="{{ Request::old('price') }}" required="required">
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-3 col-xs-12 m-b-15">
-                <div class="fg-line">
-                  <label>ΑΝΤΙΚΕΙΜΕΝΟ</label>
-                  <input name="" type="text" class="form-control catalog-name disabled" disabled value="" required="required">
-                  <input name="catalog_id" type="hidden" class="catalog-id" value="">
+                <div class="col-md-3 col-xs-12 m-b-15">
+                  <div class="fg-line">
+                    <label>ΑΝΤΙΚΕΙΜΕΝΟ</label>
+                    <input name="" type="text" class="form-control catalog-name disabled" disabled value="" required="required">
+                    <input name="catalog_id" type="hidden" class="catalog-id" value="">
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-xs-12 m-b-15">
-                <div class="fg-line">
-                  <label for="notes">ΣΗΜΕΙΩΣΕΙΣ</label>
-                  <textarea rows="3" id="notes" class="form-control" name="notes" placeholder="...">{{ Request::old('notes') }}</textarea>
+                <div class="col-md-6 col-xs-12 m-b-15">
+                  <div class="fg-line">
+                    <label for="notes">ΣΗΜΕΙΩΣΕΙΣ</label>
+                    <textarea rows="2" id="notes" class="form-control" name="notes" placeholder="...">{{ Request::old('notes') }}</textarea>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="modal-footer">
-            <a href="#" class="btn btn-link a-prevent" data-dismiss="modal">ΑΚΥΡΩΣΗ</a>
+            <a href="#" class="btn btn-link a-prevent" data-dismiss="modal">ΑΚΥΡΟ</a>
             <button type="submit" class="btn bgm-black">ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ</button>
           </div>
 
@@ -220,15 +222,15 @@
       var modal = $('#modalMain');
 
       modal.on('shown.bs.modal', function () {
-        $('.set-active-item').find('.lgi-heading').removeClass('c-pink f-700');
+        $('[data-item]').removeClass('catalog-item-selected');
         $('.item-price').val('');
         $('.catalog-name').val('')
         $('.catalog-id').val('')
       });
 
-      $(document).on('click', '.set-active-item', function(e) {
-        $('.set-active-item').find('.lgi-heading').removeClass('c-pink f-700');
-        $(this).find('.lgi-heading').addClass('c-pink f-700');
+      $(document).on('click', '[data-item]', function(e) {
+        $('[data-item]').removeClass('catalog-item-selected');
+        $(this).addClass('catalog-item-selected');
         $('.item-price').val($(this).data('price'));
         $('.catalog-name').val($(this).data('name'))
         $('.catalog-id').val($(this).data('id'))

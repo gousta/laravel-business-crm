@@ -10,15 +10,37 @@ body.modal-open {
     overflow: hidden;
 }
 
+.catalog-item {
+    background: transparent;
+}
+.catalog-item span {
+    color: #9E9E9E;
+}
+.catalog-item.catalog-item-selected {
+    background: #E91E63;
+    color: #fff;
+    font-weight: 600;
+}
+.catalog-item.catalog-item-selected span {
+    color: #fff;
+    font-weight: 600;
+}
+
 .modal.fullscreen:before {
     height: auto;
     content: none;
 }
 
 .modal.fullscreen .modal-dialog {
-    width: calc(100vw - 20px);
+    width: 100vw;
+    height: 100vh;
     vertical-align: top;
-    margin: 10px 10px 0 10px;
+    margin: 0;
+}
+
+.modal.fullscreen .modal-content {
+    border-radius: 0;
+    height: 100vh;
 }
 
 @media (max-width: 991px) {

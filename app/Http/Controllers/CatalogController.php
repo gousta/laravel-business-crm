@@ -34,6 +34,7 @@ class CatalogController extends Controller
         return view('catalog.create', [
             'item'       => $item,
             'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
+            'brands' => Catalog::orderBy('brand', 'desc')->distinct('brand')->pluck('brand'),
         ]);
     }
 
@@ -69,6 +70,7 @@ class CatalogController extends Controller
         return view('catalog.show', [
             'item'       => $item,
             'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
+            'brands' => Catalog::orderBy('brand', 'desc')->distinct('brand')->pluck('brand'),
         ]);
     }
 
@@ -86,6 +88,7 @@ class CatalogController extends Controller
         return view('catalog.edit', [
             'item'       => $item,
             'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
+            'brands' => Catalog::orderBy('brand', 'desc')->distinct('brand')->pluck('brand'),
         ]);
     }
 
