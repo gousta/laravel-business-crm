@@ -12,8 +12,8 @@ php artisan migrate --force
 # Change assets version to break browser cache
 php artisan assets:version
 
-# Cache some stuff
-php artisan route:cache
+# Clear view cache
+php artisan view:clear
 
 # Destroy application cache to allow for structural changes
 php artisan cache:clear
