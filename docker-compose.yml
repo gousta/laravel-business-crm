@@ -7,9 +7,9 @@ volumes:
     driver: local
 
 services:
-  postgres:
+  crm_postgres:
     image: postgres:10.3
-    container_name: crm-postgres
+    container_name: crm_postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
@@ -19,27 +19,27 @@ services:
       - POSTGRES_DB=laravel
       - POSTGRES_USER=laravel
 
-  redis:
+  crm_redis:
     image: redis:4.0
-    container_name: crm-redis
+    container_name: crm_redis
     command: --appendonly yes
     volumes:
       - redis-data:/data
     ports:
       - "6379:6379"
 
-  nginx:
+  crm_nginx:
     image: nginx:latest
-    container_name: crm-nginx
+    container_name: crm_nginx
     volumes:
       - .:/var/www
       - ./docker/nginx:/etc/nginx/conf.d
     ports:
       - "8002:80"
 
-  php-fpm:
+  crm_php:
     build: docker/php-fpm
-    container_name: crm-php-fpm
+    container_name: crm_php
     working_dir: /var/www
     volumes:
       - .:/var/www
