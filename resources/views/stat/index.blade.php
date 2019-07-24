@@ -33,7 +33,7 @@
                     @if(isset($data['this_week'][$date], $data['this_week'][$date][0]))
                       <i class="zmdi zmdi-male-alt"></i> {{ $data['this_week'][$date][0]->clients or '' }}
                       &nbsp;
-                      <span class="f-500 c-cyan p-r-10">&euro; {{ $data['this_week'][$date][0]->sum or '' }}</span>
+                      <span class="f-500 c-cyan p-r-10">&euro;{{ $data['this_week'][$date][0]->sum or '' }}</span>
 
                       <a class="c-pink" href="{{ route('labor.index', ['date' => \Carbon\Carbon::createFromFormat('d/m/Y', $date)->format('Y-m-d')]) }}">
                         <i class="zmdi zmdi-assignment"></i>
@@ -56,7 +56,7 @@
               <strong class="c-gray p-r-10">ΟΛΑ ΤΑ ΧΡΟΝΙΑ</strong>
               <span class="pull-right">
                 <strong><i class="zmdi zmdi-male-alt"></i> {{ $data['all']['average_customers_per_day'] }}</strong>
-                <strong class="p-l-10 f-500 c-cyan">&euro; {{ $data['all']['average_per_day'] }}</strong>
+                <strong class="p-l-10 f-500 c-cyan">&euro;{{ $data['all']['average_per_day'] }}</strong>
               </span>
             </div>
 
@@ -65,7 +65,7 @@
                 <strong class="c-gray p-r-10">{{ $year }}</strong>
                 <span class="pull-right">
                   <strong><i class="zmdi zmdi-male-alt"></i> {{ $yearAveragePerDay['customers'] }}</strong>
-                  <strong class="p-l-10 f-500 c-cyan">&euro; {{ $yearAveragePerDay['amount'] or '' }}</strong>
+                  <strong class="p-l-10 f-500 c-cyan">&euro;{{ $yearAveragePerDay['amount'] or '' }}</strong>
                 </span>
               </div>
             @endforeach
@@ -79,7 +79,7 @@
                   <td>{{ ucfirst($row->week_day) }}</td>
   
                   <td class="text-right">
-                    <span class="f-500 c-cyan">&euro; {{ number_format($row->sum/$row->days, 0, ',', '.') }}</span>
+                    <span class="f-500 c-cyan">&euro;{{ number_format($row->sum/$row->days, 0, ',', '.') }}</span>
                   </td>
                 </tr>
               @endforeach
@@ -91,7 +91,7 @@
             @foreach($data['best_days'] as $best)
               <div class="visitors-stats-item p-l-10 p-r-10 m-b-10">
                 <strong><i class="zmdi zmdi-calendar"></i> {{ $best->date or '' }}</strong>
-                <strong class="pull-right">&euro; {{ $best->sum or '' }}</strong>
+                <strong class="pull-right">&euro;{{ $best->sum or '' }}</strong>
               </div>
             @endforeach
           </div>
@@ -108,7 +108,7 @@
                 <td>{{ ucfirst($row['reason']) }}</td>
 
                 <td class="text-right">
-                  <span class="f-500 c-red">&euro; {{ number_format($row['amount'], 0, ',', '.') }}</span>
+                  <span class="f-500 c-red">&euro;{{ number_format($row['amount'], 0, ',', '.') }}</span>
                 </td>
               </tr>
             @endforeach
@@ -133,18 +133,18 @@
                   <td class="text-right">
                     <i class="zmdi zmdi-male-alt"></i> {{ $year->clients or '' }}
                     &nbsp;
-                    <span class="f-500 c-cyan">&euro; {{ number_format($year->sum, 0, ',', '.') }}</span>
+                    <span class="f-500 c-cyan">&euro;{{ number_format($year->sum, 0, ',', '.') }}</span>
 
                     @if(isset($data['expense_per_year'][$year->txn_date]))
                       -
-                      <span class="f-500 c-red">&euro; {{ number_format($data['expense_per_year'][$year->txn_date]->sum, 0, ',', '.') }}</span>
+                      <span class="f-500 c-red">&euro;{{ number_format($data['expense_per_year'][$year->txn_date]->sum, 0, ',', '.') }}</span>
                       /
-                      <span class="f-500 c-green">&euro; {{ number_format($year->sum - $data['expense_per_year'][$year->txn_date]->sum, 0, ',', '.') }}</span>
+                      <span class="f-500 c-green">&euro;{{ number_format($year->sum - $data['expense_per_year'][$year->txn_date]->sum, 0, ',', '.') }}</span>
                     @else
                       -
-                      <span class="f-500 c-red">&euro; 0</span>
+                      <span class="f-500 c-red">&euro;0</span>
                       /
-                      <span class="f-500 c-green">&euro; {{ number_format($year->sum, 0, ',', '.') }}</span>
+                      <span class="f-500 c-green">&euro;{{ number_format($year->sum, 0, ',', '.') }}</span>
                     @endif
                   </td>
                 </tr>
@@ -172,18 +172,17 @@
                   <td class="text-right">
                     <i class="zmdi zmdi-male-alt"></i> {{ $month->clients or '' }}
                     &nbsp;
-                    <span class="f-500 c-cyan">&euro; {{ number_format($month->sum, 0, ',', '.') }}</span>
+                    <span class="f-500 c-cyan">&euro;{{ number_format($month->sum, 0, ',', '.') }}</span>
+                    <span class="p-l-5 p-r-5 f-500 c-purple">POS &euro;{{ number_format($month->sum_pos, 0, ',', '.') }}</span>
 
                     @if(isset($data['expense_per_month'][$month->txn_date]))
-                      -
-                      <span class="f-500 c-red">&euro; {{ number_format($data['expense_per_month'][$month->txn_date]->sum, 0, ',', '.') }}</span>
+                      <span class="f-500 c-red">&euro;{{ number_format($data['expense_per_month'][$month->txn_date]->sum, 0, ',', '.') }}</span>
                       /
-                      <span class="f-500 c-green">&euro; {{ number_format($month->sum - $data['expense_per_month'][$month->txn_date]->sum, 0, ',', '.') }}</span>
+                      <span class="f-500 c-green">&euro;{{ number_format($month->sum - $data['expense_per_month'][$month->txn_date]->sum, 0, ',', '.') }}</span>
                     @else
-                      -
-                      <span class="f-500 c-red">&euro; 0</span>
+                      <span class="f-500 c-red">&euro;0</span>
                       /
-                      <span class="f-500 c-green">&euro; {{ number_format($month->sum, 0, ',', '.') }}</span>
+                      <span class="f-500 c-green">&euro;{{ number_format($month->sum, 0, ',', '.') }}</span>
                     @endif
                   </td>
                 </tr>
@@ -210,7 +209,7 @@
               @foreach($data['monthly_gross_revenue_by_category'] as $row)
                 <tr>
                   <td>{{ $row->cat or '' }}</td>
-                  <td class="f-500 c-cyan text-right">&euro; {{ $row->sum or '' }}</td>
+                  <td class="f-500 c-cyan text-right">&euro;{{ $row->sum or '' }}</td>
                 </tr>
               @endforeach
             </tbody>
@@ -230,7 +229,7 @@
                   <td>{{ $labor->item->name or '' }}</td>
                   <td class="text-right">
                     <span class="f-300 c-black p-r-10"><i class="zmdi zmdi-check-all"></i> {{ $labor->count or '' }}</span>
-                    <span class="f-500 c-cyan">&euro; {{ $labor->sum or '' }}</span>
+                    <span class="f-500 c-cyan">&euro;{{ $labor->sum or '' }}</span>
                   </td>
                 </tr>
               @endforeach
@@ -253,7 +252,7 @@
               @foreach($data['best_clients_female'] as $woman)
                 <tr>
                   <td>{{ $woman->client->name or '' }} {{ $woman->client->surname or '' }}</td>
-                  <td class="f-500 c-cyan text-right">&euro; {{ $woman->sum or '' }}</td>
+                  <td class="f-500 c-cyan text-right">&euro;{{ $woman->sum or '' }}</td>
                 </tr>
               @endforeach
             </tbody>
@@ -274,7 +273,7 @@
               @foreach($data['best_clients_male'] as $man)
                 <tr>
                   <td>{{ $man->client->name or '' }} {{ $man->client->surname or '' }}</td>
-                  <td class="f-500 c-cyan text-right">&euro; {{ $man->sum or '' }}</td>
+                  <td class="f-500 c-cyan text-right">&euro;{{ $man->sum or '' }}</td>
                 </tr>
               @endforeach
             </tbody>

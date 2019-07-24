@@ -30,6 +30,7 @@ class Labor extends Model
         'catalog_id',
         'price',
         'notes',
+        'pos'
     ];
 
     /**
@@ -50,6 +51,10 @@ class Labor extends Model
         'created_at',
         'updated_at',
         'deleted_at',
+    ];
+
+    protected $casts = [
+        'pos' => 'boolean',
     ];
 
     public function client()
@@ -99,7 +104,7 @@ class Labor extends Model
 
     public function scopeSumPerMonth($q)
     {
-        $q->selectRaw("date_trunc('month', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
+        $q->selectRaw("date_trunc('month', date)::DATE AS txn_date, sum(price), sum(price) FILTER (WHERE pos = true) as sum_pos, count(distinct(client_id)) AS clients")
             ->where('date', '>=', START_DATE)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
@@ -153,11 +158,12 @@ class Labor extends Model
         return $res ? (int) round($res) : 0;
     }
 
-    public static function getAveragePerDayYears() {
+    public static function getAveragePerDayYears()
+    {
         $startYear = env('APP_START_YEAR', '2016');
         $d = [];
         
-        for($y = $startYear; $y <= date('Y'); $y++) {
+        for ($y = $startYear; $y <= date('Y'); $y++) {
             $d[$y] = [
                 'amount' => static::averagePerDayForYear($y),
                 'customers' => static::averageCustomersPerDayForYear($y),

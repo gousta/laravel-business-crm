@@ -15,9 +15,10 @@ Route::group([
     Route::resource('vat', 'VatController');
 
     Route::post('/client/{id}/labor', 'ClientController@laborStore')->name('client.labor.store');
-    Route::get('/client/{id}/labor/{lid}/edit', 'ClientController@laborEdit')->name('client.labor.edit');
-    Route::post('/client/{id}/labor/{lid}', 'ClientController@laborUpdate')->name('client.labor.update');
-    Route::get('/client/{id}/labor/{lid}', 'ClientController@laborDestroy')->name('client.labor.destroy');
+    Route::get('/client/{id}/labor/{laborId}/edit', 'ClientController@laborEdit')->name('client.labor.edit');
+    Route::post('/client/{id}/labor/{laborId}', 'ClientController@laborUpdate')->name('client.labor.update');
+    Route::post('/async/client/{id}/labor/{laborId}', 'ClientController@asyncLaborUpdate')->name('async.client.labor.update');
+    Route::get('/client/{id}/labor/{laborId}', 'ClientController@laborDestroy')->name('client.labor.destroy');
     Route::resource('client', 'ClientController');
 });
 

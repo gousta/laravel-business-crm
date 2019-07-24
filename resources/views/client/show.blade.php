@@ -51,6 +51,7 @@
               <th width="150">ΗΜΕΡΟΜΗΝΙΑ</th>
               <th width="600">ΑΝΤΙΚΕΙΜΕΝΟ</th>
               <th>ΣΗΜΕΙΩΣΕΙΣ</th>
+              <th>ΠΛΗΡΩΜΗ</th>
               <th>TIMH</th>
             </tr>
           </thead>
@@ -68,11 +69,15 @@
                 <td>{{ $lab->date or '' }}</td>
                 <td>{{ $lab->item->namePublic or '' }}</td>
                 <td>{{ $lab->notes or '' }}</td>
+                <td>
+                  <button class="btn btn-sm {{ !$lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="cash">ΜΕΤΡΗΤΑ</button>
+                  <button class="btn btn-sm {{ $lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="pos">POS</button>
+                </td>
                 <td style="width:100px">{{ $lab->price or '' }} &euro;</td>
               </tr>
             @endforeach
             <tr>
-              <th colspan="4">ΣΥΝΟΛΟ</th>
+              <th colspan="5">ΣΥΝΟΛΟ</th>
               <th>{{ array_sum($labor['today']->pluck('price')->toArray()) }} &euro;</th>
             </tr>
           </tbody>
@@ -99,6 +104,7 @@
               <th width="150">ΗΜΕΡΟΜΗΝΙΑ</th>
               <th width="600">ΑΝΤΙΚΕΙΜΕΝΟ</th>
               <th>ΣΗΜΕΙΩΣΕΙΣ</th>
+              <th>ΠΛΗΡΩΜΗ</th>
               <th>ΤΙΜΗ</th>
             </tr>
           </thead>
@@ -118,6 +124,10 @@
                 <td>{{ $lab->date or '' }}</td>
                 <td>{{ $lab->item->namePublic or '' }}</td>
                 <td>{{ $lab->notes or '' }}</td>
+                <td>
+                  <button class="btn btn-sm {{ !$lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="cash">ΜΕΤΡΗΤΑ</button>
+                  <button class="btn btn-sm {{ $lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="pos">POS</button>
+                </td>
                 <td style="width:100px">{{ $lab->price or '' }} &euro;</td>
               </tr>
             @endforeach
@@ -234,6 +244,25 @@
         $('.item-price').val($(this).data('price'));
         $('.catalog-name').val($(this).data('name'))
         $('.catalog-id').val($(this).data('id'))
+      });
+
+      $(document).on('click', '[data-payment]', function(e) {
+        var id = $(this).data('id');
+        var payment = $(this).data('payment');
+
+        if($(this).hasClass('btn-primary')) return; // do nothing if user presses the same payment method
+
+        $('[data-id='+id+']').removeClass('btn-primary').addClass('btn-link');
+        $(this).removeClass('btn-link').addClass('btn-primary');
+        
+        console.log('labor', id, payment);
+        
+        $.ajax({
+          method: "POST",
+          url: "{{ route('async.client.labor.update', ['id' => $client->id, 'laborId' => 'laborId']) }}".replace('laborId', id),
+          data: { pos: payment === 'pos' }
+        })
+          .done(function(data) {});
       });
 
     });

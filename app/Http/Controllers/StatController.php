@@ -62,8 +62,8 @@ class StatController extends Controller
                 'sum_per_year'     => Labor::sumPerYear()->take(5)->get(),
                 'expense_per_year' => Expense::sumPerYear()->take(5)->get()->keyBy('txn_date'),
 
-                'sum_per_month'     => Labor::sumPerMonth()->take(14)->get(),
-                'expense_per_month' => Expense::sumPerMonth()->take(14)->get()->keyBy('txn_date'),
+                'sum_per_month'     => Labor::sumPerMonth()->take(18)->get(),
+                'expense_per_month' => Expense::sumPerMonth()->take(18)->get()->keyBy('txn_date'),
 
                 'this_week' => Labor::whereBetween('date', [date('Y-m-d', strtotime('-6 day')), date('Y-m-d')])->groupBy('date')->orderBy('date', 'desc')->selectRaw('date, sum(price), count(distinct(client_id)) AS clients')->get()->groupBy('date'),
                 'best_days' => Labor::groupBy('date')->orderBy('sum', 'desc')->selectRaw('date, sum(price) as sum')->take(1)->get(),

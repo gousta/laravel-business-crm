@@ -132,18 +132,18 @@ class ClientController extends Controller
         return redirect()->route('client.show', $client->id)->with('status', $this->ok);
     }
 
-    public function laborDestroy(Request $request, $id, $lid)
+    public function laborDestroy(Request $request, $id, $laborId)
     {
         $client = Client::findOrFail($id);
-        $client->labor()->where('id', '=', $lid)->delete();
+        $client->labor()->where('id', '=', $laborId)->delete();
 
         return redirect()->route('client.show', $client->id)->with('status', $this->deleted);
     }
 
-    public function laborEdit(Request $request, $id, $lid)
+    public function laborEdit(Request $request, $id, $laborId)
     {
         $client = Client::findOrFail($id);
-        $labor = $client->labor()->where('id', $lid)->first();
+        $labor = $client->labor()->where('id', $laborId)->first();
 
         return view('client.labor.edit', [
             'client' => $client,
@@ -151,12 +151,23 @@ class ClientController extends Controller
         ]);
     }
 
-    public function laborUpdate(Request $request, $id, $lid)
+    public function laborUpdate(Request $request, $id, $laborId)
     {
         $client = Client::findOrFail($id);
-        $labor = Labor::find($lid)->update($request->all());
+        $labor = Labor::find($laborId)->update($request->all());
 
-        return redirect()->route('client.labor.edit', ['id' => $client->id, 'lid' => $lid])
+        return redirect()->route('client.labor.edit', ['id' => $client->id, 'lid' => $laborId])
             ->with('status', $this->ok);
+    }
+
+    public function asyncLaborUpdate(Request $request, $id, $laborId)
+    {
+        $labor = Labor::find($laborId);
+        $labor->update($request->all());
+
+        return response()->json([
+            'status' => 'ok',
+            'data' => $labor,
+        ]);
     }
 }
