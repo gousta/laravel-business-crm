@@ -104,7 +104,6 @@
               <th width="150">ΗΜΕΡΟΜΗΝΙΑ</th>
               <th width="600">ΑΝΤΙΚΕΙΜΕΝΟ</th>
               <th>ΣΗΜΕΙΩΣΕΙΣ</th>
-              <th>ΠΛΗΡΩΜΗ</th>
               <th>ΤΙΜΗ</th>
             </tr>
           </thead>
@@ -124,10 +123,6 @@
                 <td>{{ $lab->date or '' }}</td>
                 <td>{{ $lab->item->namePublic or '' }}</td>
                 <td>{{ $lab->notes or '' }}</td>
-                <td>
-                  <button class="btn btn-sm {{ !$lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="cash">ΜΕΤΡΗΤΑ</button>
-                  <button class="btn btn-sm {{ $lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="pos">POS</button>
-                </td>
                 <td style="width:100px">{{ $lab->price or '' }} &euro;</td>
               </tr>
             @endforeach
