@@ -1,58 +1,46 @@
 version: '2'
 
 volumes:
-  crm-postgres-data:
+  postgres-data:
     driver: local
-  crm-redis-data:
+  redis-data:
     driver: local
 
 services:
-  postgres:
+  crm_postgres:
     image: postgres:10.3
-    container_name: crm-postgres
+    container_name: crm_postgres
     volumes:
-      - crm-postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
-    networks:
-      - crm-network
+      - "26200:5432"
     environment:
       - POSTGRES_PASSWORD=laravel
       - POSTGRES_DB=laravel
       - POSTGRES_USER=laravel
 
-  redis:
+  crm_redis:
     image: redis:4.0
-    container_name: crm-redis
+    container_name: crm_redis
     command: --appendonly yes
     volumes:
-      - crm-redis-data:/data
+      - redis-data:/data
     ports:
       - "6379:6379"
-    networks:
-      - crm-network
 
-  nginx:
+  crm_nginx:
     image: nginx:latest
-    container_name: crm-nginx
+    container_name: crm_nginx
     volumes:
       - .:/var/www
       - ./docker/nginx:/etc/nginx/conf.d
     ports:
       - "8002:80"
-    networks:
-      - crm-network
 
-  php-fpm:
+  crm_php:
     build: docker/php-fpm
-    container_name: crm-php-fpm
+    container_name: crm_php
     working_dir: /var/www
     volumes:
       - .:/var/www
       - ./docker/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
-    networks:
-      - crm-network
-
-networks:
-  crm-network:
-    driver: bridge
