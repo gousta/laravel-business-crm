@@ -62,21 +62,24 @@ class Expense extends Model
         return Carbon::parse($v)->setTimezone('Europe/Athens')->format('d/m/Y');
     }
 
-    public function scopeAnalyze($q) {
+    public function scopeAnalyze($q)
+    {
         $data = $q->get();
         $rawData = [];
         $result = [];
 
-        foreach($data as $row) {
+        foreach ($data as $row) {
             $lines = explode("\n", $row->description);
 
-            if(count($lines) > 0) {
-                foreach($lines as $line) {
-                    if($line != '' && strlen($line) > 0) {
+            if (count($lines) > 0) {
+                foreach ($lines as $line) {
+                    $line = strtolower($line);
+
+                    if ($line !== '' && strlen($line) > 0) {
                         $lineData = explode(' ', str_replace('  ', ' ', trim($line)));
                         $amount = array_shift($lineData);
 
-                        if(count($lineData) > 0) {
+                        if (count($lineData) > 0) {
                             $rawData[] = [
                                 'amount' => (float) $amount,
                                 'reason' => join(' ', $lineData)
@@ -87,12 +90,12 @@ class Expense extends Model
             } else {
                 $rawData[] = [
                     'amount' => (float) $row->amount,
-                    'reason' => $row->description
+                    'reason' => strtolower($row->description)
                 ];
             }
         }
 
-        foreach(collect($rawData)->groupBy('reason') as $reason => $items) {
+        foreach (collect($rawData)->groupBy('reason') as $reason => $items) {
             $result[] = [
                 'reason' => $reason,
                 'amount' => $items->sum('amount'),
