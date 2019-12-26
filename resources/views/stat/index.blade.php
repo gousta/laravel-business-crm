@@ -152,6 +152,8 @@
             </tbody>
           </table>
         </div>
+
+        <canvas id="sum_per_year" height="120"></canvas>
       </div>
 
       <div class="card">
@@ -196,96 +198,6 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12 col-lg-4">
-
-      <div class="card">
-        <div class="card-header">
-          <h2>Σύνολο ανά κατηγορία</h2>
-        </div>
-        <div class="card-body m-t-0">
-          <table class="table table-inner table-vmiddle table-condensed">
-            <tbody>
-              @foreach($data['monthly_gross_revenue_by_category'] as $row)
-                <tr>
-                  <td>{{ $row->cat or '' }}</td>
-                  <td class="f-500 c-cyan text-right">&euro;{{ $row->sum or '' }}</td>
-                </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <h2>Διάσημες υπηρεσίες</h2>
-        </div>
-        <div class="card-body m-t-0">
-          <table class="table table-inner table-vmiddle table-condensed">
-            <tbody>
-              @foreach($data['most_used_labor'] as $labor)
-                <tr>
-                  <td>{{ $labor->item->name or '' }}</td>
-                  <td class="text-right">
-                    <span class="f-300 c-black p-r-10"><i class="zmdi zmdi-check-all"></i> {{ $labor->count or '' }}</span>
-                    <span class="f-500 c-cyan">&euro;{{ $labor->sum or '' }}</span>
-                  </td>
-                </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-md-12 col-lg-4">
-      <div class="card">
-        <div class="card-header">
-          <h2>Top Γυναίκες</h2>
-        </div>
-
-        <div class="card-body m-t-0">
-          <table class="table table-inner table-vmiddle table-condensed">
-            <tbody>
-              @foreach($data['best_clients_female'] as $woman)
-                <tr>
-                  <td>{{ $woman->client->name or '' }} {{ $woman->client->surname or '' }}</td>
-                  <td class="f-500 c-cyan text-right">&euro;{{ $woman->sum or '' }}</td>
-                </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-12 col-lg-4">
-      <div class="card">
-        <div class="card-header">
-          <h2>Top Άνδρες</h2>
-        </div>
-
-        <div class="card-body m-t-0">
-          <table class="table table-inner table-vmiddle table-condensed">
-            <tbody>
-              @foreach($data['best_clients_male'] as $man)
-                <tr>
-                  <td>{{ $man->client->name or '' }} {{ $man->client->surname or '' }}</td>
-                  <td class="f-500 c-cyan text-right">&euro;{{ $man->sum or '' }}</td>
-                </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-12 col-lg-4"></div>
-
-  </div>
-
 @stop
 
 @push('scripts')
@@ -296,7 +208,34 @@
     moment.locale('el');
     var data = {!! json_encode($data) !!}
 
+    data.sum_per_year.reverse()
     data.sum_per_month.reverse()
+
+    new Chart(document.getElementById("sum_per_year"), {
+      type: 'line',
+      data: {
+        labels: data.sum_per_year.map(function(r) { return moment(r.txn_date).format('YYYY') }),
+        datasets: [
+          {
+            fill: true,
+            label: 'Τζίρος',
+            data: data.sum_per_year.map(function(r) { return r.sum }),
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false,
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false
+            }
+          }]
+        }
+      }
+    });
 
     new Chart(document.getElementById("sum_per_month"), {
       type: 'line',

@@ -38,9 +38,7 @@ class Labor extends Model
      *
      * @var array
      */
-    protected $hidden = [
-
-    ];
+    protected $hidden = [];
 
     /**
      * The attributes that should be mutated to dates.
@@ -143,7 +141,7 @@ class Labor extends Model
             ->whereYear('date', $year)
             ->groupBy('date')
             ->first();
-        $res = $res ? $res->average:null;
+        $res = $res ? $res->average : null;
 
         return $res ? (int) round($res) : 0;
     }
@@ -162,7 +160,7 @@ class Labor extends Model
     {
         $startYear = env('APP_START_YEAR', '2016');
         $d = [];
-        
+
         for ($y = $startYear; $y <= date('Y'); $y++) {
             $d[$y] = [
                 'amount' => static::averagePerDayForYear($y),
@@ -205,13 +203,27 @@ class Labor extends Model
     public function getWeekDayAttribute()
     {
         switch ($this->dow) {
-            case '1': return 'Κυριακή'; break;
-            case '2': return 'Δευτέρα'; break;
-            case '3': return 'Τρίτη'; break;
-            case '4': return 'Τετάρτη'; break;
-            case '5': return 'Πέμπτη'; break;
-            case '6': return 'Παρασκευή'; break;
-            case '7': return 'Σάββατο'; break;
+            case '1':
+                return 'Κυριακή';
+                break;
+            case '2':
+                return 'Δευτέρα';
+                break;
+            case '3':
+                return 'Τρίτη';
+                break;
+            case '4':
+                return 'Τετάρτη';
+                break;
+            case '5':
+                return 'Πέμπτη';
+                break;
+            case '6':
+                return 'Παρασκευή';
+                break;
+            case '7':
+                return 'Σάββατο';
+                break;
         }
     }
 }

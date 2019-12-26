@@ -68,12 +68,6 @@ class StatController extends Controller
                 'this_week' => Labor::whereBetween('date', [date('Y-m-d', strtotime('-6 day')), date('Y-m-d')])->groupBy('date')->orderBy('date', 'desc')->selectRaw('date, sum(price), count(distinct(client_id)) AS clients')->get()->groupBy('date'),
                 'best_days' => Labor::groupBy('date')->orderBy('sum', 'desc')->selectRaw('date, sum(price) as sum')->take(1)->get(),
 
-                'most_used_labor'     => Labor::shop()->with('item')->selectRaw('count(catalog_id) as count, sum(price), catalog_id')->groupBy('catalog_id')->take(5)->orderBy('count', 'desc')->get(),
-                'best_clients_male'   => Labor::shop()->with('client')->bestClients('male')->get(),
-                'best_clients_female' => Labor::shop()->with('client')->bestClients('female')->get(),
-
-                'monthly_gross_revenue_by_category' => Labor::shop()->monthlyGrossRevenueByCategory()->get(),
-
                 'expenses_analysis' => Expense::analyze(),
             ],
             'frame' => [
