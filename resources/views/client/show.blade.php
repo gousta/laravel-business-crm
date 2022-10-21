@@ -72,7 +72,7 @@
               </tr>
             @endforeach
             <tr>
-              <th colspan="5">ΣΥΝΟΛΟ</th>
+              <th colspan="4">ΣΥΝΟΛΟ</th>
               <th>{{ array_sum($labor['today']->pluck('price')->toArray()) }} &euro;</th>
             </tr>
           </tbody>
