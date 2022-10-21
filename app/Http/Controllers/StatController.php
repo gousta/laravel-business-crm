@@ -59,7 +59,7 @@ class StatController extends Controller
                     'average_per_dayofweek' => Labor::averagePerDayOfWeek()->get(),
                 ],
 
-                'sum_per_year'     => Labor::sumPerYear()->take(5)->get(),
+                'sum_per_year'     => Labor::sumPerYear()->take(10)->get(),
                 'expense_per_year' => Expense::sumPerYear()->take(5)->get()->keyBy('txn_date'),
 
                 'sum_per_month'     => Labor::sumPerMonth()->take(18)->get(),
