@@ -175,7 +175,7 @@
                     <i class="zmdi zmdi-male-alt"></i> {{ $month->clients or '' }}
                     &nbsp;
                     <span class="f-500 c-cyan">&euro;{{ number_format($month->sum, 0, ',', '.') }}</span>
-                    <span class="p-l-5 p-r-5 f-500 c-purple">POS &euro;{{ number_format($month->sum_pos, 0, ',', '.') }}</span>
+                    <!-- <span class="p-l-5 p-r-5 f-500 c-purple">POS &euro;{{ number_format($month->sum_pos, 0, ',', '.') }}</span> -->
 
                     @if(isset($data['expense_per_month'][$month->txn_date]))
                       <span class="f-500 c-red">&euro;{{ number_format($data['expense_per_month'][$month->txn_date]->sum, 0, ',', '.') }}</span>
