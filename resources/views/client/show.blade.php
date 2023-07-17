@@ -189,7 +189,7 @@
                 <div class="col-md-1 col-xs-12 m-b-15">
                   <div class="fg-line">
                     <label for="price">ΤΙΜΗ</label>
-                    <input id="price" name="price" type="number" class="form-control item-price" value="{{ Request::old('price') }}" required="required">
+                    <input id="price" name="price" type="number" step=".01" class="form-control item-price" value="{{ Request::old('price') }}" required="required">
                   </div>
                 </div>
                 <div class="col-md-3 col-xs-12 m-b-15">
