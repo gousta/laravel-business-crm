@@ -11,7 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected $ok = 'Προστέθηκε';
+    protected $ok = 'Αποθηκεύτηκε';
     protected $deleted = 'Αφαιρέθηκε';
 
     /**

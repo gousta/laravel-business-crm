@@ -35,27 +35,19 @@
                     @endif
 
                     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                        <div class="fg-line">
-                            <input type="text" name="name" class="form-control" placeholder="ΟΝΟΜΑ">
-                        </div>
+                        <input type="text" name="name" class="form-control" placeholder="ΟΝΟΜΑ">
                     </div>
 
                     <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                        <div class="fg-line">
-                            <input type="email" name="email" class="form-control" placeholder="EMAIL">
-                        </div>
+                        <input type="email" name="email" class="form-control" placeholder="EMAIL">
                     </div>
 
                     <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                        <div class="fg-line">
-                            <input type="password" name="password" class="form-control" placeholder="ΚΩΔΙΚΟΣ">
-                        </div>
+                        <input type="password" name="password" class="form-control" placeholder="ΚΩΔΙΚΟΣ">
                     </div>
 
                     <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
-                        <div class="fg-line">
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="ΚΩΔΙΚΟΣ ΞΑΝΑ">
-                        </div>
+                        <input type="password" name="password_confirmation" class="form-control" placeholder="ΚΩΔΙΚΟΣ ΞΑΝΑ">
                     </div>
 
                     <div class="text-right">

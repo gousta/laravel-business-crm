@@ -37,15 +37,13 @@
           {!! Form::open(['url' => route('auth.login'), 'method' => 'POST']) !!}
 
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-              <div class="fg-line">
+
                 <input type="email" name="email" class="form-control" placeholder="EMAIL" value="{{ Request::old('email') }}">
-              </div>
+
             </div>
 
             <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-              <div class="fg-line">
                 <input type="password" name="password" class="form-control" placeholder="ΚΩΔΙΚΟΣ">
-              </div>
             </div>
 
             <div class="text-right">
