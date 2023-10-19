@@ -1,22 +1,18 @@
 @include('layouts.error')
 
 <div class="form-group {{ $errors->has('amount') ? 'has-error' : '' }}">
-    <div class="fg-line">
-        <label for="amount">ΠΟΣΟ</label>
-        <input id="amount" type="number" step="0.01" name="amount" class="form-control" placeholder="" value="{{ $expense['amount'] or '' }}">
-    </div>
+    <label for="amount">ΠΟΣΟ</label>
+    <input id="amount" type="number" step="0.01" name="amount" class="form-control" placeholder="" value="{{ $expense['amount'] or '' }}">
 </div>
 
 <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
-    <div class="fg-line">
-        <label for="description">ΑΝΤΙΚΕΙΜΕΝΑ (1 ΣΕ ΚΑΘΕ ΓΡΑΜΜΗ, ΜΟΡΦΗ: 5.50 kafedes)</label>
-        <textarea rows="8" id="description" name="description" class="form-control" required="required">{{ $expense['description'] or '' }}</textarea>
-    </div>
+    <label for="description">ΑΝΤΙΚΕΙΜΕΝΑ (1 ΣΕ ΚΑΘΕ ΓΡΑΜΜΗ, ΜΟΡΦΗ: 5.50 kafedes)</label>
+    <textarea rows="8" id="description" name="description" class="form-control" required="required">{{ $expense['description'] or '' }}</textarea>
 </div>
 
 
 <div class="text-right">
-    <button class="btn bgm-black">ΑΠΟΘΗΚΕΥΣΗ</button>
+    <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
 </div>
 
 @push('scripts')

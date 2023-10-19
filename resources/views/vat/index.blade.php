@@ -21,15 +21,15 @@
         <div class="card-body card-padding">
             <div class="row m-b-15">
                 <div class="col-xs-6">
-                    <span class="f-700 c-lightgreen">ΤΙΜΟΛΟΓΙΑ &euro; {!! $total->invoice or '0' !!}</span>
+                    <span class="f-700 c-crm">ΤΙΜΟΛΟΓΙΑ &euro; {!! $total->invoice or '0' !!}</span>
                 </div>
                 <div class="col-xs-6 text-right">
-                    <span class="f-700 c-brown">&euro; {!! $total->cashier or '0' !!} ΤΑΜΕΙΑΚΗ</span>
+                    <span class="f-700 c-pink">&euro; {!! $total->cashier or '0' !!} ΤΑΜΕΙΑΚΗ</span>
                 </div>
             </div>
             <div class="progress progress-sweet">
-                <div class="progress-bar bgm-lightgreen" style="width: {!! $total->invoicePercentage !!}%;"></div>
-                <div class="progress-bar bgm-brown" style="width: {!! $total->cashierPercentage !!}%;"></div>
+                <div class="progress-bar bgm-crm" style="width: {!! $total->invoicePercentage !!}%;"></div>
+                <div class="progress-bar bgm-pink" style="width: {!! $total->cashierPercentage !!}%;"></div>
             </div>
         </div>
 

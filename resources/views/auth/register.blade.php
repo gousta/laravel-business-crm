@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="login-content bgm-pink">
+    <div class="login-content bgm-crm">
 
         <div class="lc-block toggled" id="l-login">
             <h1 style="color:#fff;margin-bottom:20px">CRM</h1>

@@ -1,17 +1,13 @@
 @include('layouts.error')
 
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-    <div class="fg-line">
-        <label for="name">ΟΝΟΜΑ</label>
-        <input id="name" type="text" name="name" class="form-control" placeholder="" required="required" value="{{ $item['name'] or '' }}">
-    </div>
+    <label for="name">ΟΝΟΜΑ</label>
+    <input id="name" type="text" name="name" class="form-control" placeholder="" required="required" value="{{ $item['name'] or '' }}">
 </div>
 
 <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
-    <div class="fg-line">
-        <label for="price">TIMH</label>
-        <input id="price" type="number" name="price" class="form-control" placeholder="" required="required" value="{{ $item['price'] or '' }}">
-    </div>
+    <label for="price">TIMH</label>
+    <input id="price" type="number" name="price" class="form-control" placeholder="" required="required" value="{{ $item['price'] or '' }}">
 </div>
 
 <div class="row">
@@ -61,7 +57,7 @@
 
 
 <div class="text-right">
-    <button class="btn bgm-black">ΑΠΟΘΗΚΕΥΣΗ</button>
+    <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
 </div>
 
 
@@ -84,7 +80,7 @@
 
             $(document).on('click', '.cancel-new-category-btn', function(e) {
                 e.preventDefault();
-                
+
                 $('.new-category .new-category-input').attr('name', '');
                 $('.new-category .new-category-input').addClass('hidden');
                 $('.new-category .new-category-btn').removeClass('hidden');
@@ -112,7 +108,7 @@
 
             $(document).on('click', '.cancel-new-brand-btn', function(e) {
                 e.preventDefault();
-                
+
                 $('.new-brand .new-brand-input').attr('name', '');
                 $('.new-brand .new-brand-input').addClass('hidden');
                 $('.new-brand .new-brand-btn').removeClass('hidden');

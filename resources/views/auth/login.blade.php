@@ -23,7 +23,7 @@
 <body class="bgm-white">
 
   <div class="mdnsign">
-    <div class="mdnhead bgm-pink">
+    <div class="mdnhead bgm-crm">
       <div class="mdnheadinner">
         <div class="mdntitle">
           <div class="c-white f-s-20">Σύνδεση</div>
@@ -37,17 +37,15 @@
           {!! Form::open(['url' => route('auth.login'), 'method' => 'POST']) !!}
 
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-
                 <input type="email" name="email" class="form-control" placeholder="EMAIL" value="{{ Request::old('email') }}">
-
             </div>
 
             <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                <input type="password" name="password" class="form-control" placeholder="ΚΩΔΙΚΟΣ">
+                <input type="password" name="password" class="form-control" placeholder="ΚΩΔΙΚΟΣ" autocomplete="current-password">
             </div>
 
             <div class="text-right">
-              <button class="btn bgm-pink btn-lg waves-effect">ΕΠΟΜΕΝΟ</button>
+              <button class="btn bgm-crm btn-lg waves-effect">ΕΠΟΜΕΝΟ</button>
             </div>
           {!! Form::close() !!}
         </div>

@@ -11,7 +11,6 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 html {
-    font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -1406,7 +1405,6 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", "Roboto", sans-serif;
     font-size: 15px;
     line-height: 1.42857143;
     color: #5e5e5e;
@@ -1423,13 +1421,13 @@ textarea {
 }
 
 a {
-    color: #2196f3;
+    color: #32c787;
     text-decoration: none;
 }
 
 a:hover,
 a:focus {
-    color: #0a6ebd;
+    color: #229161;
     text-decoration: none;
 }
 
@@ -3326,7 +3324,7 @@ output {
 }
 
 .form-control:focus {
-    border-color: #b4b4b4;
+    border-color: #32c787;
     outline: 0;
 }
 
@@ -7867,7 +7865,7 @@ button.close {
     position: absolute;
     z-index: 1070;
     display: block;
-    font-family: "Roboto", sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
@@ -8001,7 +7999,7 @@ button.close {
     display: none;
     max-width: 276px;
     padding: 1px;
-    font-family: "Roboto", sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
@@ -8309,7 +8307,7 @@ button.close {
     width: 20px;
     height: 20px;
     line-height: 1;
-    font-family: serif;
+    font-family: inherit;
 }
 
 .carousel-control .icon-prev:before {

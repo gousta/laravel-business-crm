@@ -18,6 +18,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'show_in_calendar',
     ];
 
     /**
@@ -26,6 +28,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
+
+    public function appointments()
+    {
+        return $this->hasMany('App\Models\Appointment', 'user_id', 'id');
+    }
 }

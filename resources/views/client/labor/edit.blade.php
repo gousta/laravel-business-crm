@@ -1,4 +1,4 @@
-@extends('layouts.app', ['pageTitle' => 'Επεξεργασία Εργασίας'])
+@extends('layouts.app', ['pageTitle' => 'Επεξεργασία εργασίας'])
 
 @push('backbutton')
     <li>

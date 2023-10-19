@@ -51,8 +51,8 @@ class StatController extends Controller
                     'sum' => Labor::shop()->sum('price'),
                     'customers' => Labor::shop()->distinct('client_id')->count('client_id'),
 
-                    'average_per_day' => Labor::averagePerDay(),
-                    'average_customers_per_day' => Labor::averageCustomersPerDay(),
+                    'average_per_day' => Labor::averagePerDay()->first()->average ?? 0,
+                    'average_customers_per_day' => Labor::averageCustomersPerDay()->count('client_id') ?? 0,
 
                     'average_per_day_yearly' => Labor::getAveragePerDayYears(),
 

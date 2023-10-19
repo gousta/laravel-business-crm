@@ -1,4 +1,4 @@
-@extends('layouts.app', ['pageTitle' => 'Εργασίες ' . \Carbon\Carbon::parse(\Request::get('date'))->formatLocalized('%d %B')])
+@extends('layouts.app', ['pageTitle' => 'Εργασίες για ' . \Carbon\Carbon::parse(\Request::get('date'))->formatLocalized(config('crm.date_format'))])
 
 @push('backbutton')
     <li>

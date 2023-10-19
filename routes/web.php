@@ -13,13 +13,20 @@ Route::group([
     Route::resource('catalog', 'CatalogController');
     Route::resource('expense', 'ExpenseController');
     Route::resource('vat', 'VatController');
+    Route::resource('user', 'UserController');
 
+    Route::get('/appointments', 'AppointmentController@index')->name('appointment.index');
+
+    Route::resource('client', 'ClientController');
     Route::post('/client/{id}/labor', 'ClientController@laborStore')->name('client.labor.store');
     Route::get('/client/{id}/labor/{laborId}/edit', 'ClientController@laborEdit')->name('client.labor.edit');
     Route::post('/client/{id}/labor/{laborId}', 'ClientController@laborUpdate')->name('client.labor.update');
-    Route::post('/async/client/{id}/labor/{laborId}', 'ClientController@asyncLaborUpdate')->name('async.client.labor.update');
     Route::get('/client/{id}/labor/{laborId}', 'ClientController@laborDestroy')->name('client.labor.destroy');
-    Route::resource('client', 'ClientController');
+
+    // Async
+    Route::get('/async/appointments', 'AppointmentController@asyncIndexAppointments')->name('async.appointment.index');
+    Route::put('/async/appointments', 'AppointmentController@asyncUpdateAnyAppointment')->name('async.appointment.any.update');
+    Route::post('/async/client/{id}/labor/{laborId}', 'ClientController@asyncLaborUpdate')->name('async.client.labor.update');
 });
 
 Route::group([
@@ -30,8 +37,8 @@ Route::group([
     Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
 
     // Registration Routes...
-    Route::get('register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-    Route::post('register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@register']);
+    // Route::get('register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+    // Route::post('register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@register']);
 
     // Password Reset Routes...
     Route::get('password/reset/{token?}', ['as' => 'auth.password.reset', 'uses' => 'Auth\ForgotPasswordController@showResetForm']);

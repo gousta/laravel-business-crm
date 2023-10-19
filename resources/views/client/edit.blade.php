@@ -1,4 +1,4 @@
-@extends('layouts.app', ['pageTitle' => 'Επεξεργασία'])
+@extends('layouts.app', ['pageTitle' => 'Επεξεργασία πελάτη'])
 
 @push('backbutton')
     <li>
@@ -12,12 +12,9 @@
 
 @section('content')
     <div class="card">
-        {{-- <div class="card-header ch-alt">
-            <a href="{{ route('client.show', $client->id) }}" class="card-back-btn">
-                <i class="zmdi zmdi-arrow-left"></i>
-            </a>
+        <div class="card-header ch-alt">
             <h2>Επεξεργασία Πελάτη</h2>
-        </div> --}}
+        </div>
 
         <div class="card-body card-padding">
             {!! Form::open(['url' => route('client.update', $client->id), 'method' => 'PUT']) !!}

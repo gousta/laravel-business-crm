@@ -16,18 +16,14 @@
 <div class="row">
     <div class="col-xs-12 col-md-6">
         <div class="form-group {{ $errors->has('cashier') ? 'has-error' : '' }}">
-            <div class="fg-line">
-                <label for="cashier">ΦΠΑ ΤΑΜΕΙΑΚΗΣ</label>
-                <input id="cashier" type="number" step="0.01" name="cashier" class="form-control" placeholder="" value="{{ $vat['cashier'] or '' }}">
-            </div>
+            <label for="cashier">ΦΠΑ ΤΑΜΕΙΑΚΗΣ</label>
+            <input id="cashier" type="number" step="0.01" name="cashier" class="form-control" placeholder="" value="{{ $vat['cashier'] or '' }}">
         </div>
     </div>
     <div class="col-xs-12 col-md-6">
         <div class="form-group {{ $errors->has('invoice') ? 'has-error' : '' }}">
-            <div class="fg-line">
-                <label for="invoice">ΦΠΑ ΑΠΟ ΤΙΜΟΛΟΓΙΑ</label>
-                <input id="invoice" type="number" step="0.01" name="invoice" class="form-control" placeholder="" value="{{ $vat['invoice'] or '' }}">
-            </div>
+            <label for="invoice">ΦΠΑ ΑΠΟ ΤΙΜΟΛΟΓΙΑ</label>
+            <input id="invoice" type="number" step="0.01" name="invoice" class="form-control" placeholder="" value="{{ $vat['invoice'] or '' }}">
         </div>
     </div>
 </div>
@@ -37,9 +33,9 @@
     @if($vat)
         {{ Form::open(['method'  => 'DELETE', 'route' => ['vat.destroy', $vat->id]]) }}
         {{ Form::hidden('date', Request::input('date')) }}
-        {{ Form::button('ΔΙΑΓΡΑΦΗ', ['type' => 'submit', 'class' => 'btn btn-link c-red']) }}
+        {{ Form::button('ΔΙΑΓΡΑΦΗ', ['type' => 'submit', 'class' => 'btn btn-link']) }}
         {{ Form::close() }}
     @else
-        <button class="btn bgm-black">ΑΠΟΘΗΚΕΥΣΗ</button>
+        <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
     @endif
 </div>

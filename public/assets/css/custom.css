@@ -1,3 +1,7 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #main {
     padding-top: 72px;
 }
@@ -17,7 +21,7 @@ body.modal-open {
     color: #9e9e9e;
 }
 .catalog-item.catalog-item-selected {
-    background: #e91e63;
+    background: #32c787;
     color: #fff;
     font-weight: 600;
 }
@@ -84,10 +88,25 @@ body.modal-open {
 
 .card {
     margin-bottom: 15px;
+    box-shadow: none;
 }
 
 .btn {
     font-weight: 600;
+    box-shadow: none !important;
+}
+
+.btn:not(.ccta) {
+    height: 40px;
+    line-height: 28px;
+    border-radius: 4px;
+    padding-left: 25px;
+    padding-right: 25px;
+    vertical-align: middle;
+}
+
+.btn.btn-link:hover {
+    background: #eee;
 }
 
 .chosen-container .chosen-results li.active-result {
@@ -385,7 +404,7 @@ table.dataTable thead [class*="sorting"] {
 
 @media (max-width: 992px) {
     #header .hi-logo {
-        width: 55%;
+        float: left;
     }
 }
 
@@ -772,7 +791,6 @@ table.dataTable thead [class*="sorting"] {
     width: 56px;
     height: 56px;
     z-index: 1;
-    box-shadow: 0 8px 17px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19) !important;
 }
 .ccta i {
     font-size: 23px !important;
@@ -806,4 +824,24 @@ table.dataTable thead [class*="sorting"] {
 .progress-sweet {
     border-radius: 2px;
     height: 15px;
+}
+
+#header {
+    box-shadow: none;
+}
+
+.bgm-crm {
+    background-color: #32c787 !important;
+}
+
+.c-crm {
+    color: #32c787 !important;
+}
+
+.bgm-crm-dark {
+    background-color: #229161 !important;
+}
+
+.c-crm-dark {
+    color: #229161 !important;
 }

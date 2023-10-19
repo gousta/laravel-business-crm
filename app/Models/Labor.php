@@ -67,22 +67,16 @@ class Labor extends Model
 
     public function scopeAveragePerDay($q)
     {
-        $res = $q->selectRaw('avg(sum(price)) over () as average')
+        return $q->selectRaw('avg(sum(price)) over () as average')
             ->where('date', '>=', START_DATE)
-            ->groupBy('date')
-            ->first();
-
-        return $res ? (int) round($res->average) : 0;
+            ->groupBy('date');
     }
 
     public function scopeAverageCustomersPerDay($q)
     {
-        $res = $q->where('date', '>=', START_DATE)
+        return $q->where('date', '>=', START_DATE)
             ->groupBy('date')
-            ->distinct('client_id')
-            ->count('client_id');
-
-        return $res ? (int) round($res) : 0;
+            ->distinct('client_id');
     }
 
     public function scopeAveragePerDayOfWeek($q)
