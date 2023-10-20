@@ -14,6 +14,8 @@
             <a class="hi-logo-text">{{ $pageTitle or '-' }}</a>
         </li>
 
+        @stack('headercenter')
+
         <li class="pull-right">
             <ul class="hi-menu">
                 @stack('actionbutton')
