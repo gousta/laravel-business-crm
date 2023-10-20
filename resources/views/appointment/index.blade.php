@@ -36,6 +36,8 @@
         $(document).ready(function() {
 
             var calendar = $('.date-input').flatpickr({
+                positionElement: $('.date-selector')[0],
+                clickOpens: false,
                 enableTime: false,
                 nextArrow: '<i class="zmdi zmdi-long-arrow-right" />',
                 prevArrow: '<i class="zmdi zmdi-long-arrow-left" />',
@@ -43,6 +45,7 @@
                     window.location.href = "{{ route('appointment.index', ['date'=>'_date']) }}".replace('_date', date);
                 }
             });
+
             $(document).on('click', '.date-selector', function (e) {
                 e.preventDefault();
 
