@@ -2,6 +2,7 @@
 
 return [
     'date_format' => '%A %d %b %Y',
+    'date_format_short' => '%a %d/%m/%y',
     'role_default' => 'employee',
     'roles' => [
         'admin' => [

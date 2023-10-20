@@ -29,6 +29,7 @@ class AppointmentController extends Controller
             'users' => $users,
             'date' => $date->toDateString(),
             'date_formatted' => $date->formatLocalized(config('crm.date_format')),
+            'date_formatted_short' => $date->formatLocalized(config('crm.date_format_short')),
         ]);
     }
 

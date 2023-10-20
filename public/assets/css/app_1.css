@@ -10407,7 +10407,7 @@ h6 small,
 
 .hi-menu > li {
     display: inline-block;
-    margin: 0 1px;
+    margin: 0;
     vertical-align: top;
     min-width: 50px;
 }

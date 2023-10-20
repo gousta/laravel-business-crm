@@ -6,9 +6,38 @@
 
 @push('styles')
     <style>
+        .date-selector {
+            display: block !important;
+        }
 
-        @media (min-width: 768px) {
+        .date-selector-short {
+            display: none !important;
+        }
+
+        .date-input {
+            display:none;
+            visibility:hidden;
+        }
+
+        @media (max-width: 992px) {
+            #header .calendar .hi-logo {
+                float: none;
+            }
+
             .date-selector {
+                display: none !important;
+            }
+
+            .date-selector-short {
+                display: block !important;
+            }
+
+            .hi-menu > li.arrow-button  {
+                min-width: auto;
+                width: 35px;
+            }
+
+            #header .hi-logo a.date-selector {
                 font-size: 16px;
             }
         }
@@ -16,17 +45,18 @@
 @endpush
 
 @push('headercenter')
-    <li>
+    <li class="calendar">
         <ul class="hi-menu">
-            <li>
-                <a href="{{ $date_prev_link }}" class="action-create"><i class="him-icon zmdi zmdi-arrow-left"></i></a>
+            <li class="arrow-button">
+                <a href="{{ $date_prev_link }}"><i class="him-icon zmdi zmdi-arrow-left"></i></a>
             </li>
             <li class="hi-logo">
                 <a href="#" class="date-selector">{{$date_formatted}}</a>
-                <input class="date-input" style="display:none;visibility:hidden" />
+                <a href="#" class="date-selector-short">{{$date_formatted_short}}</a>
+                <input class="date-input"/>
             </li>
-            <li>
-                <a href="{{ $date_next_link }}" class="action-create"><i class="him-icon zmdi zmdi-arrow-right"></i></a>
+            <li class="arrow-button">
+                <a href="{{ $date_next_link }}"><i class="him-icon zmdi zmdi-arrow-right"></i></a>
             </li>
         </ul>
     </li>
@@ -62,7 +92,11 @@
 
             $(document).on('click', '.date-selector', function (e) {
                 e.preventDefault();
+                calendar.open();
+            });
 
+            $(document).on('click', '.date-selector-short', function (e) {
+                e.preventDefault();
                 calendar.open();
             });
         });
