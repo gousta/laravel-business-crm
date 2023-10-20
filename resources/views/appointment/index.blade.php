@@ -23,7 +23,7 @@
             </li>
             <li class="hi-logo">
                 <a href="#" class="date-selector">{{$date_formatted}}</a>
-                <input class="date-input" style="display:none" />
+                <input class="date-input" style="display:none;visibility:hidden" />
             </li>
             <li>
                 <a href="{{ $date_next_link }}" class="action-create"><i class="him-icon zmdi zmdi-arrow-right"></i></a>
