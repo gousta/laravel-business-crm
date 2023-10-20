@@ -969,12 +969,12 @@ table.dataTable thead [class*="sorting"] {
 }
 
 span.flatpickr-weekday {
-    font-weight: 400;
+    font-weight: 900;
     color: #333;
 }
 
 .flatpickr-day {
-    font-size: 0.92rem;
+    /* font-size: 0.92rem; */
     border: 0;
     color: #747a80;
 }

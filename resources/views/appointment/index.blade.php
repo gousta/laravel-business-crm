@@ -4,6 +4,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 
+@push('styles')
+    <style>
+
+        @media (min-width: 768px) {
+            .date-selector {
+                font-size: 16px;
+            }
+        }
+    </style>
+@endpush
+
 @push('headercenter')
     <li>
         <ul class="hi-menu">
