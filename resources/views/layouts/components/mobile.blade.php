@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="theme-color" content="#32c787" />
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifestv2.json">
     <link rel="apple-touch-icon" href="/web_hi_res_512.png">
     <link rel="apple-touch-icon" sizes="76x76" href="/web_hi_res_512.png">
     <link rel="apple-touch-icon" sizes="120x120" href="/web_hi_res_512.png">
