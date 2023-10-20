@@ -50,7 +50,7 @@
             <li class="arrow-button">
                 <a href="{{ $date_prev_link }}"><i class="him-icon zmdi zmdi-arrow-left"></i></a>
             </li>
-            <li class="hi-logo">
+            <li class="date-selector-wrapper hi-logo">
                 <a href="#" class="date-selector">{{$date_formatted}}</a>
                 <a href="#" class="date-selector-short">{{$date_formatted_short}}</a>
                 <input class="date-input"/>
@@ -79,10 +79,11 @@
 
             var calendar = $('.date-input').flatpickr({
                 locale: 'gr',
-                positionElement: $('.date-selector')[0],
+                positionElement: $('.date-selector-wrapper')[0],
                 clickOpens: false,
                 enableTime: false,
                 disableMobile: true,
+                position: 'auto center',
                 nextArrow: '<i class="zmdi zmdi-arrow-right" />',
                 prevArrow: '<i class="zmdi zmdi-arrow-left" />',
                 onChange: (datetime, date) => {
@@ -90,12 +91,7 @@
                 }
             });
 
-            $(document).on('click', '.date-selector', function (e) {
-                e.preventDefault();
-                calendar.open();
-            });
-
-            $(document).on('click', '.date-selector-short', function (e) {
+            $(document).on('click', '.date-selector-wrapper', function (e) {
                 e.preventDefault();
                 calendar.open();
             });
