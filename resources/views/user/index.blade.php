@@ -17,6 +17,7 @@
                         <th>EMAIL</th>
                         <th>ΡΟΛΟΣ</th>
                         <th>ΗΜΕΡΟΛΟΓΙΟ</th>
+                        <th>ΣΕΙΡΑ ΣΤΟ ΗΜΕΡΟΛΟΓΙΟ</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,7 +26,8 @@
                             <td class="vamiddle">{{ $user->name or '' }}</td>
                             <td class="vamiddle">{{ $user->email or '' }}</td>
                             <td class="vamiddle">{{ config('crm.roles.'.$user->role.'.label') }}</td>
-                            <td class="vamiddle">{{ $user->show_in_calendar ? 'ΝΑΙ':'ΟΧΙ' }}</td>
+                            <td class="vamiddle">{{ $user->show_in_calendar ? 'ΕΜΦΑΝΙΖΕΤΑΙ':'-' }}</td>
+                            <td class="vamiddle">{{ $user->order_in_calendar ? $user->order_in_calendar:'-' }}</td>
                         </tr>
                     @endforeach
                 </tbody>

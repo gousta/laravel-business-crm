@@ -13,8 +13,9 @@
 @endpush
 
 @section('content')
-    @include('appointment.shared.table-interactive')
+    <!-- @include('appointment.shared.table') -->
     <!-- @include('appointment.shared.slot') -->
+    @include('appointment.shared.table-interactive')
 @stop
 
 @push('scripts')

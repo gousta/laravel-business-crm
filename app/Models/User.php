@@ -20,6 +20,7 @@ class User extends Authenticatable
         'password',
         'role',
         'show_in_calendar',
+        'order_in_calendar',
     ];
 
     /**

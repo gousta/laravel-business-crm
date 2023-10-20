@@ -67,6 +67,11 @@
     </div>
 </div>
 
+<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+    <label for="name">ΣΕΙΡΑ ΕΜΦΑΝΙΣΗΣ ΣΤΟ ΗΜΕΡΟΛΟΓΙΟ</label>
+    <input id="name" type="text" name="order_in_calendar" class="form-control" placeholder="" value="{{ $user['order_in_calendar'] or '' }}" />
+</div>
+
 <div class="text-right">
     <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
 </div>

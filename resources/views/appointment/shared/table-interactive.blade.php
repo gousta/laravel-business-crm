@@ -113,7 +113,7 @@
 
         $(document).ready(function() {
             loadAppointments();
-            setInterval(loadAppointments, 10000);
+            // setInterval(loadAppointments, 10000);
 
             $(document).on('blur', '.slot-input', async function(e) {
                 e.preventDefault();

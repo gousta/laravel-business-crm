@@ -19,7 +19,7 @@ class AppointmentController extends Controller
         $nextDate = Carbon::parse($date)->addDay();
 
         $users = User::where('show_in_calendar', true)
-            ->orderBy('id', 'asc')
+            ->orderBy('order_in_calendar', 'asc')
             ->get();
 
         return view('appointment.index', [
