@@ -15,4 +15,4 @@
 
 
     <link rel="icon" type="image/ico" href="/favicon.ico"/>
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="/crm.png" sizes="512x512">
