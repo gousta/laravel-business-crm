@@ -1,6 +1,6 @@
 @extends('layouts.app', ['pageTitle' => 'Ραντεβού' ])
 
-@push('styles')
+@push('vendorstyles')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 
@@ -39,8 +39,8 @@
                 positionElement: $('.date-selector')[0],
                 clickOpens: false,
                 enableTime: false,
-                nextArrow: '<i class="zmdi zmdi-long-arrow-right" />',
-                prevArrow: '<i class="zmdi zmdi-long-arrow-left" />',
+                nextArrow: '<i class="zmdi zmdi-arrow-right" />',
+                prevArrow: '<i class="zmdi zmdi-arrow-left" />',
                 onChange: (datetime, date) => {
                     window.location.href = "{{ route('appointment.index', ['date'=>'_date']) }}".replace('_date', date);
                 }

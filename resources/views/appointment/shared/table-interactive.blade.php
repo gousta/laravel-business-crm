@@ -47,6 +47,10 @@
             padding-right: 10px;
         }
 
+        .slot-input::placeholder {
+            color: #ccc;
+        }
+
         @media (max-width: 768px) {
             .table {
                 table-layout: auto;
