@@ -30,8 +30,11 @@
         .table-bordered > tbody > tr > td,
         .table-bordered > thead > tr > th {
             border: 10px solid #f5f5f5;
-            border-top: 1px solid #f5f5f5;
+            border-top: 1px solid #ddd;
             border-bottom: none;
+        }
+        .table-bordered > tbody > tr > td:first-child {
+            border-top: 1px solid #f5f5f5;
         }
 
         .slot-input {
