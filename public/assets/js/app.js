@@ -41,7 +41,7 @@ $(window).load(function () {
     }
 
     if ($("#growl-alert").val() && $("#growl-alert").val() !== "") {
-        notify($("#growl-alert").val(), "warning");
+        notify($("#growl-alert").val(), "info");
     }
 
     if ($("#growl-warning").val() && $("#growl-warning").val() !== "") {
