@@ -14,5 +14,4 @@
     <link rel="apple-touch-startup-image" href="/ios_startup.png">
 
 
-    <link rel="icon" type="image/ico" href="/favicon.ico"/>
     <link rel="icon" type="image/png" href="/crm.png" sizes="512x512">
