@@ -32,10 +32,12 @@
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/gr.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
 
             var calendar = $('.date-input').flatpickr({
+                locale: 'gr',
                 positionElement: $('.date-selector')[0],
                 clickOpens: false,
                 enableTime: false,
