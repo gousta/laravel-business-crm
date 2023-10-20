@@ -110,10 +110,12 @@
         }
 
         async function saveAppointment(user_id, description, date, hour) {
+            $(`.slot-input`).attr('disabled', true);
             const url = "{{ route('async.appointment.any.update') }}";
             const data = { user_id, description, date, hour };
             $.ajax({ method: "PUT", url, data }).done(function() {
                 notify('Αποθηκεύτηκε', 'inverse');
+                $(`.slot-input`).attr('disabled', false);
                 loadAppointments();
             });
         }
