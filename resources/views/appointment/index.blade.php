@@ -52,6 +52,7 @@
                 positionElement: $('.date-selector')[0],
                 clickOpens: false,
                 enableTime: false,
+                disableMobile: true,
                 nextArrow: '<i class="zmdi zmdi-arrow-right" />',
                 prevArrow: '<i class="zmdi zmdi-arrow-left" />',
                 onChange: (datetime, date) => {
