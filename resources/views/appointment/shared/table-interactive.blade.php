@@ -47,8 +47,37 @@
             padding-right: 10px;
         }
 
+        .slot-input:focus {
+            padding-right: 60px;
+        }
+
         .slot-input::placeholder {
             color: #ccc;
+        }
+
+        .slot-wrapper {
+            position: relative;
+        }
+        .slot-tooltip {
+            visibility: hidden;
+            display: block;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 2px 7px;
+            background: #333;
+            color: #fff;
+            font-weight: 600;
+            font-size: 12px;
+            border-radius: 50px;
+            position: absolute;
+            top: 6px;
+            right: 5px;
+        }
+
+        :focus + .slot-tooltip {
+            margin-bottom: 0;
+            height: auto;
+            visibility: visible;
         }
 
         @media (max-width: 768px) {
@@ -78,8 +107,9 @@
             <tr>
                 <td>{{ $hour }}</td>
                 @foreach($users as $user)
-                <td id="{{ str_replace(':', '', $user->id.$date.$hour) }}">
+                <td class="slot-wrapper" id="{{ str_replace(':', '', $user->id.$date.$hour) }}">
                     <input type="text" class="slot-input" data-user-id="{{$user->id}}" data-date="{{$date}}" data-hour="{{$hour}}" />
+                    <div class="slot-tooltip">{{$hour}}</div>
                 </td>
                 @endforeach
             </tr>
