@@ -2,10 +2,16 @@
     <style>
         .table {
             table-layout: fixed;
+            position: relative;
+            border-collapse: collapse;
         }
 
         .table thead tr th {
+            background: #f3f3f3;
             font-weight: 800;
+            position: sticky;
+            top: 56px; /** required for `sticky` to work */
+            z-index: 1;
         }
 
         .table thead tr th:first-child {
@@ -23,13 +29,13 @@
         }
 
         .table-bordered {
-            border: 10px solid #f5f5f5;
-            border-top: 1px solid #f5f5f5;
-            border-bottom: 1px solid #f5f5f5;
+            border: 10px solid #f3f3f3;
+            border-top: 1px solid #f3f3f3;
+            border-bottom: 1px solid #f3f3f3;
         }
         .table-bordered > tbody > tr > td,
         .table-bordered > thead > tr > th {
-            border: 10px solid #f5f5f5;
+            border: 10px solid #f3f3f3;
             border-top: 1px solid #ddd;
             border-bottom: none;
         }
@@ -92,31 +98,29 @@
     </style>
 @endpush
 
-<div class="table-responsive">
-    <table class="table table-bordered table-condensed">
-        <thead>
-            <tr>
-                <th>&nbsp;</th>
-                @foreach($users as $user)
-                <th>{{ $user->name }}</th>
-                @endforeach
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($hours as $hour)
-            <tr>
-                <td>{{ $hour }}</td>
-                @foreach($users as $user)
-                <td class="slot-wrapper" id="{{ str_replace(':', '', $user->id.$date.$hour) }}">
-                    <input type="text" class="slot-input" data-user-id="{{$user->id}}" data-date="{{$date}}" data-hour="{{$hour}}" />
-                    <div class="slot-tooltip">{{$hour}}</div>
-                </td>
-                @endforeach
-            </tr>
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            @foreach($users as $user)
+            <th>{{ $user->name }}</th>
             @endforeach
-        </tbody>
-    </table>
-</div>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($hours as $hour)
+        <tr>
+            <td>{{ $hour }}</td>
+            @foreach($users as $user)
+            <td class="slot-wrapper" id="{{ str_replace(':', '', $user->id.$date.$hour) }}">
+                <input type="text" class="slot-input" data-user-id="{{$user->id}}" data-date="{{$date}}" data-hour="{{$hour}}" />
+                <div class="slot-tooltip">{{$hour}}</div>
+            </td>
+            @endforeach
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 
 @push('scripts')
     <script type="text/javascript">
