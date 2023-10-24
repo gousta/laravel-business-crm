@@ -448,6 +448,7 @@ table.dataTable thead [class*="sorting"] {
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     font-size: 13px;
+    padding: 0.5em 0;
 }
 
 .a-hover {
