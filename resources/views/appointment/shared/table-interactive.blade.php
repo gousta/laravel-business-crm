@@ -1,21 +1,28 @@
 @push('styles')
     <style>
+        .table-wrap {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
         .table {
             table-layout: fixed;
-            position: relative;
             border-collapse: collapse;
+        }
+
+        .table thead {
+            position: sticky;
+            inset-block-start: 56px;
+            z-index: 1;
         }
 
         .table thead tr th {
             background: #f3f3f3;
-            font-weight: 800;
-            position: sticky;
-            top: 56px; /** required for `sticky` to work */
-            z-index: 1;
+            font-weight: 900;
+            border-bottom: 1px solid #ddd;
         }
 
         .table thead tr th:first-child {
-            background: none;
             width: 65px;
         }
 
@@ -25,22 +32,24 @@
         }
 
         .table tbody tr td:first-child {
-            padding: 5px 0 !important;
+            padding: 5px 0 5px 0 !important;
         }
 
         .table-bordered {
-            border: 10px solid #f3f3f3;
-            border-top: 1px solid #f3f3f3;
-            border-bottom: 1px solid #f3f3f3;
+            border: 0;
         }
-        .table-bordered > tbody > tr > td,
-        .table-bordered > thead > tr > th {
-            border: 10px solid #f3f3f3;
-            border-top: 1px solid #ddd;
-            border-bottom: none;
+
+        .table-bordered > thead > tr > th,
+        .table-bordered > tbody > tr > td {
+            border: 1px solid #f3f3f3;
+            border-left: 10px solid #f3f3f3;
+            border-right: 10px solid #f3f3f3;
         }
-        .table-bordered > tbody > tr > td:first-child {
-            border-top: 1px solid #f5f5f5;
+        .table-bordered > tbody > tr:nth-child(2n) > td {
+            border-bottom-color: #e1e1e1;
+        }
+        .table-bordered > tbody > tr:nth-child(2n) > td:first-child {
+            border-bottom-color: #f3f3f3;
         }
 
         .slot-input {
@@ -69,12 +78,12 @@
             display: block;
             overflow: hidden;
             box-sizing: border-box;
-            padding: 2px 7px;
+            padding: 2px 4px;
             background: #333;
             color: #fff;
             font-weight: 600;
             font-size: 12px;
-            border-radius: 50px;
+            border-radius: 2px;
             position: absolute;
             top: 6px;
             right: 5px;
@@ -98,6 +107,7 @@
     </style>
 @endpush
 
+<div class="table-wrap">
 <table class="table table-bordered table-condensed">
     <thead>
         <tr>
@@ -121,6 +131,7 @@
         @endforeach
     </tbody>
 </table>
+</div>
 
 @push('scripts')
     <script type="text/javascript">
