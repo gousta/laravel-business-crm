@@ -63,7 +63,7 @@
         }
 
         .slot-input:focus {
-            padding-right: 60px;
+            padding-right: 50px;
         }
 
         .slot-input::placeholder {
