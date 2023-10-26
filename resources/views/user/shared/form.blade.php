@@ -57,22 +57,34 @@
 
 @endif
 
-<div class="form-group {{ $errors->has('show_in_calendar') ? 'has-error' : '' }}">
-    <div class="checkbox m-t-0 m-b-15">
-        <label>
-            <input type="checkbox" name="show_in_calendar" value="true" {{ isset($user['show_in_calendar']) && $user['show_in_calendar'] ? 'checked':'' }} />
-            <i class="input-helper"></i>
-            ΕΜΦΑΝΙΣΗ ΣΤΑ ΡΑΝΤΕΒΟΥ
-        </label>
+<div class="m-t-50 m-b-50"><hr /></div>
+
+<div class="m-b-30">
+    <strong>ΡΥΘΜΙΣΕΙΣ ΡΑΝΤΕΒΟΥ</strong>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="form-group {{ $errors->has('show_in_calendar') ? 'has-error' : '' }}">
+            <div class="checkbox m-t-0 m-b-15">
+                <label>
+                    <input type="checkbox" name="show_in_calendar" value="true" {{ isset($user['show_in_calendar']) && $user['show_in_calendar'] ? 'checked':'' }} />
+                    <i class="input-helper"></i>
+                    ΕΜΦΑΝΙΣΗ ΣΤΑ ΡΑΝΤΕΒΟΥ
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+            <label for="name">ΣΕΙΡΑ ΕΜΦΑΝΙΣΗΣ ΣΤΑ ΡΑΝΤΕΒΟΥ</label>
+            <input id="name" type="text" name="order_in_calendar" class="form-control" placeholder="" value="{{ $user['order_in_calendar'] or '' }}" />
+        </div>
     </div>
 </div>
 
-<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-    <label for="name">ΣΕΙΡΑ ΕΜΦΑΝΙΣΗΣ ΣΤΑ ΡΑΝΤΕΒΟΥ</label>
-    <input id="name" type="text" name="order_in_calendar" class="form-control" placeholder="" value="{{ $user['order_in_calendar'] or '' }}" />
-</div>
-
-<div class="text-right">
+<div class="m-t-20 text-right">
     <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
 </div>
 
