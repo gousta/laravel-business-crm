@@ -62,13 +62,13 @@
         <label>
             <input type="checkbox" name="show_in_calendar" value="true" {{ isset($user['show_in_calendar']) && $user['show_in_calendar'] ? 'checked':'' }} />
             <i class="input-helper"></i>
-            ΕΜΦΑΝΙΣΗ ΣΤΟ ΗΜΕΡΟΛΟΓΙΟ
+            ΕΜΦΑΝΙΣΗ ΣΤΑ ΡΑΝΤΕΒΟΥ
         </label>
     </div>
 </div>
 
 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-    <label for="name">ΣΕΙΡΑ ΕΜΦΑΝΙΣΗΣ ΣΤΟ ΗΜΕΡΟΛΟΓΙΟ</label>
+    <label for="name">ΣΕΙΡΑ ΕΜΦΑΝΙΣΗΣ ΣΤΑ ΡΑΝΤΕΒΟΥ</label>
     <input id="name" type="text" name="order_in_calendar" class="form-control" placeholder="" value="{{ $user['order_in_calendar'] or '' }}" />
 </div>
 
