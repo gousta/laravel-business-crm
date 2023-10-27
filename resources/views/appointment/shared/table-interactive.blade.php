@@ -93,9 +93,19 @@
             visibility: visible;
         }
 
+        @media (max-width: 1024px) {
+            .table thead tr th:first-child {
+                width: 50px;
+            }
+        }
+
         @media (max-width: 768px) {
             .table {
                 table-layout: auto;
+            }
+
+            .table thead tr th:first-child {
+                width: 45px;
             }
 
             .table thead tr th:not(:first-child) {
