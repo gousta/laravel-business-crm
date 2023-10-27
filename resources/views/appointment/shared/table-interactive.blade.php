@@ -6,6 +6,7 @@
         }
 
         .table {
+            border: 0;
             table-layout: fixed;
             border-collapse: collapse;
         }
@@ -19,7 +20,6 @@
         .table thead tr th {
             background: #f3f3f3;
             font-weight: 900;
-            border-bottom: 1px solid #ddd;
         }
 
         .table thead tr th:first-child {
@@ -27,43 +27,33 @@
         }
 
         .table tbody tr td {
+            border-top: 0;
+            border-left: 5px solid #f3f3f3;
+            border-right: 5px solid #f3f3f3;
+            border-bottom: 0;
             padding: 0 !important;
-            height: 32px;
+            height: 30px;
         }
 
         .table tbody tr td:first-child {
             padding: 5px 0 5px 0 !important;
-        }
-
-        .table-bordered {
-            border: 0;
-        }
-
-        .table-bordered > thead > tr > th,
-        .table-bordered > tbody > tr > td {
-            border: 1px solid #f3f3f3;
-            border-left: 10px solid #f3f3f3;
-            border-right: 10px solid #f3f3f3;
-        }
-        .table-bordered > tbody > tr:nth-child(2n) > td {
-            border-bottom-color: #e1e1e1;
-        }
-        .table-bordered > tbody > tr:nth-child(2n) > td:first-child {
-            border-bottom-color: #f3f3f3;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
         }
 
         .slot-input {
             display: block;
             width: 100%;
-            height: 32px;
-            border: 0px solid transparent;
+            height: 100%;
+            border: 1px solid #f3f3f3;
             box-shadow: none;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
 
         .slot-input:focus {
-            padding-right: 50px;
+            border: 1px solid #333;
+            border-radius: 0 2px 2px 2px;
         }
 
         .slot-input::placeholder {
@@ -73,6 +63,7 @@
         .slot-wrapper {
             position: relative;
         }
+
         .slot-tooltip {
             visibility: hidden;
             display: block;
@@ -83,13 +74,14 @@
             color: #fff;
             font-weight: 600;
             font-size: 12px;
-            border-radius: 2px;
+            border-radius: 2px 0 0 2px;
             position: absolute;
-            top: 6px;
-            right: 5px;
+            top: 0px;
+            left: -38px;
+            z-index: 1;
         }
 
-        :focus + .slot-tooltip {
+        .slot-input:focus + .slot-tooltip {
             margin-bottom: 0;
             height: auto;
             visibility: visible;
