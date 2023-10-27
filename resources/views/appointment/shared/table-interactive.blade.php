@@ -36,11 +36,18 @@
         }
 
         .table tbody tr td:first-child {
+            background: #f3f3f3;
             padding: 5px 0 5px 0 !important;
             border-top-color: transparent;
             border-bottom-color: transparent;
         }
 
+        .tips-row {
+            border-bottom: 15px solid #f3f3f3;
+            z-index: 1;
+        }
+
+        .tips-input,
         .slot-input {
             display: block;
             width: 100%;
@@ -51,26 +58,22 @@
             padding-right: 5px;
         }
 
-        .slot-input:focus {
-            border: 1px solid #333;
-            border-radius: 0 2px 2px 2px;
-        }
-
         .slot-input::placeholder {
             color: #ccc;
         }
 
+        .tips-wrapper,
         .slot-wrapper {
             position: relative;
         }
 
-        .slot-tooltip {
+        .base-tooltip {
             visibility: hidden;
             display: block;
             overflow: hidden;
             box-sizing: border-box;
             padding: 2px 4px;
-            background: #333;
+            background: #32c787;
             color: #fff;
             font-weight: 600;
             font-size: 12px;
@@ -79,9 +82,23 @@
             top: 0px;
             left: -38px;
             z-index: 1;
+            top: 0px;
         }
 
-        .slot-input:focus + .slot-tooltip {
+        .tips-tooltip {
+            left: -45px;
+        }
+
+        .slot-tooltip {
+            left: -38px;
+        }
+
+        .tooltip-input:focus {
+            border: 1px solid #32c787;
+            border-radius: 0 2px 2px 2px;
+        }
+
+        .tooltip-input:focus + .base-tooltip {
             margin-bottom: 0;
             height: auto;
             visibility: visible;
@@ -110,13 +127,23 @@
         </tr>
     </thead>
     <tbody>
+        <!-- <tr class="tips-row">
+            <td>TIPS</td>
+            @foreach($users as $user)
+            <td class="tips-wrapper">
+                <input type="number" class="tips-input tooltip-input" data-user-id="{{$user->id}}" data-date="{{$date}}" />
+                <div class="base-tooltip tips-tooltip">€ TIPS</div>
+            </td>
+            @endforeach
+        </tr> -->
+
         @foreach($hours as $hour)
         <tr>
             <td>{{ $hour }}</td>
             @foreach($users as $user)
             <td class="slot-wrapper" id="{{ str_replace(':', '', $user->id.$date.$hour) }}">
-                <input type="text" class="slot-input" data-user-id="{{$user->id}}" data-date="{{$date}}" data-hour="{{$hour}}" />
-                <div class="slot-tooltip">{{$hour}}</div>
+                <input type="text" class="slot-input tooltip-input" data-user-id="{{$user->id}}" data-date="{{$date}}" data-hour="{{$hour}}" />
+                <div class="base-tooltip slot-tooltip">{{$hour}}</div>
             </td>
             @endforeach
         </tr>
