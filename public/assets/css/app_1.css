@@ -6625,6 +6625,20 @@ a.thumbnail.active {
     color: inherit;
 }
 
+.alert-boring {
+    background-color: #fff;
+    border-color: transparent;
+    color: #333;
+}
+
+.alert-boring hr {
+    border-top-color: #eee;
+}
+
+.alert-boring .alert-link {
+    color: #ddd;
+}
+
 .alert-success {
     background-color: #32c787;
     border-color: transparent;
@@ -11484,7 +11498,7 @@ h6 small,
 .card .card-header {
     position: relative;
     display: block;
-    padding: 16px;
+    padding: 15px;
     border-radius: 2px 2px 0 0;
 }
 

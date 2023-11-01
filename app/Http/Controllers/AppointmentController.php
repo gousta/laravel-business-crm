@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Appointment;
+use App\Models\ScheduleExclusion;
 use Illuminate\Http\Request;
 use App\Http\Requests\Appointment\CreateRequest;
 
@@ -18,9 +19,15 @@ class AppointmentController extends Controller
         $prevDate = Carbon::parse($date)->subDay();
         $nextDate = Carbon::parse($date)->addDay();
 
+        $scheduleExclusions = ScheduleExclusion::whereDate('date', $date->toDateString())
+            ->get()
+            ->pluck('user_id');
+
         $users = User::where('show_in_calendar', true)
+            ->whereNotIn('id', $scheduleExclusions)
             ->orderBy('order_in_calendar', 'asc')
             ->get();
+
 
         return view('appointment.index', [
             'date_prev_link' => route('appointment.index', ['date' => $prevDate->toDateString()]),

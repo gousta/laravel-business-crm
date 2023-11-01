@@ -30,7 +30,7 @@
                             <a href="{{ route('client.index') }}"><i class="him-icon zmdi zmdi-account"></i> Πελάτες</a>
                         </li>
                         <li>
-                            <a href="{{ route('appointment.index') }}"><i class="him-icon zmdi zmdi-calendar-note"></i> Ραντεβού</a>
+                            <a href="{{ route('appointment.index') }}"><i class="him-icon zmdi zmdi-view-week"></i> Ραντεβού</a>
                         </li>
                         <li>
                             <a href="{{ route('expense.index') }}"><i class="him-icon zmdi zmdi-money"></i> Εξοδολόγιο</a>
@@ -52,6 +52,9 @@
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ route('user.index') }}"><i class="him-icon zmdi zmdi-accounts-list-alt"></i> Χρήστες Συστήματος</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('schedule.index') }}"><i class="him-icon zmdi zmdi-calendar-alt"></i> Πρόγραμμα Εργασίας</a>
                             </li>
                             <li>
                                 <a href="{{ route('stat.index') }}"><i class="him-icon zmdi zmdi-equalizer"></i> Σύνοψη</a>

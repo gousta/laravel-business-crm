@@ -17,6 +17,8 @@ Route::group([
 
     Route::get('/appointments', 'AppointmentController@index')->name('appointment.index');
 
+    Route::get('/schedule', 'ScheduleController@index')->name('schedule.index');
+
     Route::resource('client', 'ClientController');
     Route::post('/client/{id}/labor', 'ClientController@laborStore')->name('client.labor.store');
     Route::get('/client/{id}/labor/{laborId}/edit', 'ClientController@laborEdit')->name('client.labor.edit');
@@ -26,6 +28,7 @@ Route::group([
     // Async
     Route::get('/async/appointments', 'AppointmentController@asyncIndexAppointments')->name('async.appointment.index');
     Route::put('/async/appointments', 'AppointmentController@asyncUpdateAnyAppointment')->name('async.appointment.any.update');
+    Route::put('/async/schedule-exclusions', 'ScheduleController@asyncUpdateScheduleExclusions')->name('async.scheduleExclusion.any.update');
     Route::post('/async/client/{id}/labor/{laborId}', 'ClientController@asyncLaborUpdate')->name('async.client.labor.update');
 });
 

@@ -115,6 +115,11 @@
     </style>
 @endpush
 
+@if($users->count() === 0)
+    <div class="alert alert-boring">
+        Δεν υπάρχουν χρήστες που να εργάζονται {{$date_formatted}}
+    </div>
+@else
 <div class="table-wrap">
 <table class="table table-bordered table-condensed">
     <thead>
@@ -140,6 +145,7 @@
     </tbody>
 </table>
 </div>
+@endif
 
 @push('scripts')
     <script type="text/javascript">
