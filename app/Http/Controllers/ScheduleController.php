@@ -53,8 +53,7 @@ class ScheduleController extends Controller
             ->orderBy('order_in_calendar', 'asc')
             ->get();
 
-        $diffBetweenNow = Carbon::parse($date)->weekOfYear - Carbon::now()->weekOfYear;
-        $prevDate = $diffBetweenNow > 0 ? Carbon::parse($date)->subWeek()->toDateString() : null;
+        $prevDate = Carbon::parse($date)->subWeek()->toDateString();
         $nextDate = Carbon::parse($date)->addWeek()->toDateString();
 
         return view('schedule.index', [
