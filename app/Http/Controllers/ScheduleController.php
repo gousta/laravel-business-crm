@@ -42,8 +42,8 @@ class ScheduleController extends Controller
         $start = Carbon::parse($date)->format('Y-m-d');
         $end = Carbon::parse($date)->addWeek()->format('Y-m-d');
 
-        $schedule_exclusions = ScheduleExclusion::where('date', '>' , $start)
-            ->where('date', '<', $end)
+        $schedule_exclusions = ScheduleExclusion::where('date', '>=' , $start)
+            ->where('date', '<=', $end)
             ->get()
             ->keyBy(function ($row) {
                 return implode([$row['user_id'], $row['date']], '|');
