@@ -39,11 +39,9 @@
         <section id="main">
             @include('layouts.components.sidebar')
 
-            {{-- <section id="content"> --}}
-                <div class="container">
-                    @yield('content')
-                </div>
-            {{-- </section> --}}
+            <div class="container">
+                @yield('content')
+            </div>
         </section>
 
         <!-- Javascript Libraries -->

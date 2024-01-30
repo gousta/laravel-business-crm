@@ -39,47 +39,58 @@
     </div>
 
     <div class="card">
-        <div class="card-body card-padding f-400 c-gray brd-4">
+        <div class="card-body card-padding f-700 c-black brd-4">
             @include('layouts.error')
             ΣΗΜΕΡΑ
         </div>
         @if(isset($labor['today']) && count($labor['today']) > 0)
             <div class="table-responsive">
-                <table class="table table-striped table-condensed table-va-middle">
+                <table class="table table-condensed table-va-middle">
                     <thead>
                         <tr>
-                            <th>&nbsp;</th>
+                            <th width="100">&nbsp;</th>
+                            <th width="10">&nbsp;</th>
                             <th width="150">ΗΜΕΡΟΜΗΝΙΑ</th>
-                            <th width="600">ΑΝΤΙΚΕΙΜΕΝΟ</th>
+                            <th width="100">TIMH</th>
+                            <th width="300">ΑΝΤΙΚΕΙΜΕΝΟ</th>
                             <th>ΣΗΜΕΙΩΣΕΙΣ</th>
-                            <!-- <th>ΠΛΗΡΩΜΗ</th> -->
-                            <th>TIMH</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($labor['today'] as $lab)
+                        @foreach($labor['today'] as $index => $lab)
                             <tr>
-                                <td style="width:120px">
-                                    <a href="{{ route('client.labor.destroy', ['id' => $client->id, 'lid' => $lab->id]) }}" class="c-red p-r-15">
-                                        <i class="zmdi zmdi-delete f-s-22"></i>
+                                <td>
+                                    <a href="{{ route('client.labor.destroy', ['id' => $client->id, 'lid' => $lab->id]) }}" class="c-orange p-r-15">
+                                        <i class="zmdi zmdi-delete f-s-18"></i>
                                     </a>
                                     <a href="{{ route('client.labor.edit', ['id' => $client->id, 'lid' => $lab->id]) }}" class="c-black">
-                                        <i class="zmdi zmdi-edit f-s-24"></i>
+                                        <i class="zmdi zmdi-edit f-s-18"></i>
                                     </a>
                                 </td>
+                                <td>
+                                    @if(count($labor['today']) > 1)
+                                        {{ $index === 0 ? '┌':'' }}
+                                        {{ $index > 0 && $index + 1 < count($labor['today']) ? '├':'' }}
+                                        {{ $index + 1 === count($labor['today']) ? '└':'' }}
+                                    @else
+                                        &nbsp;
+                                    @endif
+                                </td>
                                 <td>{{ $lab->date or '' }}</td>
+                                <td>{{ $lab->price or '' }} &euro;</td>
                                 <td>{{ $lab->item->namePublic or '' }}</td>
                                 <td>{{ $lab->notes or '' }}</td>
-                                <!-- <td>
-                                    <button class="btn btn-sm {{ !$lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="cash">ΜΕΤΡΗΤΑ</button>
-                                    <button class="btn btn-sm {{ $lab->pos ? 'btn-primary':'btn-link' }}" data-id="{{ $lab->id }}" data-payment="pos">POS</button>
-                                </td> -->
-                                <td style="width:100px">{{ $lab->price or '' }} &euro;</td>
                             </tr>
                         @endforeach
                         <tr>
-                            <th colspan="4">ΣΥΝΟΛΟ</th>
-                            <th>{{ array_sum($labor['today']->pluck('price')->toArray()) }} &euro;</th>
+                            <th>ΣΥΝΟΛΟ</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>
+                                {{ array_sum($labor['today']->pluck('price')->toArray()) }} &euro;
+                            </th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </tbody>
                 </table>
@@ -92,39 +103,54 @@
             </div>
         @endif
 
-        <div class="card-body card-padding m-t-30 f-400 c-gray">
+        <div class="card-body card-padding m-t-30 f-700 c-black">
             ΙΣΤΟΡΙΚΟ ({{count($labor['old'])}})
         </div>
 
         @if(isset($labor['old']) && count($labor['old']) > 0)
             <div class="table-responsive">
-                <table class="table table-striped table-condensed table-va-middle">
+                <table class="table table-condensed table-va-middle">
                     <thead>
                         <tr>
-                            <th>&nbsp;</th>
+                            <th width="100">&nbsp;</th>
+                            <th width="10">&nbsp;</th>
                             <th width="150">ΗΜΕΡΟΜΗΝΙΑ</th>
-                            <th width="600">ΑΝΤΙΚΕΙΜΕΝΟ</th>
+                            <th width="100">ΤΙΜΗ</th>
+                            <th width="300">ΑΝΤΙΚΕΙΜΕΝΟ</th>
                             <th>ΣΗΜΕΙΩΣΕΙΣ</th>
-                            <th>ΤΙΜΗ</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($labor['old'] as $lab)
+                        @php
+                            $laborGroupped = $labor['old']->groupBy('date');
+                        @endphp
+                        @foreach($laborGroupped as $date => $labs)
+                            @foreach($labs as $index => $lab)
                             <tr>
-                                <td style="width:120px">
+                                <td>
                                     @if(Auth::user()->role === 'admin')
-                                    <a href="{{ route('client.labor.destroy', ['id' => $client->id, 'lid' => $lab->id]) }}" class="c-red p-r-15">
-                                        <i class="zmdi zmdi-delete f-s-22"></i>
+                                    <a href="{{ route('client.labor.destroy', ['id' => $client->id, 'lid' => $lab->id]) }}" class="c-orange p-r-15">
+                                        <i class="zmdi zmdi-delete f-s-18"></i>
                                     </a>
                                     @endif
                                     <a href="{{ route('client.labor.edit', ['id' => $client->id, 'lid' => $lab->id]) }}" class="c-black">
-                                        <i class="zmdi zmdi-edit f-s-24"></i>
+                                        <i class="zmdi zmdi-edit f-s-18"></i>
                                     </a>
                                 </td>
-                                <td>{{ $lab->date or '' }}</td>
+                                <td>
+                                    @if(count($labs) > 1)
+                                        {{ $index === 0 ? '┌':''}}
+                                        {{ $index > 0 && $index + 1 < count($labs) ? '├':''}}
+                                        {{ $index + 1 === count($labs) ? '└':''}}
+                                    @else
+                                        &nbsp;
+                                    @endif
+                                </td>
+                                <td>{{ $lab->date }}</td>
+                                <td>{{ $lab->price or '' }} &euro;</td>
                                 <td>{{ $lab->item->namePublic or '' }}</td>
                                 <td>{{ $lab->notes or '' }}</td>
-                                <td style="width:100px">{{ $lab->price or '' }} &euro;</td>
+                            @endforeach
                             </tr>
                         @endforeach
                     </tbody>
