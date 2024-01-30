@@ -8,6 +8,15 @@
 
 @section('content')
     <div class="card">
+        <div>
+            <ul class="tab-nav" data-tab-color="black">
+            @foreach($years as $year)
+                <li class="{{ $year == $selectedYear ? 'active':'' }}">
+                    <a href="#" class="a-prevent filter-by-year" data-year="{{ $year }}">{{ $year }}</a>
+                </li>
+            @endforeach
+            </ul>
+        </div>
 
         <div class="table-responsive">
             <table class="table table-hover table-condensed">
@@ -39,6 +48,11 @@
             $(document).on('click', 'tr[data-href]', function () {
                 window.location.href = $(this).data('href');
             });
+
+            $(document).on('click', '.filter-by-year', function(e) {
+                var year = $(this).data('year');
+                window.location = "{{ route('expense.index') }}" + '?year=' + year;
+            })
 
         });
     </script>

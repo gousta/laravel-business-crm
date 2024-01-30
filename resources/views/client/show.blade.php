@@ -20,14 +20,19 @@
     <div class="bgm-crm-dark" style="margin: -16px -15px -40px -15px;padding: 30px 46px 70px">
         <div class="">
             <div class="c-white pull-right">
+                <i class="zmdi zmdi-comment-text p-l-5 p-t-4 pull-right"></i>
                 {!! $client->notes ? nl2br($client->notes):'-' !!}
             </div>
             <div class="c-white m-b-5">
-                <i class="zmdi zmdi-phone p-r-5 p-t-4 pull-left"></i>
+                <i class="zmdi zmdi-library p-r-5 p-t-2 pull-left"></i>
+                Κωδ. Πελάτη: {{ $client->id or '-' }}
+            </div>
+            <div class="c-white m-b-5">
+                <i class="zmdi zmdi-phone p-r-5 p-t-3 pull-left"></i>
                 <a class="c-white" href="tel:{{ $client->phone or '' }}">{{ $client->phone or '-' }}</a>
             </div>
             <div class="c-white">
-                <i class="zmdi zmdi-email p-r-5 p-t-5 pull-left"></i>
+                <i class="zmdi zmdi-email p-r-5 p-t-4 pull-left"></i>
                 <a class="c-white" href="mailto:{{ $client->email or '' }}">{{ $client->email or '-' }}</a>
             </div>
         </div>
@@ -88,7 +93,7 @@
         @endif
 
         <div class="card-body card-padding m-t-30 f-400 c-gray">
-            ΠΑΛΑΙΟΤΕΡΑ
+            ΙΣΤΟΡΙΚΟ ({{count($labor['old'])}})
         </div>
 
         @if(isset($labor['old']) && count($labor['old']) > 0)

@@ -42,7 +42,7 @@
     $(document).ready(function() {
 
       $(document).on('click', 'tr[data-href]', function () {
-        window.location.href = $(this).data('href');
+        window.location = $(this).data('href');
       });
 
     });

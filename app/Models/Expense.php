@@ -105,4 +105,18 @@ class Expense extends Model
         $sorted = collect($result)->sortByDesc('amount');
         return $sorted->values()->take(20)->all();
     }
+
+    public static function getYears()
+    {
+        $years = [];
+        $data = self::selectRaw("date_trunc('year', created_at)::DATE AS txn_date");
+        $groupped = $data->groupBy('txn_date');
+        $ordered = $groupped->orderBy('txn_date', 'desc');
+
+        foreach ($ordered->get() as $row) {
+            $years[] = Carbon::parse($row->txn_date)->format('Y');
+        }
+
+        return $years;
+    }
 }

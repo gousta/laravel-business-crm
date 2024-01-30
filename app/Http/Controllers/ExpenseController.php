@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Http\Requests\Expense\CreateRequest;
 use App\Models\Expense;
 use Illuminate\Http\Request;
@@ -13,11 +14,14 @@ class ExpenseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $expenses = Expense::orderBy('id', 'desc')->get();
+        $selectedYear = $request->input('year') ?? Carbon::now()->year;
+        $expenses = Expense::orderBy('id', 'desc')->whereYear('created_at', $selectedYear)->get();
 
         return view('expense.index', [
+            'years' => Expense::getYears(),
+            'selectedYear' => $selectedYear,
             'expenses' => $expenses,
         ]);
     }

@@ -1,16 +1,16 @@
 @include('layouts.error')
 
-<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-    <label for="name">ΟΝΟΜΑ</label>
-    <input id="name" type="text" name="name" class="form-control" placeholder="" required="required" value="{{ $item['name'] or '' }}">
-</div>
-
-<div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
-    <label for="price">TIMH</label>
-    <input id="price" type="number" name="price" class="form-control" placeholder="" required="required" value="{{ $item['price'] or '' }}">
-</div>
-
 <div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+            <label for="name">ΟΝΟΜΑ</label>
+            <input id="name" type="text" name="name" class="form-control" placeholder="" required="required" value="{{ $item['name'] or '' }}">
+        </div>
+        <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
+            <label for="price">TIMH</label>
+            <input id="price" type="number" name="price" class="form-control" placeholder="" required="required" value="{{ $item['price'] or '' }}">
+        </div>
+    </div>
     <div class="col-xs-12 col-sm-6">
         <div class="f-500">ΚΑΤΗΓΟΡΙΑ</div>
         <div class="m-b-15">
@@ -30,8 +30,6 @@
                 <a href="#" class="cancel-new-category-btn hidden">Άκυρωση</a>
             </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-6">
         <div class="f-500">ΜΑΡΚΑ</div>
         <div class="m-b-15">
             @foreach($brands as $brand)
