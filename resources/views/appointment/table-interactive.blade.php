@@ -181,7 +181,7 @@
 
         $(document).ready(function() {
             loadAppointments();
-            // setInterval(loadAppointments, 10000);
+            // setInterval(loadAppointments, 60000);
 
             $(document).on('blur', '.slot-input', async function(e) {
                 e.preventDefault();
@@ -193,6 +193,12 @@
 
                 if (existingDescription !== description) {
                     await saveAppointment(userId, description, date, hour);
+                }
+            });
+
+            $(document).on('keydown', '.slot-input', function(e) {
+                if (e.key === 'Enter') {
+                    $(this).blur();
                 }
             });
         });

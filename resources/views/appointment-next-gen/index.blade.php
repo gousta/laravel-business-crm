@@ -42,6 +42,45 @@
             }
         }
     </style>
+
+
+    <style>
+        .table-wrap {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            border: 0;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .table thead {
+            position: sticky;
+            inset-block-start: 56px;
+            z-index: 1;
+        }
+
+        .table thead tr th, .table tbody tr td  {
+            border: 0;
+            padding: 0 8px !important;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .table thead tr th {
+            font-weight: 900;
+        }
+
+        .table tbody tr td {
+            cursor: pointer;
+        }
+
+        .table tbody tr td.selected {
+            background: pink;
+        }
+    </style>
 @endpush
 
 @push('headercenter')
@@ -62,11 +101,20 @@
     </li>
 @endpush
 
-@push('actionbutton')
-@endpush
-
 @section('content')
-    @include('appointment.table-interactive')
+
+    <div id="root">
+      Loading...
+      <noscript>JavaScript is required.</noscript>
+    </div>
+    <script>
+      window.appointmentProps = {
+        hours: {!! json_encode($hours) !!},
+        users: {!! json_encode($users) !!},
+        date: {!! json_encode($date) !!},
+      };
+    </script>
+    <script type="module" src="/appointments-next-gen/index.js"></script>
 @stop
 
 @push('scripts')
@@ -85,7 +133,7 @@
                 nextArrow: '<i class="zmdi zmdi-arrow-right" />',
                 prevArrow: '<i class="zmdi zmdi-arrow-left" />',
                 onChange: (datetime, date) => {
-                    window.location.href = "{{ route('appointment.index', ['date'=>'_date']) }}".replace('_date', date);
+                    window.location.href = "{{ route('appointmentNextGen.index', ['date'=>'_date']) }}".replace('_date', date);
                 }
             });
 

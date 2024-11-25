@@ -9,7 +9,7 @@ use App\Models\ScheduleExclusion;
 use Illuminate\Http\Request;
 use App\Http\Requests\Appointment\CreateRequest;
 
-class AppointmentController extends Controller
+class AppointmentNextGenController extends Controller
 {
     public function index(Request $request)
     {
@@ -28,9 +28,9 @@ class AppointmentController extends Controller
             ->orderBy('order_in_calendar', 'asc')
             ->get();
 
-        return view('appointment.index', [
-            'date_prev_link' => route('appointment.index', ['date' => $prevDate->toDateString()]),
-            'date_next_link' => route('appointment.index', ['date' => $nextDate->toDateString()]),
+        return view('appointment-next-gen.index', [
+            'date_prev_link' => route('appointmentNextGen.index', ['date' => $prevDate->toDateString()]),
+            'date_next_link' => route('appointmentNextGen.index', ['date' => $nextDate->toDateString()]),
             'hours' => $hours,
             'users' => $users,
             'date' => $date->toDateString(),

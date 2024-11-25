@@ -16,6 +16,7 @@ Route::group([
     Route::resource('user', 'UserController');
 
     Route::get('/appointments', 'AppointmentController@index')->name('appointment.index');
+    Route::get('/appointments2', 'AppointmentNextGenController@index')->name('appointmentNextGen.index');
 
     Route::get('/schedule', 'ScheduleController@index')->name('schedule.index');
 
