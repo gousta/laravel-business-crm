@@ -43,9 +43,15 @@ class Expense extends Model
         'updated_at',
     ];
 
+    public function scopeLastXMonths($q, $months = 36)
+    {
+        $q->where('created_at', '>=', Carbon::now()->subMonths($months));
+    }
+
     public function scopeSumPerMonth($q)
     {
         $q->selectRaw("date_trunc('month', created_at)::DATE AS txn_date, sum(amount)")
+            ->lastXMonths(18)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
@@ -53,6 +59,7 @@ class Expense extends Model
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', created_at)::DATE AS txn_date, sum(amount)")
+            ->lastXMonths(60)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
@@ -62,6 +69,7 @@ class Expense extends Model
         return Carbon::parse($v)->setTimezone('Europe/Athens')->format('d/m/Y');
     }
 
+    // Συνολικά έξοδα ανά εγγραφή
     public function scopeAnalyze($q)
     {
         $data = $q->get();

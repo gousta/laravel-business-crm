@@ -51,23 +51,32 @@ class StatController extends Controller
                     'sum' => Labor::shop()->sum('price'),
                     'customers' => Labor::shop()->distinct('client_id')->count('client_id'),
 
-                    'average_per_day' => Labor::averagePerDay()->first()->average ?? 0,
-                    'average_customers_per_day' => Labor::averageCustomersPerDay()->count('client_id') ?? 0,
-
-                    'average_per_day_yearly' => Labor::getAveragePerDayYears(),
-
-                    'average_per_dayofweek' => Labor::averagePerDayOfWeek()->get(),
                 ],
 
-                'sum_per_year'     => Labor::sumPerYear()->take(10)->get(),
-                'expense_per_year' => Expense::sumPerYear()->take(5)->get()->keyBy('txn_date'),
+                // AVERAGES
+                'average_customers_per_day' => Labor::averageCustomersPerDay()->count('client_id') ?? 0,
+                'average_per_day' => Labor::averagePerDay()->first()->average ?? 0,
 
+                // AVERAGE PER DAY YEARLY
+                'average_per_day_yearly' => Labor::getAveragePerDayYears(),
+                // AVERAGE PER DAY OF WEEK
+                'average_per_dayofweek' => Labor::averagePerDayOfWeek()->get(),
+
+                // YEARLY
+                'sum_per_year'     => Labor::sumPerYear()->get(),
+                'expense_per_year' => Expense::sumPerYear()->get()->keyBy('txn_date'),
+
+                // MONTHLY
                 'sum_per_month'     => Labor::sumPerMonth()->get(),
                 'expense_per_month' => Expense::sumPerMonth()->get()->keyBy('txn_date'),
 
+                // THIS WEEK
                 'this_week' => Labor::whereBetween('date', [date('Y-m-d', strtotime('-6 day')), date('Y-m-d')])->groupBy('date')->orderBy('date', 'desc')->selectRaw('date, sum(price), count(distinct(client_id)) AS clients')->get()->groupBy('date'),
+
+                // BEST CLIENTS
                 'best_days' => Labor::groupBy('date')->orderBy('sum', 'desc')->selectRaw('date, sum(price) as sum')->take(1)->get(),
 
+                // EXPENSES
                 'expenses_analysis' => Expense::analyze(),
             ],
             'frame' => [

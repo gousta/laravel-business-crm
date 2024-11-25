@@ -57,16 +57,16 @@
                 </div>
                 <div class="card-body card-padding p-b-0">
                     <div class="visitors-stats-item p-l-10 p-r-10 m-b-10">
-                        <strong class="c-gray p-r-10">ΤΕΛΕΥΤΑΙΑ 3 ΧΡΟΝΙΑ</strong>
+                        <strong class="c-gray p-r-10">ΤΕΛΕΥΤΑΙΩΝ 3 ΕΤΩΝ</strong>
                         <span class="pull-right">
-                            @if (isset($data['all'], $data['all']['average_customers_per_day'], $data['all']['average_per_day']))
+                            @if (isset($data['average_customers_per_day'], $data['average_per_day']))
                                 <strong><i class="zmdi zmdi-male-alt"></i>
-                                    {{ $data['all']['average_customers_per_day'] }}</strong>
-                                <strong class="p-l-10 f-500 c-crm">&euro;{{ number_format($data['all']['average_per_day'], 0, ',', '.') }}</strong>
+                                    {{ $data['average_customers_per_day'] }}</strong>
+                                <strong class="p-l-10 f-500 c-crm">&euro;{{ number_format($data['average_per_day'], 0, ',', '.') }}</strong>
                             @endif
                         </span>
                     </div>
-                    @foreach ($data['all']['average_per_day_yearly'] as $year => $yearAveragePerDay)
+                    @foreach ($data['average_per_day_yearly'] as $year => $yearAveragePerDay)
                         <div class="visitors-stats-item p-l-10 p-r-10 m-b-10">
                             <strong class="c-gray p-r-10">{{ $year }}</strong>
                             <span class="pull-right">
@@ -82,7 +82,7 @@
                 </div>
                 <table class="table table-inner table-vmiddle table-condensed">
                     <tbody>
-                        @foreach ($data['all']['average_per_dayofweek'] as $row)
+                        @foreach ($data['average_per_dayofweek'] as $row)
                             <tr>
                                 <td>{{ ucfirst($row->week_day) }}</td>
 

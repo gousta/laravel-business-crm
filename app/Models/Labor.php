@@ -99,18 +99,20 @@ class Labor extends Model
             ->groupBy('date');
     }
 
+    // Σύνολα ανα μήνα
     public function scopeSumPerMonth($q)
     {
         $q->selectRaw("date_trunc('month', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
-            ->lastXMonths(60)
+            ->lastXMonths(18)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
 
+    // Σύνολα ανά έτος
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
-            ->lastXMonths(18)
+            ->lastXMonths(60)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
