@@ -57,12 +57,12 @@
                 </div>
                 <div class="card-body card-padding p-b-0">
                     <div class="visitors-stats-item p-l-10 p-r-10 m-b-10">
-                        <strong class="c-gray p-r-10">ΟΛΑ ΤΑ ΧΡΟΝΙΑ</strong>
+                        <strong class="c-gray p-r-10">ΤΕΛΕΥΤΑΙΑ 3 ΧΡΟΝΙΑ</strong>
                         <span class="pull-right">
                             @if (isset($data['all'], $data['all']['average_customers_per_day'], $data['all']['average_per_day']))
                                 <strong><i class="zmdi zmdi-male-alt"></i>
                                     {{ $data['all']['average_customers_per_day'] }}</strong>
-                                <strong class="p-l-10 f-500 c-crm">&euro;{{ $data['all']['average_per_day'] }}</strong>
+                                <strong class="p-l-10 f-500 c-crm">&euro;{{ number_format($data['all']['average_per_day'], 0, ',', '.') }}</strong>
                             @endif
                         </span>
                     </div>
@@ -195,7 +195,6 @@
                                         &nbsp;
                                         <span
                                             class="f-500 c-crm">&euro;{{ number_format($month->sum, 0, ',', '.') }}</span>
-                                        <!-- <span class="p-l-5 p-r-5 f-500 c-purple">POS &euro;{{ number_format($month->sum_pos, 0, ',', '.') }}</span> -->
 
                                         @if (isset($data['expense_per_month'][$month->txn_date]))
                                             <span

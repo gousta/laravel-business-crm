@@ -65,16 +65,21 @@ class Labor extends Model
         return $this->hasOne('App\Models\Catalog', 'id', 'catalog_id');
     }
 
+    public function scopeLastXMonths($q, $months = 36)
+    {
+        $q->where('date', '>=', Carbon::now()->subMonths($months));
+    }
+
     public function scopeAveragePerDay($q)
     {
-        return $q->selectRaw('avg(sum(price)) over () as average')
-            ->where('date', '>=', START_DATE)
+        $q->selectRaw('avg(sum(price)) over () as average')
+            ->lastXMonths(36)
             ->groupBy('date');
     }
 
     public function scopeAverageCustomersPerDay($q)
     {
-        return $q->where('date', '>=', START_DATE)
+        $q->lastXMonths(36)
             ->groupBy('date')
             ->distinct('client_id');
     }
@@ -96,8 +101,8 @@ class Labor extends Model
 
     public function scopeSumPerMonth($q)
     {
-        $q->selectRaw("date_trunc('month', date)::DATE AS txn_date, sum(price), sum(price) FILTER (WHERE pos = true) as sum_pos, count(distinct(client_id)) AS clients")
-            ->where('date', '>=', START_DATE)
+        $q->selectRaw("date_trunc('month', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
+            ->lastXMonths(60)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
@@ -105,7 +110,7 @@ class Labor extends Model
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
-            ->where('date', '>=', START_DATE)
+            ->lastXMonths(18)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
@@ -152,10 +157,11 @@ class Labor extends Model
 
     public static function getAveragePerDayYears()
     {
-        $startYear = env('APP_START_YEAR', '2016');
+        $startYear = Carbon::now()->year;
+        $endYear = Carbon::now()->subYears(3)->year;
         $d = [];
 
-        for ($y = $startYear; $y <= date('Y'); $y++) {
+        for ($y = $startYear; $y > $endYear; $y--) {
             $d[$y] = [
                 'amount' => static::averagePerDayForYear($y),
                 'customers' => static::averageCustomersPerDayForYear($y),
