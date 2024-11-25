@@ -64,7 +64,7 @@ class Expense extends Model
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', created_at)::DATE AS txn_date, sum(amount)")
-            ->lastXYears(3)
+            ->lastXYears(5)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }

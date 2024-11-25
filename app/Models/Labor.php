@@ -68,7 +68,7 @@ class Labor extends Model
         $q->where('date', '>=', Carbon::now()->subMonths($months));
     }
 
-    public function scopeLastXYears($q, $years = 3)
+    public function scopeLastXYears($q, $years)
     {
         $q->where('date', '>=', Carbon::now()->subYears($years));
     }
@@ -115,7 +115,7 @@ class Labor extends Model
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
-            ->lastXYears(3)
+            ->lastXYears(5)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }
