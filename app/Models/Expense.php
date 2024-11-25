@@ -77,7 +77,7 @@ class Expense extends Model
     // Συνολικά έξοδα ανά εγγραφή
     public function scopeAnalyze($q)
     {
-        $data = $q->get();
+        $data = $q->lastXYears(10)->get();
         $rawData = [];
         $result = [];
 
@@ -87,6 +87,7 @@ class Expense extends Model
             if (count($lines) > 0) {
                 foreach ($lines as $line) {
                     $line = strtolower($line);
+
 
                     if ($line !== '' && strlen($line) > 0) {
                         $lineData = explode(' ', str_replace('  ', ' ', trim($line)));
