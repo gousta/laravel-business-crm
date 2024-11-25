@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Traits\Shop;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -10,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Labor extends Model
 {
     use SoftDeletes;
-    use Shop;
 
     /**
      * The table associated with the model.
@@ -70,6 +68,11 @@ class Labor extends Model
         $q->where('date', '>=', Carbon::now()->subMonths($months));
     }
 
+    public function scopeLastXYears($q, $years = 3)
+    {
+        $q->where('date', '>=', Carbon::now()->subYears($years));
+    }
+
     public function scopeAveragePerDay($q)
     {
         $q->selectRaw('avg(sum(price)) over () as average')
@@ -112,7 +115,7 @@ class Labor extends Model
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', date)::DATE AS txn_date, sum(price), count(distinct(client_id)) AS clients")
-            ->lastXMonths(60)
+            ->lastXYears(3)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }

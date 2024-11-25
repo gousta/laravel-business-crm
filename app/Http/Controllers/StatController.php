@@ -47,12 +47,6 @@ class StatController extends Controller
     {
         $with = [
             'data' => [
-                'all' => [
-                    'sum' => Labor::shop()->sum('price'),
-                    'customers' => Labor::shop()->distinct('client_id')->count('client_id'),
-
-                ],
-
                 // AVERAGES
                 'average_customers_per_day' => Labor::averageCustomersPerDay()->count('client_id') ?? 0,
                 'average_per_day' => Labor::averagePerDay()->first()->average ?? 0,

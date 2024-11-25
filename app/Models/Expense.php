@@ -48,6 +48,11 @@ class Expense extends Model
         $q->where('created_at', '>=', Carbon::now()->subMonths($months));
     }
 
+    public function scopeLastXYears($q, $years)
+    {
+        $q->where('created_at', '>=', Carbon::now()->subYears($years));
+    }
+
     public function scopeSumPerMonth($q)
     {
         $q->selectRaw("date_trunc('month', created_at)::DATE AS txn_date, sum(amount)")
@@ -59,7 +64,7 @@ class Expense extends Model
     public function scopeSumPerYear($q)
     {
         $q->selectRaw("date_trunc('year', created_at)::DATE AS txn_date, sum(amount)")
-            ->lastXMonths(60)
+            ->lastXYears(3)
             ->groupBy('txn_date')
             ->orderBy('txn_date', 'desc');
     }

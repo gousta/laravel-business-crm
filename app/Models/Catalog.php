@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Traits\Shop;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Catalog extends Model
 {
     use SoftDeletes;
-    use Shop;
 
     /**
      * The table associated with the model.
