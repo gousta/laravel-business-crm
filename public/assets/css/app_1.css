@@ -154,9 +154,9 @@ select {
 }
 
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
     -webkit-appearance: button;
     cursor: pointer;
 }
@@ -176,24 +176,24 @@ input {
     line-height: normal;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
     box-sizing: border-box;
     padding: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
     height: auto;
 }
 
-input[type="search"] {
+input[type='search'] {
     -webkit-appearance: textfield;
     box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -244,16 +244,16 @@ th {
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: ' (' attr(href) ')';
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: ' (' attr(title) ')';
     }
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+        content: '';
     }
 
     pre,
@@ -316,20 +316,20 @@ th {
 }
 
 @font-face {
-    font-family: "Glyphicons Halflings";
-    src: url("../fonts/glyphicons-halflings-regular.eot");
-    src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"),
-        url("../fonts/glyphicons-halflings-regular.woff") format("woff"),
-        url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"),
-        url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+        url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+        url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+        url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: "Glyphicons Halflings";
+    font-family: 'Glyphicons Halflings';
     font-style: normal;
     font-weight: normal;
     line-height: 1;
@@ -338,1052 +338,1052 @@ th {
 }
 
 .glyphicon-asterisk:before {
-    content: "\002a";
+    content: '\002a';
 }
 
 .glyphicon-plus:before {
-    content: "\002b";
+    content: '\002b';
 }
 
 .glyphicon-euro:before,
 .glyphicon-eur:before {
-    content: "\20ac";
+    content: '\20ac';
 }
 
 .glyphicon-minus:before {
-    content: "\2212";
+    content: '\2212';
 }
 
 .glyphicon-cloud:before {
-    content: "\2601";
+    content: '\2601';
 }
 
 .glyphicon-envelope:before {
-    content: "\2709";
+    content: '\2709';
 }
 
 .glyphicon-pencil:before {
-    content: "\270f";
+    content: '\270f';
 }
 
 .glyphicon-glass:before {
-    content: "\e001";
+    content: '\e001';
 }
 
 .glyphicon-music:before {
-    content: "\e002";
+    content: '\e002';
 }
 
 .glyphicon-search:before {
-    content: "\e003";
+    content: '\e003';
 }
 
 .glyphicon-heart:before {
-    content: "\e005";
+    content: '\e005';
 }
 
 .glyphicon-star:before {
-    content: "\e006";
+    content: '\e006';
 }
 
 .glyphicon-star-empty:before {
-    content: "\e007";
+    content: '\e007';
 }
 
 .glyphicon-user:before {
-    content: "\e008";
+    content: '\e008';
 }
 
 .glyphicon-film:before {
-    content: "\e009";
+    content: '\e009';
 }
 
 .glyphicon-th-large:before {
-    content: "\e010";
+    content: '\e010';
 }
 
 .glyphicon-th:before {
-    content: "\e011";
+    content: '\e011';
 }
 
 .glyphicon-th-list:before {
-    content: "\e012";
+    content: '\e012';
 }
 
 .glyphicon-ok:before {
-    content: "\e013";
+    content: '\e013';
 }
 
 .glyphicon-remove:before {
-    content: "\e014";
+    content: '\e014';
 }
 
 .glyphicon-zoom-in:before {
-    content: "\e015";
+    content: '\e015';
 }
 
 .glyphicon-zoom-out:before {
-    content: "\e016";
+    content: '\e016';
 }
 
 .glyphicon-off:before {
-    content: "\e017";
+    content: '\e017';
 }
 
 .glyphicon-signal:before {
-    content: "\e018";
+    content: '\e018';
 }
 
 .glyphicon-cog:before {
-    content: "\e019";
+    content: '\e019';
 }
 
 .glyphicon-trash:before {
-    content: "\e020";
+    content: '\e020';
 }
 
 .glyphicon-home:before {
-    content: "\e021";
+    content: '\e021';
 }
 
 .glyphicon-file:before {
-    content: "\e022";
+    content: '\e022';
 }
 
 .glyphicon-time:before {
-    content: "\e023";
+    content: '\e023';
 }
 
 .glyphicon-road:before {
-    content: "\e024";
+    content: '\e024';
 }
 
 .glyphicon-download-alt:before {
-    content: "\e025";
+    content: '\e025';
 }
 
 .glyphicon-download:before {
-    content: "\e026";
+    content: '\e026';
 }
 
 .glyphicon-upload:before {
-    content: "\e027";
+    content: '\e027';
 }
 
 .glyphicon-inbox:before {
-    content: "\e028";
+    content: '\e028';
 }
 
 .glyphicon-play-circle:before {
-    content: "\e029";
+    content: '\e029';
 }
 
 .glyphicon-repeat:before {
-    content: "\e030";
+    content: '\e030';
 }
 
 .glyphicon-refresh:before {
-    content: "\e031";
+    content: '\e031';
 }
 
 .glyphicon-list-alt:before {
-    content: "\e032";
+    content: '\e032';
 }
 
 .glyphicon-lock:before {
-    content: "\e033";
+    content: '\e033';
 }
 
 .glyphicon-flag:before {
-    content: "\e034";
+    content: '\e034';
 }
 
 .glyphicon-headphones:before {
-    content: "\e035";
+    content: '\e035';
 }
 
 .glyphicon-volume-off:before {
-    content: "\e036";
+    content: '\e036';
 }
 
 .glyphicon-volume-down:before {
-    content: "\e037";
+    content: '\e037';
 }
 
 .glyphicon-volume-up:before {
-    content: "\e038";
+    content: '\e038';
 }
 
 .glyphicon-qrcode:before {
-    content: "\e039";
+    content: '\e039';
 }
 
 .glyphicon-barcode:before {
-    content: "\e040";
+    content: '\e040';
 }
 
 .glyphicon-tag:before {
-    content: "\e041";
+    content: '\e041';
 }
 
 .glyphicon-tags:before {
-    content: "\e042";
+    content: '\e042';
 }
 
 .glyphicon-book:before {
-    content: "\e043";
+    content: '\e043';
 }
 
 .glyphicon-bookmark:before {
-    content: "\e044";
+    content: '\e044';
 }
 
 .glyphicon-print:before {
-    content: "\e045";
+    content: '\e045';
 }
 
 .glyphicon-camera:before {
-    content: "\e046";
+    content: '\e046';
 }
 
 .glyphicon-font:before {
-    content: "\e047";
+    content: '\e047';
 }
 
 .glyphicon-bold:before {
-    content: "\e048";
+    content: '\e048';
 }
 
 .glyphicon-italic:before {
-    content: "\e049";
+    content: '\e049';
 }
 
 .glyphicon-text-height:before {
-    content: "\e050";
+    content: '\e050';
 }
 
 .glyphicon-text-width:before {
-    content: "\e051";
+    content: '\e051';
 }
 
 .glyphicon-align-left:before {
-    content: "\e052";
+    content: '\e052';
 }
 
 .glyphicon-align-center:before {
-    content: "\e053";
+    content: '\e053';
 }
 
 .glyphicon-align-right:before {
-    content: "\e054";
+    content: '\e054';
 }
 
 .glyphicon-align-justify:before {
-    content: "\e055";
+    content: '\e055';
 }
 
 .glyphicon-list:before {
-    content: "\e056";
+    content: '\e056';
 }
 
 .glyphicon-indent-left:before {
-    content: "\e057";
+    content: '\e057';
 }
 
 .glyphicon-indent-right:before {
-    content: "\e058";
+    content: '\e058';
 }
 
 .glyphicon-facetime-video:before {
-    content: "\e059";
+    content: '\e059';
 }
 
 .glyphicon-picture:before {
-    content: "\e060";
+    content: '\e060';
 }
 
 .glyphicon-map-marker:before {
-    content: "\e062";
+    content: '\e062';
 }
 
 .glyphicon-adjust:before {
-    content: "\e063";
+    content: '\e063';
 }
 
 .glyphicon-tint:before {
-    content: "\e064";
+    content: '\e064';
 }
 
 .glyphicon-edit:before {
-    content: "\e065";
+    content: '\e065';
 }
 
 .glyphicon-share:before {
-    content: "\e066";
+    content: '\e066';
 }
 
 .glyphicon-check:before {
-    content: "\e067";
+    content: '\e067';
 }
 
 .glyphicon-move:before {
-    content: "\e068";
+    content: '\e068';
 }
 
 .glyphicon-step-backward:before {
-    content: "\e069";
+    content: '\e069';
 }
 
 .glyphicon-fast-backward:before {
-    content: "\e070";
+    content: '\e070';
 }
 
 .glyphicon-backward:before {
-    content: "\e071";
+    content: '\e071';
 }
 
 .glyphicon-play:before {
-    content: "\e072";
+    content: '\e072';
 }
 
 .glyphicon-pause:before {
-    content: "\e073";
+    content: '\e073';
 }
 
 .glyphicon-stop:before {
-    content: "\e074";
+    content: '\e074';
 }
 
 .glyphicon-forward:before {
-    content: "\e075";
+    content: '\e075';
 }
 
 .glyphicon-fast-forward:before {
-    content: "\e076";
+    content: '\e076';
 }
 
 .glyphicon-step-forward:before {
-    content: "\e077";
+    content: '\e077';
 }
 
 .glyphicon-eject:before {
-    content: "\e078";
+    content: '\e078';
 }
 
 .glyphicon-chevron-left:before {
-    content: "\e079";
+    content: '\e079';
 }
 
 .glyphicon-chevron-right:before {
-    content: "\e080";
+    content: '\e080';
 }
 
 .glyphicon-plus-sign:before {
-    content: "\e081";
+    content: '\e081';
 }
 
 .glyphicon-minus-sign:before {
-    content: "\e082";
+    content: '\e082';
 }
 
 .glyphicon-remove-sign:before {
-    content: "\e083";
+    content: '\e083';
 }
 
 .glyphicon-ok-sign:before {
-    content: "\e084";
+    content: '\e084';
 }
 
 .glyphicon-question-sign:before {
-    content: "\e085";
+    content: '\e085';
 }
 
 .glyphicon-info-sign:before {
-    content: "\e086";
+    content: '\e086';
 }
 
 .glyphicon-screenshot:before {
-    content: "\e087";
+    content: '\e087';
 }
 
 .glyphicon-remove-circle:before {
-    content: "\e088";
+    content: '\e088';
 }
 
 .glyphicon-ok-circle:before {
-    content: "\e089";
+    content: '\e089';
 }
 
 .glyphicon-ban-circle:before {
-    content: "\e090";
+    content: '\e090';
 }
 
 .glyphicon-arrow-left:before {
-    content: "\e091";
+    content: '\e091';
 }
 
 .glyphicon-arrow-right:before {
-    content: "\e092";
+    content: '\e092';
 }
 
 .glyphicon-arrow-up:before {
-    content: "\e093";
+    content: '\e093';
 }
 
 .glyphicon-arrow-down:before {
-    content: "\e094";
+    content: '\e094';
 }
 
 .glyphicon-share-alt:before {
-    content: "\e095";
+    content: '\e095';
 }
 
 .glyphicon-resize-full:before {
-    content: "\e096";
+    content: '\e096';
 }
 
 .glyphicon-resize-small:before {
-    content: "\e097";
+    content: '\e097';
 }
 
 .glyphicon-exclamation-sign:before {
-    content: "\e101";
+    content: '\e101';
 }
 
 .glyphicon-gift:before {
-    content: "\e102";
+    content: '\e102';
 }
 
 .glyphicon-leaf:before {
-    content: "\e103";
+    content: '\e103';
 }
 
 .glyphicon-fire:before {
-    content: "\e104";
+    content: '\e104';
 }
 
 .glyphicon-eye-open:before {
-    content: "\e105";
+    content: '\e105';
 }
 
 .glyphicon-eye-close:before {
-    content: "\e106";
+    content: '\e106';
 }
 
 .glyphicon-warning-sign:before {
-    content: "\e107";
+    content: '\e107';
 }
 
 .glyphicon-plane:before {
-    content: "\e108";
+    content: '\e108';
 }
 
 .glyphicon-calendar:before {
-    content: "\e109";
+    content: '\e109';
 }
 
 .glyphicon-random:before {
-    content: "\e110";
+    content: '\e110';
 }
 
 .glyphicon-comment:before {
-    content: "\e111";
+    content: '\e111';
 }
 
 .glyphicon-magnet:before {
-    content: "\e112";
+    content: '\e112';
 }
 
 .glyphicon-chevron-up:before {
-    content: "\e113";
+    content: '\e113';
 }
 
 .glyphicon-chevron-down:before {
-    content: "\e114";
+    content: '\e114';
 }
 
 .glyphicon-retweet:before {
-    content: "\e115";
+    content: '\e115';
 }
 
 .glyphicon-shopping-cart:before {
-    content: "\e116";
+    content: '\e116';
 }
 
 .glyphicon-folder-close:before {
-    content: "\e117";
+    content: '\e117';
 }
 
 .glyphicon-folder-open:before {
-    content: "\e118";
+    content: '\e118';
 }
 
 .glyphicon-resize-vertical:before {
-    content: "\e119";
+    content: '\e119';
 }
 
 .glyphicon-resize-horizontal:before {
-    content: "\e120";
+    content: '\e120';
 }
 
 .glyphicon-hdd:before {
-    content: "\e121";
+    content: '\e121';
 }
 
 .glyphicon-bullhorn:before {
-    content: "\e122";
+    content: '\e122';
 }
 
 .glyphicon-bell:before {
-    content: "\e123";
+    content: '\e123';
 }
 
 .glyphicon-certificate:before {
-    content: "\e124";
+    content: '\e124';
 }
 
 .glyphicon-thumbs-up:before {
-    content: "\e125";
+    content: '\e125';
 }
 
 .glyphicon-thumbs-down:before {
-    content: "\e126";
+    content: '\e126';
 }
 
 .glyphicon-hand-right:before {
-    content: "\e127";
+    content: '\e127';
 }
 
 .glyphicon-hand-left:before {
-    content: "\e128";
+    content: '\e128';
 }
 
 .glyphicon-hand-up:before {
-    content: "\e129";
+    content: '\e129';
 }
 
 .glyphicon-hand-down:before {
-    content: "\e130";
+    content: '\e130';
 }
 
 .glyphicon-circle-arrow-right:before {
-    content: "\e131";
+    content: '\e131';
 }
 
 .glyphicon-circle-arrow-left:before {
-    content: "\e132";
+    content: '\e132';
 }
 
 .glyphicon-circle-arrow-up:before {
-    content: "\e133";
+    content: '\e133';
 }
 
 .glyphicon-circle-arrow-down:before {
-    content: "\e134";
+    content: '\e134';
 }
 
 .glyphicon-globe:before {
-    content: "\e135";
+    content: '\e135';
 }
 
 .glyphicon-wrench:before {
-    content: "\e136";
+    content: '\e136';
 }
 
 .glyphicon-tasks:before {
-    content: "\e137";
+    content: '\e137';
 }
 
 .glyphicon-filter:before {
-    content: "\e138";
+    content: '\e138';
 }
 
 .glyphicon-briefcase:before {
-    content: "\e139";
+    content: '\e139';
 }
 
 .glyphicon-fullscreen:before {
-    content: "\e140";
+    content: '\e140';
 }
 
 .glyphicon-dashboard:before {
-    content: "\e141";
+    content: '\e141';
 }
 
 .glyphicon-paperclip:before {
-    content: "\e142";
+    content: '\e142';
 }
 
 .glyphicon-heart-empty:before {
-    content: "\e143";
+    content: '\e143';
 }
 
 .glyphicon-link:before {
-    content: "\e144";
+    content: '\e144';
 }
 
 .glyphicon-phone:before {
-    content: "\e145";
+    content: '\e145';
 }
 
 .glyphicon-pushpin:before {
-    content: "\e146";
+    content: '\e146';
 }
 
 .glyphicon-usd:before {
-    content: "\e148";
+    content: '\e148';
 }
 
 .glyphicon-gbp:before {
-    content: "\e149";
+    content: '\e149';
 }
 
 .glyphicon-sort:before {
-    content: "\e150";
+    content: '\e150';
 }
 
 .glyphicon-sort-by-alphabet:before {
-    content: "\e151";
+    content: '\e151';
 }
 
 .glyphicon-sort-by-alphabet-alt:before {
-    content: "\e152";
+    content: '\e152';
 }
 
 .glyphicon-sort-by-order:before {
-    content: "\e153";
+    content: '\e153';
 }
 
 .glyphicon-sort-by-order-alt:before {
-    content: "\e154";
+    content: '\e154';
 }
 
 .glyphicon-sort-by-attributes:before {
-    content: "\e155";
+    content: '\e155';
 }
 
 .glyphicon-sort-by-attributes-alt:before {
-    content: "\e156";
+    content: '\e156';
 }
 
 .glyphicon-unchecked:before {
-    content: "\e157";
+    content: '\e157';
 }
 
 .glyphicon-expand:before {
-    content: "\e158";
+    content: '\e158';
 }
 
 .glyphicon-collapse-down:before {
-    content: "\e159";
+    content: '\e159';
 }
 
 .glyphicon-collapse-up:before {
-    content: "\e160";
+    content: '\e160';
 }
 
 .glyphicon-log-in:before {
-    content: "\e161";
+    content: '\e161';
 }
 
 .glyphicon-flash:before {
-    content: "\e162";
+    content: '\e162';
 }
 
 .glyphicon-log-out:before {
-    content: "\e163";
+    content: '\e163';
 }
 
 .glyphicon-new-window:before {
-    content: "\e164";
+    content: '\e164';
 }
 
 .glyphicon-record:before {
-    content: "\e165";
+    content: '\e165';
 }
 
 .glyphicon-save:before {
-    content: "\e166";
+    content: '\e166';
 }
 
 .glyphicon-open:before {
-    content: "\e167";
+    content: '\e167';
 }
 
 .glyphicon-saved:before {
-    content: "\e168";
+    content: '\e168';
 }
 
 .glyphicon-import:before {
-    content: "\e169";
+    content: '\e169';
 }
 
 .glyphicon-export:before {
-    content: "\e170";
+    content: '\e170';
 }
 
 .glyphicon-send:before {
-    content: "\e171";
+    content: '\e171';
 }
 
 .glyphicon-floppy-disk:before {
-    content: "\e172";
+    content: '\e172';
 }
 
 .glyphicon-floppy-saved:before {
-    content: "\e173";
+    content: '\e173';
 }
 
 .glyphicon-floppy-remove:before {
-    content: "\e174";
+    content: '\e174';
 }
 
 .glyphicon-floppy-save:before {
-    content: "\e175";
+    content: '\e175';
 }
 
 .glyphicon-floppy-open:before {
-    content: "\e176";
+    content: '\e176';
 }
 
 .glyphicon-credit-card:before {
-    content: "\e177";
+    content: '\e177';
 }
 
 .glyphicon-transfer:before {
-    content: "\e178";
+    content: '\e178';
 }
 
 .glyphicon-cutlery:before {
-    content: "\e179";
+    content: '\e179';
 }
 
 .glyphicon-header:before {
-    content: "\e180";
+    content: '\e180';
 }
 
 .glyphicon-compressed:before {
-    content: "\e181";
+    content: '\e181';
 }
 
 .glyphicon-earphone:before {
-    content: "\e182";
+    content: '\e182';
 }
 
 .glyphicon-phone-alt:before {
-    content: "\e183";
+    content: '\e183';
 }
 
 .glyphicon-tower:before {
-    content: "\e184";
+    content: '\e184';
 }
 
 .glyphicon-stats:before {
-    content: "\e185";
+    content: '\e185';
 }
 
 .glyphicon-sd-video:before {
-    content: "\e186";
+    content: '\e186';
 }
 
 .glyphicon-hd-video:before {
-    content: "\e187";
+    content: '\e187';
 }
 
 .glyphicon-subtitles:before {
-    content: "\e188";
+    content: '\e188';
 }
 
 .glyphicon-sound-stereo:before {
-    content: "\e189";
+    content: '\e189';
 }
 
 .glyphicon-sound-dolby:before {
-    content: "\e190";
+    content: '\e190';
 }
 
 .glyphicon-sound-5-1:before {
-    content: "\e191";
+    content: '\e191';
 }
 
 .glyphicon-sound-6-1:before {
-    content: "\e192";
+    content: '\e192';
 }
 
 .glyphicon-sound-7-1:before {
-    content: "\e193";
+    content: '\e193';
 }
 
 .glyphicon-copyright-mark:before {
-    content: "\e194";
+    content: '\e194';
 }
 
 .glyphicon-registration-mark:before {
-    content: "\e195";
+    content: '\e195';
 }
 
 .glyphicon-cloud-download:before {
-    content: "\e197";
+    content: '\e197';
 }
 
 .glyphicon-cloud-upload:before {
-    content: "\e198";
+    content: '\e198';
 }
 
 .glyphicon-tree-conifer:before {
-    content: "\e199";
+    content: '\e199';
 }
 
 .glyphicon-tree-deciduous:before {
-    content: "\e200";
+    content: '\e200';
 }
 
 .glyphicon-cd:before {
-    content: "\e201";
+    content: '\e201';
 }
 
 .glyphicon-save-file:before {
-    content: "\e202";
+    content: '\e202';
 }
 
 .glyphicon-open-file:before {
-    content: "\e203";
+    content: '\e203';
 }
 
 .glyphicon-level-up:before {
-    content: "\e204";
+    content: '\e204';
 }
 
 .glyphicon-copy:before {
-    content: "\e205";
+    content: '\e205';
 }
 
 .glyphicon-paste:before {
-    content: "\e206";
+    content: '\e206';
 }
 
 .glyphicon-alert:before {
-    content: "\e209";
+    content: '\e209';
 }
 
 .glyphicon-equalizer:before {
-    content: "\e210";
+    content: '\e210';
 }
 
 .glyphicon-king:before {
-    content: "\e211";
+    content: '\e211';
 }
 
 .glyphicon-queen:before {
-    content: "\e212";
+    content: '\e212';
 }
 
 .glyphicon-pawn:before {
-    content: "\e213";
+    content: '\e213';
 }
 
 .glyphicon-bishop:before {
-    content: "\e214";
+    content: '\e214';
 }
 
 .glyphicon-knight:before {
-    content: "\e215";
+    content: '\e215';
 }
 
 .glyphicon-baby-formula:before {
-    content: "\e216";
+    content: '\e216';
 }
 
 .glyphicon-tent:before {
-    content: "\26fa";
+    content: '\26fa';
 }
 
 .glyphicon-blackboard:before {
-    content: "\e218";
+    content: '\e218';
 }
 
 .glyphicon-bed:before {
-    content: "\e219";
+    content: '\e219';
 }
 
 .glyphicon-apple:before {
-    content: "\f8ff";
+    content: '\f8ff';
 }
 
 .glyphicon-erase:before {
-    content: "\e221";
+    content: '\e221';
 }
 
 .glyphicon-hourglass:before {
-    content: "\231b";
+    content: '\231b';
 }
 
 .glyphicon-lamp:before {
-    content: "\e223";
+    content: '\e223';
 }
 
 .glyphicon-duplicate:before {
-    content: "\e224";
+    content: '\e224';
 }
 
 .glyphicon-piggy-bank:before {
-    content: "\e225";
+    content: '\e225';
 }
 
 .glyphicon-scissors:before {
-    content: "\e226";
+    content: '\e226';
 }
 
 .glyphicon-bitcoin:before {
-    content: "\e227";
+    content: '\e227';
 }
 
 .glyphicon-btc:before {
-    content: "\e227";
+    content: '\e227';
 }
 
 .glyphicon-xbt:before {
-    content: "\e227";
+    content: '\e227';
 }
 
 .glyphicon-yen:before {
-    content: "\00a5";
+    content: '\00a5';
 }
 
 .glyphicon-jpy:before {
-    content: "\00a5";
+    content: '\00a5';
 }
 
 .glyphicon-ruble:before {
-    content: "\20bd";
+    content: '\20bd';
 }
 
 .glyphicon-rub:before {
-    content: "\20bd";
+    content: '\20bd';
 }
 
 .glyphicon-scale:before {
-    content: "\e230";
+    content: '\e230';
 }
 
 .glyphicon-ice-lolly:before {
-    content: "\e231";
+    content: '\e231';
 }
 
 .glyphicon-ice-lolly-tasted:before {
-    content: "\e232";
+    content: '\e232';
 }
 
 .glyphicon-education:before {
-    content: "\e233";
+    content: '\e233';
 }
 
 .glyphicon-option-horizontal:before {
-    content: "\e234";
+    content: '\e234';
 }
 
 .glyphicon-option-vertical:before {
-    content: "\e235";
+    content: '\e235';
 }
 
 .glyphicon-menu-hamburger:before {
-    content: "\e236";
+    content: '\e236';
 }
 
 .glyphicon-modal-window:before {
-    content: "\e237";
+    content: '\e237';
 }
 
 .glyphicon-oil:before {
-    content: "\e238";
+    content: '\e238';
 }
 
 .glyphicon-grain:before {
-    content: "\e239";
+    content: '\e239';
 }
 
 .glyphicon-sunglasses:before {
-    content: "\e240";
+    content: '\e240';
 }
 
 .glyphicon-text-size:before {
-    content: "\e241";
+    content: '\e241';
 }
 
 .glyphicon-text-color:before {
-    content: "\e242";
+    content: '\e242';
 }
 
 .glyphicon-text-background:before {
-    content: "\e243";
+    content: '\e243';
 }
 
 .glyphicon-object-align-top:before {
-    content: "\e244";
+    content: '\e244';
 }
 
 .glyphicon-object-align-bottom:before {
-    content: "\e245";
+    content: '\e245';
 }
 
 .glyphicon-object-align-horizontal:before {
-    content: "\e246";
+    content: '\e246';
 }
 
 .glyphicon-object-align-left:before {
-    content: "\e247";
+    content: '\e247';
 }
 
 .glyphicon-object-align-vertical:before {
-    content: "\e248";
+    content: '\e248';
 }
 
 .glyphicon-object-align-right:before {
-    content: "\e249";
+    content: '\e249';
 }
 
 .glyphicon-triangle-right:before {
-    content: "\e250";
+    content: '\e250';
 }
 
 .glyphicon-triangle-left:before {
-    content: "\e251";
+    content: '\e251';
 }
 
 .glyphicon-triangle-bottom:before {
-    content: "\e252";
+    content: '\e252';
 }
 
 .glyphicon-triangle-top:before {
-    content: "\e253";
+    content: '\e253';
 }
 
 .glyphicon-console:before {
-    content: "\e254";
+    content: '\e254';
 }
 
 .glyphicon-superscript:before {
-    content: "\e255";
+    content: '\e255';
 }
 
 .glyphicon-subscript:before {
-    content: "\e256";
+    content: '\e256';
 }
 
 .glyphicon-menu-left:before {
-    content: "\e257";
+    content: '\e257';
 }
 
 .glyphicon-menu-right:before {
-    content: "\e258";
+    content: '\e258';
 }
 
 .glyphicon-menu-down:before {
-    content: "\e259";
+    content: '\e259';
 }
 
 .glyphicon-menu-up:before {
-    content: "\e260";
+    content: '\e260';
 }
 
 * {
@@ -1421,7 +1421,7 @@ textarea {
 }
 
 a {
-    color: #32c787;
+    color: var(--crm-color);
     text-decoration: none;
 }
 
@@ -1478,10 +1478,14 @@ img {
 }
 
 hr {
-    margin-top: 18px;
-    margin-bottom: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     border: 0;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+hr.darkbg {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .sr-only {
@@ -1505,7 +1509,7 @@ hr {
     clip: auto;
 }
 
-[role="button"] {
+[role='button'] {
     cursor: pointer;
 }
 
@@ -1628,12 +1632,12 @@ h4,
 
 h5,
 .h5 {
-    font-size: 13px;
+    font-size: 15px;
 }
 
 h6,
 .h6 {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 p {
@@ -1897,7 +1901,7 @@ blockquote .small {
 blockquote footer:before,
 blockquote small:before,
 blockquote .small:before {
-    content: "\2014 \00A0";
+    content: '\2014 \00A0';
 }
 
 .blockquote-reverse,
@@ -1915,7 +1919,7 @@ blockquote.pull-right footer:before,
 blockquote.pull-right small:before,
 .blockquote-reverse .small:before,
 blockquote.pull-right .small:before {
-    content: "";
+    content: '';
 }
 
 .blockquote-reverse footer:after,
@@ -1924,7 +1928,7 @@ blockquote.pull-right footer:after,
 blockquote.pull-right small:after,
 .blockquote-reverse .small:after,
 blockquote.pull-right .small:after {
-    content: "\00A0 \2014";
+    content: '\00A0 \2014';
 }
 
 address {
@@ -1937,7 +1941,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 code {
@@ -3055,14 +3059,14 @@ th {
     background-color: #f9f9f9;
 }
 
-table col[class*="col-"] {
+table col[class*='col-'] {
     position: static;
     float: none;
     display: table-column;
 }
 
-table td[class*="col-"],
-table th[class*="col-"] {
+table td[class*='col-'],
+table th[class*='col-'] {
     position: static;
     float: none;
     display: table-cell;
@@ -3263,27 +3267,28 @@ label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 13px;
 }
 
-input[type="search"] {
+input[type='search'] {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
     margin: 4px 0 0;
     margin-top: 1px;
     line-height: normal;
 }
 
-input[type="file"] {
+input[type='file'] {
     display: block;
 }
 
-input[type="range"] {
+input[type='range'] {
     display: block;
     width: 100%;
 }
@@ -3293,9 +3298,9 @@ select[size] {
     height: auto;
 }
 
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
+input[type='file']:focus,
+input[type='radio']:focus,
+input[type='checkbox']:focus {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
     outline: none !important;
@@ -3324,7 +3329,7 @@ output {
 }
 
 .form-control:focus {
-    border-color: #32c787;
+    border-color: var(--crm-color);
     outline: 0;
 }
 
@@ -3362,37 +3367,37 @@ textarea.form-control {
     height: auto;
 }
 
-input[type="search"] {
+input[type='search'] {
     -webkit-appearance: none;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    input[type="date"].form-control,
-    input[type="time"].form-control,
-    input[type="datetime-local"].form-control,
-    input[type="month"].form-control {
+    input[type='date'].form-control,
+    input[type='time'].form-control,
+    input[type='datetime-local'].form-control,
+    input[type='month'].form-control {
         line-height: 35px;
     }
 
-    input[type="date"].input-sm,
-    input[type="time"].input-sm,
-    input[type="datetime-local"].input-sm,
-    input[type="month"].input-sm,
-    .input-group-sm input[type="date"],
-    .input-group-sm input[type="time"],
-    .input-group-sm input[type="datetime-local"],
-    .input-group-sm input[type="month"] {
+    input[type='date'].input-sm,
+    input[type='time'].input-sm,
+    input[type='datetime-local'].input-sm,
+    input[type='month'].input-sm,
+    .input-group-sm input[type='date'],
+    .input-group-sm input[type='time'],
+    .input-group-sm input[type='datetime-local'],
+    .input-group-sm input[type='month'] {
         line-height: 30px;
     }
 
-    input[type="date"].input-lg,
-    input[type="time"].input-lg,
-    input[type="datetime-local"].input-lg,
-    input[type="month"].input-lg,
-    .input-group-lg input[type="date"],
-    .input-group-lg input[type="time"],
-    .input-group-lg input[type="datetime-local"],
-    .input-group-lg input[type="month"] {
+    input[type='date'].input-lg,
+    input[type='time'].input-lg,
+    input[type='datetime-local'].input-lg,
+    input[type='month'].input-lg,
+    .input-group-lg input[type='date'],
+    .input-group-lg input[type='time'],
+    .input-group-lg input[type='datetime-local'],
+    .input-group-lg input[type='month'] {
         line-height: 40px;
     }
 }
@@ -3418,10 +3423,10 @@ input[type="search"] {
     cursor: pointer;
 }
 
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
+.radio input[type='radio'],
+.radio-inline input[type='radio'],
+.checkbox input[type='checkbox'],
+.checkbox-inline input[type='checkbox'] {
     position: absolute;
     margin-left: -20px;
     margin-top: 4px \9;
@@ -3449,12 +3454,12 @@ input[type="search"] {
     margin-left: 10px;
 }
 
-input[type="radio"][disabled],
-input[type="checkbox"][disabled],
-input[type="radio"].disabled,
-input[type="checkbox"].disabled,
-fieldset[disabled] input[type="radio"],
-fieldset[disabled] input[type="checkbox"] {
+input[type='radio'][disabled],
+input[type='checkbox'][disabled],
+input[type='radio'].disabled,
+input[type='checkbox'].disabled,
+fieldset[disabled] input[type='radio'],
+fieldset[disabled] input[type='checkbox'] {
     cursor: not-allowed;
 }
 
@@ -3780,8 +3785,8 @@ select[multiple].input-lg {
         padding-left: 0;
     }
 
-    .form-inline .radio input[type="radio"],
-    .form-inline .checkbox input[type="checkbox"] {
+    .form-inline .radio input[type='radio'],
+    .form-inline .checkbox input[type='checkbox'] {
         position: relative;
         margin-left: 0;
     }
@@ -4721,9 +4726,9 @@ fieldset[disabled] .btn-link:focus {
     margin-top: 5px;
 }
 
-input[type="submit"].btn-block,
-input[type="reset"].btn-block,
-input[type="button"].btn-block {
+input[type='submit'].btn-block,
+input[type='reset'].btn-block,
+input[type='button'].btn-block {
     width: 100%;
 }
 
@@ -4907,7 +4912,7 @@ tbody.collapse.in {
     border-top: 0;
     border-bottom: 4px dashed;
     border-bottom: 4px solid \9;
-    content: "";
+    content: '';
 }
 
 .dropup .dropdown-menu,
@@ -5128,10 +5133,10 @@ tbody.collapse.in {
     left: auto;
 }
 
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[data-toggle='buttons'] > .btn input[type='radio'],
+[data-toggle='buttons'] > .btn-group > .btn input[type='radio'],
+[data-toggle='buttons'] > .btn input[type='checkbox'],
+[data-toggle='buttons'] > .btn-group > .btn input[type='checkbox'] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
@@ -5143,7 +5148,7 @@ tbody.collapse.in {
     border-collapse: separate;
 }
 
-.input-group[class*="col-"] {
+.input-group[class*='col-'] {
     float: none;
     padding-left: 0;
     padding-right: 0;
@@ -5256,8 +5261,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-radius: 0;
 }
 
-.input-group-addon input[type="radio"],
-.input-group-addon input[type="checkbox"] {
+.input-group-addon input[type='radio'],
+.input-group-addon input[type='checkbox'] {
     margin-top: 0;
 }
 
@@ -5855,8 +5860,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         padding-left: 0;
     }
 
-    .navbar-form .radio input[type="radio"],
-    .navbar-form .checkbox input[type="checkbox"] {
+    .navbar-form .radio input[type='radio'],
+    .navbar-form .checkbox input[type='checkbox'] {
         position: relative;
         margin-left: 0;
     }
@@ -6203,7 +6208,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .breadcrumb > li + li:before {
-    content: "/\00a0";
+    content: '/\00a0';
     padding: 0 5px;
     color: #ccc;
 }
@@ -6640,7 +6645,7 @@ a.thumbnail.active {
 }
 
 .alert-success {
-    background-color: #32c787;
+    background-color: var(--crm-color);
     border-color: transparent;
     color: #fff;
 }
@@ -7347,24 +7352,64 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
-.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > thead:first-child
+    > tr:first-child
+    td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > tbody:first-child
+    > tr:first-child
+    td:first-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
-.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > thead:first-child
+    > tr:first-child
+    th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > tbody:first-child
+    > tr:first-child
+    th:first-child {
     border-top-left-radius: 1px;
 }
 
 .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
-.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > thead:first-child
+    > tr:first-child
+    td:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > tbody:first-child
+    > tr:first-child
+    td:last-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
-.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > thead:first-child
+    > tr:first-child
+    th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+.panel
+    > .table-responsive:first-child
+    > .table:first-child
+    > tbody:first-child
+    > tr:first-child
+    th:last-child {
     border-top-right-radius: 1px;
 }
 
@@ -7383,24 +7428,64 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tbody:last-child
+    > tr:last-child
+    td:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tfoot:last-child
+    > tr:last-child
+    td:first-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tbody:last-child
+    > tr:last-child
+    th:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tfoot:last-child
+    > tr:last-child
+    th:first-child {
     border-bottom-left-radius: 1px;
 }
 
 .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tbody:last-child
+    > tr:last-child
+    td:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tfoot:last-child
+    > tr:last-child
+    td:last-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tbody:last-child
+    > tr:last-child
+    th:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+.panel
+    > .table-responsive:last-child
+    > .table:last-child
+    > tfoot:last-child
+    > tr:last-child
+    th:last-child {
     border-bottom-right-radius: 1px;
 }
 
@@ -7882,7 +7967,6 @@ button.close {
     font-family: inherit;
     font-style: normal;
     font-weight: normal;
-    letter-spacing: normal;
     line-break: auto;
     line-height: 1.42857143;
     text-align: left;
@@ -8016,7 +8100,6 @@ button.close {
     font-family: inherit;
     font-style: normal;
     font-weight: normal;
-    letter-spacing: normal;
     line-break: auto;
     line-height: 1.42857143;
     text-align: left;
@@ -8082,7 +8165,7 @@ button.close {
 
 .popover > .arrow:after {
     border-width: 10px;
-    content: "";
+    content: '';
 }
 
 .popover.top > .arrow {
@@ -8095,7 +8178,7 @@ button.close {
 }
 
 .popover.top > .arrow:after {
-    content: " ";
+    content: ' ';
     bottom: 1px;
     margin-left: -10px;
     border-bottom-width: 0;
@@ -8112,7 +8195,7 @@ button.close {
 }
 
 .popover.right > .arrow:after {
-    content: " ";
+    content: ' ';
     left: 1px;
     bottom: -10px;
     border-left-width: 0;
@@ -8129,7 +8212,7 @@ button.close {
 }
 
 .popover.bottom > .arrow:after {
-    content: " ";
+    content: ' ';
     top: 1px;
     margin-left: -10px;
     border-top-width: 0;
@@ -8146,7 +8229,7 @@ button.close {
 }
 
 .popover.left > .arrow:after {
-    content: " ";
+    content: ' ';
     right: 1px;
     border-right-width: 0;
     border-left-color: #fff;
@@ -8267,7 +8350,11 @@ button.close {
 }
 
 .carousel-control.left {
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+    background-image: -webkit-linear-gradient(
+        left,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.0001) 100%
+    );
     background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-repeat: repeat-x;
@@ -8277,7 +8364,11 @@ button.close {
 .carousel-control.right {
     left: auto;
     right: 0;
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-image: -webkit-linear-gradient(
+        left,
+        rgba(0, 0, 0, 0.0001) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
     background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-repeat: repeat-x;
@@ -8325,11 +8416,11 @@ button.close {
 }
 
 .carousel-control .icon-prev:before {
-    content: "\2039";
+    content: '\2039';
 }
 
 .carousel-control .icon-next:before {
-    content: "\203a";
+    content: '\203a';
 }
 
 .carousel-indicators {
@@ -8445,7 +8536,7 @@ button.close {
 .modal-header:after,
 .modal-footer:before,
 .modal-footer:after {
-    content: " ";
+    content: ' ';
     display: table;
 }
 
@@ -8936,12 +9027,12 @@ button.close {
 ---------------------*/
 
 @font-face {
-    font-family: "Roboto", sans-serif;
-    src: url("../fonts/roboto/Roboto-Light-webfont.eot");
-    src: url("../fonts/roboto/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/roboto/Roboto-Light-webfont.woff") format("woff"),
-        url("../fonts/roboto/Roboto-Light-webfont.ttf") format("truetype"),
-        url("../fonts/roboto/Roboto-Light-webfont.svg#icon") format("svg");
+    font-family: 'Roboto', sans-serif;
+    src: url('../fonts/roboto/Roboto-Light-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/roboto/Roboto-Light-webfont.woff') format('woff'),
+        url('../fonts/roboto/Roboto-Light-webfont.ttf') format('truetype'),
+        url('../fonts/roboto/Roboto-Light-webfont.svg#icon') format('svg');
     font-weight: 300;
     font-style: normal;
 }
@@ -8951,12 +9042,12 @@ button.close {
 ---------------------*/
 
 @font-face {
-    font-family: "Roboto", sans-serif;
-    src: url("../fonts/roboto/Roboto-Regular-webfont.eot");
-    src: url("../fonts/roboto/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/roboto/Roboto-Regular-webfont.woff") format("woff"),
-        url("../fonts/roboto/Roboto-Regular-webfont.ttf") format("truetype"),
-        url("../fonts/roboto/Roboto-Regular-webfont.svg#icon") format("svg");
+    font-family: 'Roboto', sans-serif;
+    src: url('../fonts/roboto/Roboto-Regular-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/roboto/Roboto-Regular-webfont.woff') format('woff'),
+        url('../fonts/roboto/Roboto-Regular-webfont.ttf') format('truetype'),
+        url('../fonts/roboto/Roboto-Regular-webfont.svg#icon') format('svg');
     font-weight: 400;
     font-style: normal;
 }
@@ -8966,12 +9057,12 @@ button.close {
 ---------------------*/
 
 @font-face {
-    font-family: "Roboto", sans-serif;
-    src: url("../fonts/roboto/Roboto-Medium-webfont.eot");
-    src: url("../fonts/roboto/Roboto-Medium-webfont.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/roboto/Roboto-Medium-webfont.woff") format("woff"),
-        url("../fonts/roboto/Roboto-Medium-webfont.ttf") format("truetype"),
-        url("../fonts/roboto/Roboto-Medium-webfont.svg#icon") format("svg");
+    font-family: 'Roboto', sans-serif;
+    src: url('../fonts/roboto/Roboto-Medium-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/roboto/Roboto-Medium-webfont.woff') format('woff'),
+        url('../fonts/roboto/Roboto-Medium-webfont.ttf') format('truetype'),
+        url('../fonts/roboto/Roboto-Medium-webfont.svg#icon') format('svg');
     font-weight: 500;
     font-style: normal;
 }
@@ -8981,12 +9072,12 @@ button.close {
 ---------------------*/
 
 @font-face {
-    font-family: "Roboto", sans-serif;
-    src: url("../fonts/roboto/Roboto-Bold-webfont.eot");
-    src: url("../fonts/roboto/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/roboto/Roboto-Bold-webfont.woff") format("woff"),
-        url("../fonts/roboto/Roboto-Bold-webfont.ttf") format("truetype"),
-        url("../fonts/roboto/Roboto-Bold-webfont.svg#icon") format("svg");
+    font-family: 'Roboto', sans-serif;
+    src: url('../fonts/roboto/Roboto-Bold-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/roboto/Roboto-Bold-webfont.woff') format('woff'),
+        url('../fonts/roboto/Roboto-Bold-webfont.ttf') format('truetype'),
+        url('../fonts/roboto/Roboto-Bold-webfont.svg#icon') format('svg');
     font-weight: 700;
     font-style: normal;
 }
@@ -8997,10 +9088,11 @@ button.close {
 
 @font-face {
     font-family: satisfy;
-    src: url("../fonts/satisfy/satisfy.eot");
-    src: url("../fonts/satisfy/satisfy.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/satisfy/satisfy.woff") format("woff"), url("../fonts/satisfy/satisfy.ttf") format("truetype"),
-        url("../fonts/satisfy/satisfy.svg#icon") format("svg");
+    src: url('../fonts/satisfy/satisfy.eot');
+    src: url('../fonts/satisfy/satisfy.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/satisfy/satisfy.woff') format('woff'),
+        url('../fonts/satisfy/satisfy.ttf') format('truetype'),
+        url('../fonts/satisfy/satisfy.svg#icon') format('svg');
     font-weight: 400;
     font-style: normal;
 }
@@ -9011,212 +9103,212 @@ button.close {
 
 @font-face {
     font-family: weather-icons;
-    src: url("../fonts/weather-icons/weather-icons.eot");
-    src: url("../fonts/weather-icons/weather-icons.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/weather-icons/weather-icons.woff") format("woff"),
-        url("../fonts/weather-icons/weather-icons.ttf") format("truetype"),
-        url("../fonts/weather-icons/weather-icons.svg#icon") format("svg");
+    src: url('../fonts/weather-icons/weather-icons.eot');
+    src: url('../fonts/weather-icons/weather-icons.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/weather-icons/weather-icons.woff') format('woff'),
+        url('../fonts/weather-icons/weather-icons.ttf') format('truetype'),
+        url('../fonts/weather-icons/weather-icons.svg#icon') format('svg');
     font-weight: 400;
     font-style: normal;
 }
 
-#weather-widget [class*="icon-"] {
-    font-family: "weather-icons";
+#weather-widget [class*='icon-'] {
+    font-family: 'weather-icons';
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-0:before {
-    content: ":";
+    content: ':';
 }
 
 .icon-1:before {
-    content: "p";
+    content: 'p';
 }
 
 .icon-2:before {
-    content: "S";
+    content: 'S';
 }
 
 .icon-3:before {
-    content: "Q";
+    content: 'Q';
 }
 
 .icon-4:before {
-    content: "S";
+    content: 'S';
 }
 
 .icon-5:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-6:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-7:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-8:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-9:before {
-    content: "I";
+    content: 'I';
 }
 
 .icon-10:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-11:before {
-    content: "I";
+    content: 'I';
 }
 
 .icon-12:before {
-    content: "I";
+    content: 'I';
 }
 
 .icon-13:before {
-    content: "I";
+    content: 'I';
 }
 
 .icon-14:before {
-    content: "I";
+    content: 'I';
 }
 
 .icon-15:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-16:before {
-    content: "I";
+    content: 'I';
 }
 
 .icon-17:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-18:before {
-    content: "U";
+    content: 'U';
 }
 
 .icon-19:before {
-    content: "Z";
+    content: 'Z';
 }
 
 .icon-20:before {
-    content: "Z";
+    content: 'Z';
 }
 
 .icon-21:before {
-    content: "Z";
+    content: 'Z';
 }
 
 .icon-22:before {
-    content: "Z";
+    content: 'Z';
 }
 
 .icon-23:before {
-    content: "Z";
+    content: 'Z';
 }
 
 .icon-24:before {
-    content: "E";
+    content: 'E';
 }
 
 .icon-25:before {
-    content: "E";
+    content: 'E';
 }
 
 .icon-26:before {
-    content: "3";
+    content: '3';
 }
 
 .icon-27:before {
-    content: "a";
+    content: 'a';
 }
 
 .icon-28:before {
-    content: "A";
+    content: 'A';
 }
 
 .icon-29:before {
-    content: "a";
+    content: 'a';
 }
 
 .icon-30:before {
-    content: "A";
+    content: 'A';
 }
 
 .icon-31:before {
-    content: "6";
+    content: '6';
 }
 
 .icon-32:before {
-    content: "1";
+    content: '1';
 }
 
 .icon-33:before {
-    content: "6";
+    content: '6';
 }
 
 .icon-34:before {
-    content: "1";
+    content: '1';
 }
 
 .icon-35:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-36:before {
-    content: "1";
+    content: '1';
 }
 
 .icon-37:before {
-    content: "S";
+    content: 'S';
 }
 
 .icon-38:before {
-    content: "S";
+    content: 'S';
 }
 
 .icon-39:before {
-    content: "S";
+    content: 'S';
 }
 
 .icon-40:before {
-    content: "M";
+    content: 'M';
 }
 
 .icon-41:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-42:before {
-    content: "I";
+    content: 'I';
 }
 
 .icon-43:before {
-    content: "W";
+    content: 'W';
 }
 
 .icon-44:before {
-    content: "a";
+    content: 'a';
 }
 
 .icon-45:before {
-    content: "S";
+    content: 'S';
 }
 
 .icon-46:before {
-    content: "U";
+    content: 'U';
 }
 
 .icon-47:before {
-    content: "S";
+    content: 'S';
 }
 
 .btn-file {
@@ -10260,7 +10352,7 @@ button.close {
 
 .media:before,
 .media:after {
-    content: " ";
+    content: ' ';
     display: table;
 }
 
@@ -10270,7 +10362,7 @@ button.close {
 
 .media:before,
 .media:after {
-    content: " ";
+    content: ' ';
     display: table;
 }
 
@@ -10416,21 +10508,21 @@ h6 small,
 }
 
 .clist > li:before {
-    font-family: "Material-Design-Iconic-Font";
+    font-family: 'Material-Design-Iconic-Font';
     margin: 0 10px 0 -20px;
     vertical-align: middle;
 }
 
 .clist.clist-angle > li:before {
-    content: "\f2fb";
+    content: '\f2fb';
 }
 
 .clist.clist-check > li:before {
-    content: "\f26b";
+    content: '\f26b';
 }
 
 .clist.clist-star > li:before {
-    content: "\f27d";
+    content: '\f27d';
 }
 
 /*--------------------------------------------------
@@ -10445,8 +10537,16 @@ h6 small,
     position: relative;
 }
 
-.h-inner > li:not(.pull-right) {
-    float: left;
+.hi-logo-text,
+.hi-logo-text:hover {
+    padding: 7px 10px;
+    text-transform: none;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    color: #fff;
 }
 
 .hi-logo a {
@@ -10464,7 +10564,7 @@ h6 small,
 }
 
 .hi-trigger:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -10580,7 +10680,7 @@ h6 small,
 }
 
 .him-notification:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: calc(100% - 70px);
@@ -10610,23 +10710,23 @@ h6 small,
 
 /* Full Screen */
 
-:-webkit-full-screen [data-ma-action="fullscreen"] {
+:-webkit-full-screen [data-ma-action='fullscreen'] {
     display: none;
 }
 
-:-moz-full-screen [data-ma-action="fullscreen"] {
+:-moz-full-screen [data-ma-action='fullscreen'] {
     display: none;
 }
 
-:-ms-fullscreen [data-ma-action="fullscreen"] {
+:-ms-fullscreen [data-ma-action='fullscreen'] {
     display: none;
 }
 
-:full-screen [data-ma-action="fullscreen"] {
+:full-screen [data-ma-action='fullscreen'] {
     display: none;
 }
 
-:fullscreen [data-ma-action="fullscreen"] {
+:fullscreen [data-ma-action='fullscreen'] {
     display: none;
 }
 
@@ -10697,7 +10797,7 @@ h6 small,
     z-index: 10;
 }
 
-.h-search-wrap input[type="text"] {
+.h-search-wrap input[type='text'] {
     border: 0;
     height: 40px;
     padding: 0 10px 0 55px;
@@ -10756,7 +10856,7 @@ h6 small,
 
 @media (min-width: 992px) {
     #header-alt:before {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -10793,7 +10893,7 @@ h6 small,
     padding-right: 25px;
 }
 
-#header-alt .ha-search input[type="text"] {
+#header-alt .ha-search input[type='text'] {
     width: 100%;
     background: transparent;
     border: 0;
@@ -10804,20 +10904,20 @@ h6 small,
     padding: 6px 0 6px 30px;
 }
 
-#header-alt .ha-search input[type="text"]::-moz-placeholder {
+#header-alt .ha-search input[type='text']::-moz-placeholder {
     color: #fff;
     opacity: 1;
 }
 
-#header-alt .ha-search input[type="text"]:-ms-input-placeholder {
+#header-alt .ha-search input[type='text']:-ms-input-placeholder {
     color: #fff;
 }
 
-#header-alt .ha-search input[type="text"]::-webkit-input-placeholder {
+#header-alt .ha-search input[type='text']::-webkit-input-placeholder {
     color: #fff;
 }
 
-#header-alt .ha-search input[type="text"].ie9-placeholder {
+#header-alt .ha-search input[type='text'].ie9-placeholder {
     color: #fff !important;
 }
 
@@ -10831,8 +10931,8 @@ h6 small,
 }
 
 #header-alt .ha-search .fg-line:before {
-    content: "\f1c3";
-    font-family: "Material-Design-Iconic-Font";
+    content: '\f1c3';
+    font-family: 'Material-Design-Iconic-Font';
     position: absolute;
     left: 0;
     bottom: 1px;
@@ -11032,7 +11132,7 @@ h6 small,
     position: absolute;
     top: 50%;
     margin-top: -11px;
-    font-family: "Material-Design-Iconic-Font";
+    font-family: 'Material-Design-Iconic-Font';
     font-size: 17px;
     right: 15px;
     -webkit-transition: all;
@@ -11043,7 +11143,7 @@ h6 small,
 }
 
 .sub-menu > a:before {
-    content: "\f278";
+    content: '\f278';
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
@@ -11051,7 +11151,7 @@ h6 small,
 }
 
 .sub-menu > a:after {
-    content: "\f273";
+    content: '\f273';
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0);
@@ -11059,7 +11159,7 @@ h6 small,
 }
 
 .sub-menu.toggled > a:before {
-    content: "\f278";
+    content: '\f278';
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0);
@@ -11067,7 +11167,7 @@ h6 small,
 }
 
 .sub-menu.toggled > a:after {
-    content: "\f273";
+    content: '\f273';
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
@@ -11154,7 +11254,7 @@ h6 small,
     transition-duration: 300ms;
 }
 
-.dropdown-menu[class*="bgm-"] > li > a {
+.dropdown-menu[class*='bgm-'] > li > a {
     color: #fff;
 }
 
@@ -11342,7 +11442,7 @@ h6 small,
     Chat Status Icons
 -------------------------------*/
 
-[class*="chat-status"] {
+[class*='chat-status'] {
     position: absolute;
     width: 10px;
     height: 10px;
@@ -11399,7 +11499,7 @@ h6 small,
 }
 
 .tab-nav li > a:after {
-    content: "";
+    content: '';
     height: 2px;
     position: absolute;
     width: 100%;
@@ -11459,27 +11559,27 @@ h6 small,
     background: #2196f3;
 }
 
-.tab-nav[data-tab-color="green"] > li > a:after {
+.tab-nav[data-tab-color='green'] > li > a:after {
     background: #4caf50;
 }
 
-.tab-nav[data-tab-color="red"] > li > a:after {
+.tab-nav[data-tab-color='red'] > li > a:after {
     background: #f44336;
 }
 
-.tab-nav[data-tab-color="teal"] > li > a:after {
+.tab-nav[data-tab-color='teal'] > li > a:after {
     background: #009688;
 }
 
-.tab-nav[data-tab-color="amber"] > li > a:after {
+.tab-nav[data-tab-color='amber'] > li > a:after {
     background: #ffc107;
 }
 
-.tab-nav[data-tab-color="black"] > li > a:after {
+.tab-nav[data-tab-color='black'] > li > a:after {
     background: #000000;
 }
 
-.tab-nav[data-tab-color="cyan"] > li > a:after {
+.tab-nav[data-tab-color='cyan'] > li > a:after {
     background: #00bcd4;
 }
 
@@ -11516,7 +11616,7 @@ h6 small,
     line-height: 160%;
 }
 
-.card .card-header.ch-alt:not([class*="bgm-"]) {
+.card .card-header.ch-alt:not([class*='bgm-']) {
     background-color: #f7f7f7;
 }
 
@@ -11533,11 +11633,11 @@ h6 small,
     z-index: 1;
 }
 
-.card .card-header[class*="bgm-"] h2 {
+.card .card-header[class*='bgm-'] h2 {
     color: #fff;
 }
 
-.card .card-header[class*="bgm-"] h2 small {
+.card .card-header[class*='bgm-'] h2 small {
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -11549,7 +11649,7 @@ h6 small,
     padding: 15px;
 }
 
-.card-header:not(.ch-alt):not([class*="bgm-"]) + .card-padding {
+.card-header:not(.ch-alt):not([class*='bgm-']) + .card-padding {
     padding-top: 0;
 }
 
@@ -11643,7 +11743,7 @@ h6 small,
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
-    content: "";
+    content: '';
     width: 105px;
     height: 100%;
     background: rgba(0, 0, 0, 0.1);
@@ -11713,7 +11813,7 @@ h6 small,
 }
 
 .easy-pie .percent:after {
-    content: "%";
+    content: '%';
 }
 
 .easy-pie.main-pie .percent {
@@ -11762,7 +11862,7 @@ h6 small,
     Flot Chart
 -------------------------------*/
 
-[class*="flot-chart"] {
+[class*='flot-chart'] {
     width: 100%;
     display: block;
 }
@@ -11793,24 +11893,24 @@ h6 small,
     z-index: 99999;
 }
 
-[class*="flc-"] {
+[class*='flc-'] {
     text-align: center;
     margin: 20px 0 -5px;
 }
 
-[class*="flc-"] table {
+[class*='flc-'] table {
     display: inline-block;
 }
 
-[class*="flc-"] .legendColorBox > div {
+[class*='flc-'] .legendColorBox > div {
     border: #fff !important;
 }
 
-[class*="flc-"] .legendColorBox > div > div {
+[class*='flc-'] .legendColorBox > div > div {
     border-radius: 50%;
 }
 
-[class*="flc-"] .legendLabel {
+[class*='flc-'] .legendLabel {
     padding: 0 8px 0 3px;
 }
 
@@ -11970,7 +12070,7 @@ h6 small,
 }
 
 #weather-widget .weather-icon.wi-0 {
-    background-image: url("../img/icons/weather/0.png");
+    background-image: url('../img/icons/weather/0.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -11980,13 +12080,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-0 {
-        background-image: url("../img/icons/weather/0@2x.png");
+        background-image: url('../img/icons/weather/0@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-1 {
-    background-image: url("../img/icons/weather/1.png");
+    background-image: url('../img/icons/weather/1.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -11996,13 +12096,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-1 {
-        background-image: url("../img/icons/weather/1@2x.png");
+        background-image: url('../img/icons/weather/1@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-2 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12012,13 +12112,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-2 {
-        background-image: url("../img/icons/weather/2@2x.png");
+        background-image: url('../img/icons/weather/2@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-3 {
-    background-image: url("../img/icons/weather/3.png");
+    background-image: url('../img/icons/weather/3.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12028,13 +12128,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-3 {
-        background-image: url("../img/icons/weather/3@2x.png");
+        background-image: url('../img/icons/weather/3@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-4 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12044,13 +12144,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-4 {
-        background-image: url("../img/icons/weather/2@2x.png");
+        background-image: url('../img/icons/weather/2@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-5 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12060,13 +12160,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-5 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-6 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12076,13 +12176,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-6 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-7 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12092,13 +12192,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-7 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-8 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12108,13 +12208,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-8 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-9 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12124,13 +12224,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-9 {
-        background-image: url("../img/icons/weather/9@2x.png");
+        background-image: url('../img/icons/weather/9@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-10 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12140,13 +12240,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-10 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-11 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12156,13 +12256,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-11 {
-        background-image: url("../img/icons/weather/9@2x.png");
+        background-image: url('../img/icons/weather/9@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-12 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12172,13 +12272,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-12 {
-        background-image: url("../img/icons/weather/9@2x.png");
+        background-image: url('../img/icons/weather/9@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-13 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12188,13 +12288,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-13 {
-        background-image: url("../img/icons/weather/9@2x.png");
+        background-image: url('../img/icons/weather/9@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-14 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12204,13 +12304,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-14 {
-        background-image: url("../img/icons/weather/9@2x.png");
+        background-image: url('../img/icons/weather/9@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-15 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12220,13 +12320,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-15 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-16 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12236,13 +12336,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-16 {
-        background-image: url("../img/icons/weather/9@2x.png");
+        background-image: url('../img/icons/weather/9@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-17 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12252,13 +12352,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-17 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-18 {
-    background-image: url("../img/icons/weather/18.png");
+    background-image: url('../img/icons/weather/18.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12268,13 +12368,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-18 {
-        background-image: url("../img/icons/weather/18@2x.png");
+        background-image: url('../img/icons/weather/18@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-19 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12284,13 +12384,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-19 {
-        background-image: url("../img/icons/weather/19@2x.png");
+        background-image: url('../img/icons/weather/19@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-20 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12300,13 +12400,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-20 {
-        background-image: url("../img/icons/weather/19@2x.png");
+        background-image: url('../img/icons/weather/19@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-21 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12316,13 +12416,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-21 {
-        background-image: url("../img/icons/weather/19@2x.png");
+        background-image: url('../img/icons/weather/19@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-22 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12332,13 +12432,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-22 {
-        background-image: url("../img/icons/weather/19@2x.png");
+        background-image: url('../img/icons/weather/19@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-23 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12348,13 +12448,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-23 {
-        background-image: url("../img/icons/weather/19@2x.png");
+        background-image: url('../img/icons/weather/19@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-24 {
-    background-image: url("../img/icons/weather/24.png");
+    background-image: url('../img/icons/weather/24.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12364,13 +12464,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-24 {
-        background-image: url("../img/icons/weather/24@2x.png");
+        background-image: url('../img/icons/weather/24@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-25 {
-    background-image: url("../img/icons/weather/24.png");
+    background-image: url('../img/icons/weather/24.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12380,13 +12480,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-25 {
-        background-image: url("../img/icons/weather/24@2x.png");
+        background-image: url('../img/icons/weather/24@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-26 {
-    background-image: url("../img/icons/weather/26.png");
+    background-image: url('../img/icons/weather/26.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12396,13 +12496,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-26 {
-        background-image: url("../img/icons/weather/26@2x.png");
+        background-image: url('../img/icons/weather/26@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-27 {
-    background-image: url("../img/icons/weather/27.png");
+    background-image: url('../img/icons/weather/27.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12412,13 +12512,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-27 {
-        background-image: url("../img/icons/weather/27@2x.png");
+        background-image: url('../img/icons/weather/27@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-28 {
-    background-image: url("../img/icons/weather/28.png");
+    background-image: url('../img/icons/weather/28.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12428,13 +12528,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-28 {
-        background-image: url("../img/icons/weather/28@2x.png");
+        background-image: url('../img/icons/weather/28@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-29 {
-    background-image: url("../img/icons/weather/27.png");
+    background-image: url('../img/icons/weather/27.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12444,13 +12544,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-29 {
-        background-image: url("../img/icons/weather/27@2x.png");
+        background-image: url('../img/icons/weather/27@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-30 {
-    background-image: url("../img/icons/weather/28.png");
+    background-image: url('../img/icons/weather/28.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12460,13 +12560,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-30 {
-        background-image: url("../img/icons/weather/28@2x.png");
+        background-image: url('../img/icons/weather/28@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-31 {
-    background-image: url("../img/icons/weather/31.png");
+    background-image: url('../img/icons/weather/31.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12476,13 +12576,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-31 {
-        background-image: url("../img/icons/weather/31@2x.png");
+        background-image: url('../img/icons/weather/31@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-32 {
-    background-image: url("../img/icons/weather/32.png");
+    background-image: url('../img/icons/weather/32.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12492,13 +12592,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-32 {
-        background-image: url("../img/icons/weather/32@2x.png");
+        background-image: url('../img/icons/weather/32@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-33 {
-    background-image: url("../img/icons/weather/31.png");
+    background-image: url('../img/icons/weather/31.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12508,13 +12608,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-33 {
-        background-image: url("../img/icons/weather/31@2x.png");
+        background-image: url('../img/icons/weather/31@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-34 {
-    background-image: url("../img/icons/weather/32.png");
+    background-image: url('../img/icons/weather/32.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12524,13 +12624,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-34 {
-        background-image: url("../img/icons/weather/32@2x.png");
+        background-image: url('../img/icons/weather/32@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-35 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12540,13 +12640,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-35 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-36 {
-    background-image: url("../img/icons/weather/32.png");
+    background-image: url('../img/icons/weather/32.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12556,13 +12656,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-36 {
-        background-image: url("../img/icons/weather/32@2x.png");
+        background-image: url('../img/icons/weather/32@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-37 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12572,13 +12672,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-37 {
-        background-image: url("../img/icons/weather/2@2x.png");
+        background-image: url('../img/icons/weather/2@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-38 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12588,13 +12688,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-38 {
-        background-image: url("../img/icons/weather/2@2x.png");
+        background-image: url('../img/icons/weather/2@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-39 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12604,13 +12704,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-39 {
-        background-image: url("../img/icons/weather/2@2x.png");
+        background-image: url('../img/icons/weather/2@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-40 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12620,13 +12720,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-40 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-41 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12636,13 +12736,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-41 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-42 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12652,13 +12752,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-42 {
-        background-image: url("../img/icons/weather/9@2x.png");
+        background-image: url('../img/icons/weather/9@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-43 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12668,13 +12768,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-43 {
-        background-image: url("../img/icons/weather/5@2x.png");
+        background-image: url('../img/icons/weather/5@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-44 {
-    background-image: url("../img/icons/weather/27.png");
+    background-image: url('../img/icons/weather/27.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12684,13 +12784,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-44 {
-        background-image: url("../img/icons/weather/27@2x.png");
+        background-image: url('../img/icons/weather/27@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-45 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12700,13 +12800,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-45 {
-        background-image: url("../img/icons/weather/2@2x.png");
+        background-image: url('../img/icons/weather/2@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-46 {
-    background-image: url("../img/icons/weather/18.png");
+    background-image: url('../img/icons/weather/18.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12716,13 +12816,13 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-46 {
-        background-image: url("../img/icons/weather/18@2x.png");
+        background-image: url('../img/icons/weather/18@2x.png');
         background-size: 125px 125px;
     }
 }
 
 #weather-widget .weather-icon.wi-47 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -12732,7 +12832,7 @@ h6 small,
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     #weather-widget .weather-icon.wi-47 {
-        background-image: url("../img/icons/weather/2@2x.png");
+        background-image: url('../img/icons/weather/2@2x.png');
         background-size: 125px 125px;
     }
 }
@@ -12778,195 +12878,195 @@ h6 small,
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-0 {
-    background-image: url("../img/icons/weather/0.png");
+    background-image: url('../img/icons/weather/0.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-1 {
-    background-image: url("../img/icons/weather/1.png");
+    background-image: url('../img/icons/weather/1.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-2 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-3 {
-    background-image: url("../img/icons/weather/3.png");
+    background-image: url('../img/icons/weather/3.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-4 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-5 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-6 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-7 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-8 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-9 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-10 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-11 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-12 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-13 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-14 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-15 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-16 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-17 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-18 {
-    background-image: url("../img/icons/weather/18.png");
+    background-image: url('../img/icons/weather/18.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-19 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-20 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-21 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-22 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-23 {
-    background-image: url("../img/icons/weather/19.png");
+    background-image: url('../img/icons/weather/19.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-24 {
-    background-image: url("../img/icons/weather/24.png");
+    background-image: url('../img/icons/weather/24.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-25 {
-    background-image: url("../img/icons/weather/24.png");
+    background-image: url('../img/icons/weather/24.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-26 {
-    background-image: url("../img/icons/weather/26.png");
+    background-image: url('../img/icons/weather/26.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-27 {
-    background-image: url("../img/icons/weather/27.png");
+    background-image: url('../img/icons/weather/27.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-28 {
-    background-image: url("../img/icons/weather/28.png");
+    background-image: url('../img/icons/weather/28.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-29 {
-    background-image: url("../img/icons/weather/27.png");
+    background-image: url('../img/icons/weather/27.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-30 {
-    background-image: url("../img/icons/weather/28.png");
+    background-image: url('../img/icons/weather/28.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-31 {
-    background-image: url("../img/icons/weather/31.png");
+    background-image: url('../img/icons/weather/31.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-32 {
-    background-image: url("../img/icons/weather/32.png");
+    background-image: url('../img/icons/weather/32.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-33 {
-    background-image: url("../img/icons/weather/31.png");
+    background-image: url('../img/icons/weather/31.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-34 {
-    background-image: url("../img/icons/weather/32.png");
+    background-image: url('../img/icons/weather/32.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-35 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-36 {
-    background-image: url("../img/icons/weather/32.png");
+    background-image: url('../img/icons/weather/32.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-37 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-38 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-39 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-40 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-41 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-42 {
-    background-image: url("../img/icons/weather/9.png");
+    background-image: url('../img/icons/weather/9.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-43 {
-    background-image: url("../img/icons/weather/5.png");
+    background-image: url('../img/icons/weather/5.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-44 {
-    background-image: url("../img/icons/weather/27.png");
+    background-image: url('../img/icons/weather/27.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-45 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-46 {
-    background-image: url("../img/icons/weather/18.png");
+    background-image: url('../img/icons/weather/18.png');
 }
 
 #weather-widget .weather-list > span.weather-list-icon.wi-47 {
-    background-image: url("../img/icons/weather/2.png");
+    background-image: url('../img/icons/weather/2.png');
 }
 
 #weather-widget .weather-list > span > i {
@@ -12986,7 +13086,7 @@ h6 small,
     position: relative;
     height: 145px;
     width: 100%;
-    background-image: url("../img/headers/sm/4.png");
+    background-image: url('../img/headers/sm/4.png');
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -13079,21 +13179,21 @@ h6 small,
     padding: 2px;
 }
 
-.picture-list .pl-body [class*="col-"] {
+.picture-list .pl-body [class*='col-'] {
     padding: 2px;
 }
 
-.picture-list .pl-body [class*="col-"] > a {
+.picture-list .pl-body [class*='col-'] > a {
     display: block;
 }
 
-.picture-list .pl-body [class*="col-"] > a img {
+.picture-list .pl-body [class*='col-'] > a img {
     width: 100%;
 }
 
 .picture-list .pl-body:before,
 .picture-list .pl-body:after {
-    content: " ";
+    content: ' ';
     display: table;
 }
 
@@ -13103,7 +13203,7 @@ h6 small,
 
 .picture-list .pl-body:before,
 .picture-list .pl-body:after {
-    content: " ";
+    content: ' ';
     display: table;
 }
 
@@ -13119,11 +13219,11 @@ h6 small,
     padding: 0 15px 20px;
 }
 
-.go-social .card-body [class*="col-"] {
+.go-social .card-body [class*='col-'] {
     padding: 12px;
 }
 
-.go-social .card-body [class*="col-"] img {
+.go-social .card-body [class*='col-'] img {
     -webkit-transition: all;
     -o-transition: all;
     transition: all;
@@ -13134,7 +13234,7 @@ h6 small,
     backface-visibility: hidden;
 }
 
-.go-social .card-body [class*="col-"]:hover img {
+.go-social .card-body [class*='col-']:hover img {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
@@ -13226,7 +13326,7 @@ h6 small,
 .table > thead > tr > th {
     background-color: #fff;
     vertical-align: middle;
-    font-weight: 500;
+    font-weight: 700;
     color: #333;
     border-width: 1px;
     text-transform: uppercase;
@@ -13309,7 +13409,7 @@ h6 small,
 #todo {
     background: #ffc107;
     color: #fff;
-    font-family: "satisfy", cursive;
+    font-family: 'satisfy', cursive;
 }
 
 #todo .card-header {
@@ -13455,7 +13555,7 @@ h6 small,
     text-transform: uppercase;
 }
 
-.btn[class*="bgm-"]:not(.bgm-white) {
+.btn[class*='bgm-']:not(.bgm-white) {
     color: #fff;
 }
 
@@ -13711,10 +13811,6 @@ fieldset[disabled] .btn-inverse:active {
     position: fixed !important;
 }
 
-label {
-    font-weight: 500;
-}
-
 /*-----------------------------------
     Reset Focus and Active shadows
 ------------------------------------*/
@@ -13798,7 +13894,7 @@ input:focus {
 .checkbox .input-helper:after,
 .radio .input-helper:after {
     position: absolute;
-    content: "";
+    content: '';
 }
 
 .checkbox .input-helper:before,
@@ -13845,8 +13941,8 @@ input:focus {
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    content: "\f26b";
-    font-family: "Material-Design-Iconic-Font";
+    content: '\f26b';
+    font-family: 'Material-Design-Iconic-Font';
     position: absolute;
     font-size: 12px;
     left: 2px;
@@ -13995,7 +14091,7 @@ html:not(.ie9) .select.fg-line:before {
     left: 0;
     height: 2px;
     width: 100%;
-    content: "";
+    content: '';
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0);
@@ -14007,7 +14103,7 @@ html:not(.ie9) .select.fg-line:before {
     transition-duration: 300ms;
 }
 
-.fg-line:not([class*="has-"]):after {
+.fg-line:not([class*='has-']):after {
     background: #2196f3;
 }
 
@@ -14109,7 +14205,7 @@ html:not(.ie9) .select.fg-line:before {
 }
 
 .toggle-switch .ts-helper:before {
-    content: "";
+    content: '';
     position: absolute;
     top: -4px;
     left: -4px;
@@ -14118,10 +14214,10 @@ html:not(.ie9) .select.fg-line:before {
     background: #fafafa;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
     border-radius: 50%;
-    webkit-transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    webkit-transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toggle-switch:not(.disabled) .ts-helper:active:before {
@@ -14160,99 +14256,99 @@ html:not(.ie9) .select.fg-line:before {
     filter: alpha(opacity=60);
 }
 
-.toggle-switch[data-ts-color="red"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='red'] input:not(:disabled):checked + .ts-helper {
     background: rgba(244, 67, 54, 0.5);
 }
 
-.toggle-switch[data-ts-color="red"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='red'] input:not(:disabled):checked + .ts-helper:before {
     background: #f44336;
 }
 
-.toggle-switch[data-ts-color="red"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='red'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(244, 67, 54, 0.2);
 }
 
-.toggle-switch[data-ts-color="blue"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='blue'] input:not(:disabled):checked + .ts-helper {
     background: rgba(33, 150, 243, 0.5);
 }
 
-.toggle-switch[data-ts-color="blue"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='blue'] input:not(:disabled):checked + .ts-helper:before {
     background: #2196f3;
 }
 
-.toggle-switch[data-ts-color="blue"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='blue'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(33, 150, 243, 0.2);
 }
 
-.toggle-switch[data-ts-color="amber"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='amber'] input:not(:disabled):checked + .ts-helper {
     background: rgba(255, 193, 7, 0.5);
 }
 
-.toggle-switch[data-ts-color="amber"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='amber'] input:not(:disabled):checked + .ts-helper:before {
     background: #ffc107;
 }
 
-.toggle-switch[data-ts-color="amber"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='amber'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(255, 193, 7, 0.2);
 }
 
-.toggle-switch[data-ts-color="purple"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='purple'] input:not(:disabled):checked + .ts-helper {
     background: rgba(186, 104, 200, 0.5);
 }
 
-.toggle-switch[data-ts-color="purple"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='purple'] input:not(:disabled):checked + .ts-helper:before {
     background: #ba68c8;
 }
 
-.toggle-switch[data-ts-color="purple"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='purple'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(186, 104, 200, 0.2);
 }
 
-.toggle-switch[data-ts-color="pink"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='pink'] input:not(:disabled):checked + .ts-helper {
     background: rgba(233, 30, 99, 0.5);
 }
 
-.toggle-switch[data-ts-color="pink"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='pink'] input:not(:disabled):checked + .ts-helper:before {
     background: #e91e63;
 }
 
-.toggle-switch[data-ts-color="pink"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='pink'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(233, 30, 99, 0.2);
 }
 
-.toggle-switch[data-ts-color="lime"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='lime'] input:not(:disabled):checked + .ts-helper {
     background: rgba(205, 220, 57, 0.5);
 }
 
-.toggle-switch[data-ts-color="lime"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='lime'] input:not(:disabled):checked + .ts-helper:before {
     background: #cddc39;
 }
 
-.toggle-switch[data-ts-color="lime"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='lime'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(205, 220, 57, 0.2);
 }
 
-.toggle-switch[data-ts-color="cyan"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='cyan'] input:not(:disabled):checked + .ts-helper {
     background: rgba(0, 188, 212, 0.5);
 }
 
-.toggle-switch[data-ts-color="cyan"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='cyan'] input:not(:disabled):checked + .ts-helper:before {
     background: #00bcd4;
 }
 
-.toggle-switch[data-ts-color="cyan"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='cyan'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(0, 188, 212, 0.2);
 }
 
-.toggle-switch[data-ts-color="green"] input:not(:disabled):checked + .ts-helper {
+.toggle-switch[data-ts-color='green'] input:not(:disabled):checked + .ts-helper {
     background: rgba(76, 175, 80, 0.5);
 }
 
-.toggle-switch[data-ts-color="green"] input:not(:disabled):checked + .ts-helper:before {
+.toggle-switch[data-ts-color='green'] input:not(:disabled):checked + .ts-helper:before {
     background: #4caf50;
 }
 
-.toggle-switch[data-ts-color="green"] input:not(:disabled):checked + .ts-helper:active:before {
+.toggle-switch[data-ts-color='green'] input:not(:disabled):checked + .ts-helper:active:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(76, 175, 80, 0.2);
 }
 
@@ -14494,7 +14590,7 @@ html:not(.ie9) .select.fg-line:before {
 
 .lightbox [data-src]:before,
 .lightbox [data-src]:after {
-    content: " ";
+    content: ' ';
     display: table;
 }
 
@@ -14504,7 +14600,7 @@ html:not(.ie9) .select.fg-line:before {
 
 .lightbox [data-src]:before,
 .lightbox [data-src]:after {
-    content: " ";
+    content: ' ';
     display: table;
 }
 
@@ -14621,7 +14717,7 @@ html:not(.ie9) .select.fg-line:before {
     }
 
     .modal:before {
-        content: "";
+        content: '';
         height: 100%;
         width: 1px;
         display: inline-block;
@@ -14702,43 +14798,43 @@ html:not(.ie9) .select.fg-line:before {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.modal[data-modal-color="blue"] .modal-content {
+.modal[data-modal-color='blue'] .modal-content {
     background: #2196f3;
 }
 
-.modal[data-modal-color="cyan"] .modal-content {
+.modal[data-modal-color='cyan'] .modal-content {
     background: #00bcd4;
 }
 
-.modal[data-modal-color="green"] .modal-content {
+.modal[data-modal-color='green'] .modal-content {
     background: #4caf50;
 }
 
-.modal[data-modal-color="lightgreen"] .modal-content {
+.modal[data-modal-color='lightgreen'] .modal-content {
     background: #8bc34a;
 }
 
-.modal[data-modal-color="lightblue"] .modal-content {
+.modal[data-modal-color='lightblue'] .modal-content {
     background: #03a9f4;
 }
 
-.modal[data-modal-color="amber"] .modal-content {
+.modal[data-modal-color='amber'] .modal-content {
     background: #ffc107;
 }
 
-.modal[data-modal-color="teal"] .modal-content {
+.modal[data-modal-color='teal'] .modal-content {
     background: #009688;
 }
 
-.modal[data-modal-color="orange"] .modal-content {
+.modal[data-modal-color='orange'] .modal-content {
     background: #ff9800;
 }
 
-.modal[data-modal-color="bluegray"] .modal-content {
+.modal[data-modal-color='bluegray'] .modal-content {
     background: #607d8b;
 }
 
-.modal[data-modal-color="red"] .modal-content {
+.modal[data-modal-color='red'] .modal-content {
     background: #f44336;
 }
 
@@ -14774,7 +14870,7 @@ html:not(.ie9) .select.fg-line:before {
     left: 0;
     height: 2px;
     width: 100%;
-    content: "";
+    content: '';
     -webkit-transition: all;
     -o-transition: all;
     transition: all;
@@ -14798,7 +14894,7 @@ html:not(.ie9) .select.fg-line:before {
 
 .panel-collapse .panel-heading:before,
 .panel-collapse .panel-heading:after {
-    font-family: "Material-Design-Iconic-Font";
+    font-family: 'Material-Design-Iconic-Font';
     font-size: 17px;
     position: absolute;
     left: 0;
@@ -14814,7 +14910,7 @@ html:not(.ie9) .select.fg-line:before {
 }
 
 .panel-collapse .panel-heading:before {
-    content: "\f278";
+    content: '\f278';
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
@@ -14826,7 +14922,7 @@ html:not(.ie9) .select.fg-line:before {
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    content: "\f273";
+    content: '\f273';
 }
 
 .panel-collapse .panel-heading.active .panel-title > a:after {
@@ -14856,31 +14952,59 @@ html:not(.ie9) .select.fg-line:before {
     padding-right: 5px;
 }
 
-.panel-group:not([data-collapse-color]) .panel-collapse .panel-heading.active .panel-title > a:after {
+.panel-group:not([data-collapse-color])
+    .panel-collapse
+    .panel-heading.active
+    .panel-title
+    > a:after {
     background: #2196f3;
 }
 
-.panel-group[data-collapse-color="red"] .panel-collapse .panel-heading.active .panel-title > a:after {
+.panel-group[data-collapse-color='red']
+    .panel-collapse
+    .panel-heading.active
+    .panel-title
+    > a:after {
     background: #f44336;
 }
 
-.panel-group[data-collapse-color="green"] .panel-collapse .panel-heading.active .panel-title > a:after {
+.panel-group[data-collapse-color='green']
+    .panel-collapse
+    .panel-heading.active
+    .panel-title
+    > a:after {
     background: #4caf50;
 }
 
-.panel-group[data-collapse-color="amber"] .panel-collapse .panel-heading.active .panel-title > a:after {
+.panel-group[data-collapse-color='amber']
+    .panel-collapse
+    .panel-heading.active
+    .panel-title
+    > a:after {
     background: #ffc107;
 }
 
-.panel-group[data-collapse-color="teal"] .panel-collapse .panel-heading.active .panel-title > a:after {
+.panel-group[data-collapse-color='teal']
+    .panel-collapse
+    .panel-heading.active
+    .panel-title
+    > a:after {
     background: #009688;
 }
 
-.panel-group[data-collapse-color="black"] .panel-collapse .panel-heading.active .panel-title > a:after {
+.panel-group[data-collapse-color='black']
+    .panel-collapse
+    .panel-heading.active
+    .panel-title
+    > a:after {
     background: #000000;
 }
 
-.panel-group[data-collapse-color="cyan"] .panel-collapse .panel-heading.active .panel-title > a:after {
+.panel-group[data-collapse-color='cyan']
+    .panel-collapse
+    .panel-heading.active
+    .panel-title
+    > a:after {
     background: #00bcd4;
 }
 
@@ -15223,7 +15347,7 @@ html:not(.ie9) .select.fg-line:before {
 
 .login-content:before {
     display: inline-block;
-    content: "";
+    content: '';
     height: 100vh;
     width: 1px;
     vertical-align: middle;
@@ -15325,15 +15449,15 @@ html:not(.ie9) .select.fg-line:before {
     width: 100%;
 }
 
-.lcb-navigation a[data-ma-block="#l-register"]:hover {
+.lcb-navigation a[data-ma-block='#l-register']:hover {
     width: 95px;
 }
 
-.lcb-navigation a[data-ma-block="#l-forget-password"]:hover {
+.lcb-navigation a[data-ma-block='#l-forget-password']:hover {
     width: 147px;
 }
 
-.lcb-navigation a[data-ma-block="#l-login"]:hover {
+.lcb-navigation a[data-ma-block='#l-login']:hover {
     width: 85px;
 }
 
@@ -15761,7 +15885,7 @@ html:not(.ie9) .select.fg-line:before {
     height: auto;
 }
 .select2-container--default .select2-selection--single:before {
-    content: "";
+    content: '';
     position: absolute;
     pointer-events: none;
     z-index: 1;
@@ -15813,7 +15937,7 @@ html:not(.ie9) .select.fg-line:before {
 }
 .select2-container--default .selection:after,
 .select2-container--default .selection:before {
-    content: "";
+    content: '';
     position: absolute;
     height: 2px;
     width: 0;
@@ -15865,15 +15989,15 @@ html:not(.ie9) .select.fg-line:before {
     background-color: #f9f9f9;
     color: #16181b;
 }
-.select2-dropdown .select2-results__option[aria-selected="true"] {
+.select2-dropdown .select2-results__option[aria-selected='true'] {
     position: relative;
     padding-right: 1.5rem;
     background-color: #f9f9f9;
     color: #16181b;
 }
-.select2-dropdown .select2-results__option[aria-selected="true"]:before {
+.select2-dropdown .select2-results__option[aria-selected='true']:before {
     font-family: Material-Design-Iconic-Font;
-    content: "\f26b";
+    content: '\f26b';
     position: absolute;
     top: 0.45rem;
     right: 1.5rem;
@@ -15888,7 +16012,7 @@ html:not(.ie9) .select.fg-line:before {
 }
 .select2-dropdown .select2-search--dropdown:before {
     font-family: Material-Design-Iconic-Font;
-    content: "\f1c3";
+    content: '\f1c3';
     font-size: 1.5rem;
     color: #747a80;
     position: absolute;

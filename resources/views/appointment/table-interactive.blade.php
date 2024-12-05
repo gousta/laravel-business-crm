@@ -67,7 +67,7 @@
             line-height: 32px;
             height: 32px;
             width: 46px;
-            background: #32c787;
+            background: var(--crm-color);
             color: #fff;
             font-weight: 600;
             font-size: 14px;
@@ -84,11 +84,11 @@
         }
 
         .tooltip-input:focus {
-            border: 1px solid #32c787;
+            border: 1px solid var(--crm-color);
             border-radius: 0 4px 4px 0;
         }
 
-        .tooltip-input:focus + .base-tooltip {
+        .tooltip-input:focus+.base-tooltip {
             margin-bottom: 0;
             visibility: visible;
         }
@@ -120,31 +120,31 @@
         Δεν υπάρχουν χρήστες που να εργάζονται {{$date_formatted}}
     </div>
 @else
-<div class="table-wrap">
-<table class="table table-bordered table-condensed">
-    <thead>
-        <tr>
-            <th>&nbsp;</th>
-            @foreach($users as $user)
-            <th>{{ $user->name }}</th>
-            @endforeach
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($hours as $hour)
-        <tr>
-            <td>{{ $hour }}</td>
-            @foreach($users as $user)
-            <td class="slot-wrapper" id="{{ str_replace(':', '', $user->id.$date.$hour) }}">
-                <input type="text" class="slot-input tooltip-input" data-user-id="{{$user->id}}" data-date="{{$date}}" data-hour="{{$hour}}" />
-                <div class="base-tooltip slot-tooltip">{{$hour}}</div>
-            </td>
-            @endforeach
-        </tr>
-        @endforeach
-    </tbody>
-</table>
-</div>
+    <div class="table-wrap">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    @foreach($users as $user)
+                        <th>{{ $user->name }}</th>
+                    @endforeach
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($hours as $hour)
+                    <tr>
+                        <td>{{ $hour }}</td>
+                        @foreach($users as $user)
+                            <td class="slot-wrapper" id="{{ str_replace(':', '', $user->id . $date . $hour) }}">
+                                <input type="text" class="slot-input tooltip-input" data-user-id="{{$user->id}}" data-date="{{$date}}" data-hour="{{$hour}}" />
+                                <div class="base-tooltip slot-tooltip">{{$hour}}</div>
+                            </td>
+                        @endforeach
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endif
 
 @push('scripts')
@@ -158,7 +158,7 @@
         async function loadAppointments() {
             const url = "{{ route('async.appointment.index', ['date' => $date]) }}";
 
-            $.ajax({ method: "GET", url }).done(function({ appointments }) {
+            $.ajax({ method: "GET", url }).done(function ({ appointments }) {
                 for (const appointment of appointments) {
                     const slotId = getSlotId(appointment.user_id, appointment.date, appointment.hour);
 
@@ -172,18 +172,18 @@
             $(`.slot-input`).attr('disabled', true);
             const url = "{{ route('async.appointment.any.update') }}";
             const data = { user_id, description, date, hour };
-            $.ajax({ method: "PUT", url, data }).done(function() {
+            $.ajax({ method: "PUT", url, data }).done(function () {
                 notify('Αποθηκεύτηκε', 'inverse');
                 $(`.slot-input`).attr('disabled', false);
                 loadAppointments();
             });
         }
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             loadAppointments();
             // setInterval(loadAppointments, 60000);
 
-            $(document).on('blur', '.slot-input', async function(e) {
+            $(document).on('blur', '.slot-input', async function (e) {
                 e.preventDefault();
 
                 const { userId, date, hour } = $(this).data();
@@ -196,7 +196,7 @@
                 }
             });
 
-            $(document).on('keydown', '.slot-input', function(e) {
+            $(document).on('keydown', '.slot-input', function (e) {
                 if (e.key === 'Enter') {
                     $(this).blur();
                 }

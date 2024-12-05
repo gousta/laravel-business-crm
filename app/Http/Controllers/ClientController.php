@@ -7,10 +7,21 @@ use App\Http\Requests\Labor\CreateRequest as LaborCreateRequest;
 use App\Models\Catalog;
 use App\Models\Client;
 use App\Models\Labor;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+    private $vehicleKeys = [
+        'vehicle_brand',
+        'vehicle_model',
+        'vehicle_license_plate',
+        'vehicle_production_year',
+        'vehicle_vin',
+        'vehicle_engine_displacement_cc',
+        'vehicle_engine_code',
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -49,10 +60,23 @@ class ClientController extends Controller
     public function store(CreateRequest $request)
     {
         $request->merge(['role' => 'client']);
-        $client = Client::create($request->all());
 
-        if (empty($client->id)) {
-            dump($client);
+        $vehicleData = null;
+        $clientData = $request->all();
+
+        if (config('crm.mode') === 'mechanic') {
+            $vehicleData = collect($request->only($this->vehicleKeys))->mapWithKeys(function ($item, $key) {
+                return [str_replace('vehicle_', '', $key) => $item];
+            })->toArray();
+            $clientData = $request->except($this->vehicleKeys);
+        }
+
+        $client = Client::create($clientData);
+
+        if ($vehicleData) {
+            $vehicleData['client_id'] = $client->id;
+            // force one on one relationship to vehicle model
+            Vehicle::updateOrCreate(['client_id' => $client->id], $vehicleData);
         }
 
         return redirect()->route('client.show', $client->id)->with('status', $this->ok);
@@ -70,12 +94,12 @@ class ClientController extends Controller
         $client = Client::findOrFail($id);
 
         return view('client.show', [
-            'client'     => $client,
-            'catalog'    => Catalog::popular()->get(),
+            'client' => $client,
+            'catalog' => Catalog::popular()->get(),
             'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
-            'labor'      => [
+            'labor' => [
                 'today' => $client->labor()->with('item')->where('date', '=', date('Y-m-d'))->get(),
-                'old'   => $client->labor()->with('item')->where('date', '<', date('Y-m-d'))->orderBy('date', 'desc')->get(),
+                'old' => $client->labor()->with('item')->where('date', '<', date('Y-m-d'))->orderBy('date', 'desc')->get(),
             ],
         ]);
     }
@@ -107,7 +131,24 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
         $client = Client::findOrFail($id);
-        $client->update($request->all());
+
+        $vehicleData = null;
+        $clientData = $request->all();
+
+        if (config('crm.mode') === 'mechanic') {
+            $vehicleData = collect($request->only($this->vehicleKeys))->mapWithKeys(function ($item, $key) {
+                return [str_replace('vehicle_', '', $key) => $item];
+            })->toArray();
+            $clientData = $request->except($this->vehicleKeys);
+        }
+
+        $client->update($clientData);
+
+        if ($vehicleData) {
+            $vehicleData['client_id'] = $client->id;
+            // force one on one relationship to vehicle model
+            $client->vehicle()->updateOrCreate(['client_id' => $client->id], $vehicleData);
+        }
 
         return redirect()->route('client.edit', $client->id)->with('status', $this->ok);
     }
@@ -147,7 +188,7 @@ class ClientController extends Controller
 
         return view('client.labor.edit', [
             'client' => $client,
-            'labor'  => $labor,
+            'labor' => $labor,
         ]);
     }
 

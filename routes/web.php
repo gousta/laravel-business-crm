@@ -48,4 +48,60 @@ Route::group([
     Route::get('password/reset/{token?}', ['as' => 'auth.password.reset', 'uses' => 'Auth\ForgotPasswordController@showResetForm']);
     Route::post('password/email', ['as' => 'auth.password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
     Route::post('password/reset', ['as' => 'auth.password.reset', 'uses' => 'Auth\ForgotPasswordController@reset']);
+
+
+    Route::get('/manifest.json', function () {
+        return response()->json([
+            "name" => "CRM",
+            "icons" => [
+                [
+                    "src" => "web_hi_res_512.png",
+                    "sizes" => "36x36",
+                    "type" => "image/png",
+                    "density" => 0.75
+                ],
+                [
+                    "src" => "web_hi_res_512.png",
+                    "sizes" => "48x48",
+                    "type" => "image/png",
+                    "density" => 1
+                ],
+                [
+                    "src" => "web_hi_res_512.png",
+                    "sizes" => "72x72",
+                    "type" => "image/png",
+                    "density" => 1.5
+                ],
+                [
+                    "src" => "web_hi_res_512.png",
+                    "sizes" => "96x96",
+                    "type" => "image/png",
+                    "density" => 2
+                ],
+                [
+                    "src" => "web_hi_res_512.png",
+                    "sizes" => "144x144",
+                    "type" => "image/png",
+                    "density" => 3
+                ],
+                [
+                    "src" => "web_hi_res_512.png",
+                    "sizes" => "192x192",
+                    "type" => "image/png",
+                    "density" => 4
+                ],
+                [
+                    "src" => "web_hi_res_512.png",
+                    "sizes" => "512x512",
+                    "type" => "image/png",
+                    "density" => 4
+                ]
+            ],
+            "start_url" => "/",
+            "display" => "standalone",
+            "background_color" => config('crm.color'),
+            "description" => "CRM",
+            "orientation" => "any"
+        ]);
+    });
 });

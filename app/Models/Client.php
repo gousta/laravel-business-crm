@@ -19,6 +19,7 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
+        'client_id',
         'name',
         'surname',
         'email',
@@ -26,6 +27,7 @@ class Client extends Model
         'gender',
         'notes',
         'birthday',
+        'vat',
     ];
 
     /**
@@ -37,11 +39,22 @@ class Client extends Model
 
     ];
 
+    /**
+     * Relationships
+     */
     public function labor()
     {
         return $this->hasMany('App\Models\Labor', 'client_id', 'id');
     }
 
+    public function vehicle()
+    {
+        return $this->hasOne('App\Models\Vehicle', 'client_id', 'id');
+    }
+
+    /**
+     * Getters and Setters
+     */
     public function getNameAttribute($v)
     {
         return !empty($v) ? $v : null;
@@ -110,9 +123,12 @@ class Client extends Model
     public function getGenderPrintAttribute($v)
     {
         switch ($this->gender) {
-            case 'male':   return 'Άνδρας'; break;
-            case 'female': return 'Γυναίκα'; break;
-            default:       return '-'; break;
+            case 'male':
+                return 'Άνδρας';
+            case 'female':
+                return 'Γυναίκα';
+            default:
+                return '-';
         }
     }
 }

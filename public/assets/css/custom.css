@@ -1,5 +1,28 @@
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    margin: 0;
+}
+
+h1.with-hr,
+h2.with-hr,
+h3.with-hr,
+h4.with-hr,
+h5.with-hr,
+h6.with-hr {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
 }
 
 #main {
@@ -21,7 +44,7 @@ body.modal-open {
     color: #9e9e9e;
 }
 .catalog-item.catalog-item-selected {
-    background: #32c787;
+    background: var(--crm-color);
     color: #fff;
     font-weight: 600;
 }
@@ -98,10 +121,11 @@ body.modal-open {
 
 .btn:not(.ccta) {
     height: 40px;
-    line-height: 28px;
+    font-size: 13px;
+    font-weight: 700;
     border-radius: 4px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     vertical-align: middle;
 }
 
@@ -375,7 +399,7 @@ body.modal-open {
     background: rgba(55, 71, 76, 0.7);
 }
 
-table.dataTable thead [class*="sorting"] {
+table.dataTable thead [class*='sorting'] {
     background-position: center right -4px;
 }
 
@@ -729,6 +753,20 @@ table.dataTable thead [class*="sorting"] {
     }
     .h-inner {
         padding: 10px 5px;
+        display: block;
+    }
+    .h-inner > li.pull-left {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .h-inner > li.pull-right {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .h-inner > li:not(.pull-left):not(.pull-right) {
+        padding-top: 36px;
     }
 }
 
@@ -838,19 +876,15 @@ table.dataTable thead [class*="sorting"] {
 }
 
 .bgm-crm {
-    background-color: #32c787 !important;
+    background-color: var(--crm-color) !important;
 }
 
 .c-crm {
-    color: #32c787 !important;
+    color: var(--crm-color) !important;
 }
 
 .bgm-crm-dark {
-    background-color: #229161 !important;
-}
-
-.c-crm-dark {
-    color: #229161 !important;
+    background-color: color-mix(in srgb, var(--crm-color) 70%, black) !important;
 }
 
 .contacts__btn,

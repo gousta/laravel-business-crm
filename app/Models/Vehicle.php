@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ScheduleExclusion extends Model
+class Vehicle extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'schedule_exclusions';
+    protected $table = 'vehicles';
 
     /**
      * The attributes that are mass assignable.
@@ -19,8 +19,14 @@ class ScheduleExclusion extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
-        'date',
+        'client_id',
+        'license_plate',
+        'production_year',
+        'engine_code',
+        'engine_displacement_cc',
+        'vin',
+        'brand',
+        'model',
     ];
 
     /**
@@ -34,8 +40,8 @@ class ScheduleExclusion extends Model
 
     public $timestamps = false;
 
-    public function user()
+    public function client()
     {
-        return $this->hasOne('App\Models\User', 'id', 'user_id');
+        return $this->hasOne('App\Models\Client', 'id', 'client_id');
     }
 }

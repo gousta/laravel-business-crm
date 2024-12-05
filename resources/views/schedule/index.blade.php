@@ -1,4 +1,4 @@
-@extends('layouts.app', ['pageTitle' => 'Πρόγραμμα Εργασίας' ])
+@extends('layouts.app', ['pageTitle' => 'ΠΡΟΓΡΑΜΜΑ ΕΡΓΑΣΙΑΣ'])
 
 @push('vendorstyles')
 
@@ -6,30 +6,42 @@
 
 @push('styles')
     <style>
-
         .date-input {
-            display:none;
-            visibility:hidden;
+            display: none;
+            visibility: hidden;
         }
 
-        .disabled:hover > a {
+        .disabled:hover>a {
             background: transparent !important;
         }
 
-        .disabled > a > .him-icon  {
+        .disabled>a>.him-icon {
             color: #25ac72;
         }
 
-        .disabled a:hover  {
+        .disabled a:hover {
             cursor: default;
         }
 
         @media (max-width: 992px) {
+            #main {
+                padding-top: 110px;
+            }
+
             #header .calendar .hi-logo {
                 float: none;
             }
 
-            .hi-menu > li.arrow-button  {
+            #header .calendar {
+                padding-top: 46px;
+            }
+
+            #header .calendar .hi-menu .hi-logo {
+                width: calc(100vw - 90px);
+                /* 90px = 2x 45px (arrow buttons) */
+            }
+
+            #header .hi-menu>li.arrow-button {
                 min-width: auto;
                 width: 35px;
             }
@@ -41,8 +53,8 @@
     <li class="calendar">
         <ul class="hi-menu">
 
-            <li class="arrow-button {{$date_prev_link ? '':'disabled'}}">
-                <a href="{{$date_prev_link ? $date_prev_link:'javascript:;'}}" {{$date_prev_link ? '':'disabled'}}><i class="him-icon zmdi zmdi-arrow-left"></i></a>
+            <li class="arrow-button {{$date_prev_link ? '' : 'disabled'}}">
+                <a href="{{$date_prev_link ? $date_prev_link : 'javascript:;'}}" {{$date_prev_link ? '' : 'disabled'}}><i class="him-icon zmdi zmdi-arrow-left"></i></a>
             </li>
             <li class="hi-logo disabled">
                 <a href="javascript:;" class="date-selector">{{$date_week_formatted}}</a>
@@ -56,13 +68,13 @@
 
 
 @section('content')
-    {{--@include('schedule.shared.month-graph')--}}
-    @include('schedule.shared.calendar')
+{{--@include('schedule.shared.month-graph')--}}
+@include('schedule.shared.calendar')
 @stop
 
 @push('scripts')
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             //
         });
     </script>

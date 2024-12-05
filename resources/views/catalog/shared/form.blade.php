@@ -12,12 +12,12 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-        <div class="f-500">ΚΑΤΗΓΟΡΙΑ</div>
+        <label for="cat">ΚΑΤΗΓΟΡΙΑ</label>
         <div class="m-b-15">
             @foreach($categories as $cat)
                 <div class="category-radio radio clearfix m-t-10">
                     <label>
-                        <input required="required" type="radio" name="cat" value="{{ $cat }}" {{ isset($item['cat']) && $item['cat'] === $cat ? 'checked="checked"':'' }}>
+                        <input required="required" type="radio" name="cat" value="{{ $cat }}" {{ isset($item['cat']) && $item['cat'] === $cat ? 'checked="checked"' : '' }}>
                         <i class="input-helper"></i>
                         {{ $cat }}
                     </label>
@@ -30,13 +30,13 @@
                 <a href="#" class="cancel-new-category-btn hidden">Άκυρωση</a>
             </div>
         </div>
-        <div class="f-500">ΜΑΡΚΑ</div>
+        <label for="brand">ΜΑΡΚΑ</label>
         <div class="m-b-15">
             @foreach($brands as $brand)
                 @if(!empty($brand))
                     <div class="brand-radio radio clearfix m-t-10">
                         <label>
-                            <input type="radio" name="brand" value="{{ $brand }}" {{ isset($item['brand']) && $item['brand'] === $brand ? 'checked="checked"':'' }}>
+                            <input type="radio" name="brand" value="{{ $brand }}" {{ isset($item['brand']) && $item['brand'] === $brand ? 'checked="checked"' : '' }}>
                             <i class="input-helper"></i>
                             {{ $brand }}
                         </label>
@@ -61,11 +61,11 @@
 
 @push('scripts')
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
 
 
             // CATEGORY
-            $(document).on('click', '.new-category-btn', function(e) {
+            $(document).on('click', '.new-category-btn', function (e) {
                 e.preventDefault();
 
                 $('.new-category .new-category-input').attr('name', 'cat');
@@ -76,7 +76,7 @@
                 $('.category-radio label input').attr('disabled', true);
             });
 
-            $(document).on('click', '.cancel-new-category-btn', function(e) {
+            $(document).on('click', '.cancel-new-category-btn', function (e) {
                 e.preventDefault();
 
                 $('.new-category .new-category-input').attr('name', '');
@@ -87,13 +87,13 @@
                 $('.category-radio label input').attr('disabled', false);
             });
 
-            $(document).on('input', '.new-category-input', function(e) {
+            $(document).on('input', '.new-category-input', function (e) {
                 this.value = this.value.toUpperCase();
             });
 
 
             // BRAND
-            $(document).on('click', '.new-brand-btn', function(e) {
+            $(document).on('click', '.new-brand-btn', function (e) {
                 e.preventDefault();
 
                 $('.new-brand .new-brand-input').attr('name', 'brand');
@@ -104,7 +104,7 @@
                 $('.brand-radio label input').attr('disabled', true);
             });
 
-            $(document).on('click', '.cancel-new-brand-btn', function(e) {
+            $(document).on('click', '.cancel-new-brand-btn', function (e) {
                 e.preventDefault();
 
                 $('.new-brand .new-brand-input').attr('name', '');

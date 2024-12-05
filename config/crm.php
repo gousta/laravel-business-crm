@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'color' => env('CRM_COLOR', '#222'),
+    'mode' => env('CRM_MODE', 'hairsalon'),
     'date_format' => '%A %d %b %Y',
     'date_format_short' => '%a %d/%m/%y',
     'role_default' => 'employee',
@@ -11,7 +13,7 @@ return [
         ],
         'employee' => [
             'label' => 'ΥΠΑΛΛΗΛΟΣ',
-            'access' => ['labor', 'client', 'catalog', 'expense', 'vat', 'appointments'],
+            'access' => ['labor', 'vehicle', 'client', 'catalog', 'expense', 'vat', 'appointments'],
         ],
     ],
     'appointment_hours' => [

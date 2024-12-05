@@ -8,9 +8,9 @@
             </div>
         </li> --}}
 
-        @stack('backbutton')
+        <li class="pull-left" style="display:flex">
+            @stack('backbutton')
 
-        <li class="hi-logo">
             <a class="hi-logo-text">{{ $pageTitle or '-' }}</a>
         </li>
 
@@ -26,17 +26,18 @@
                         <li>
                             <h6 class="dropdown-header">ΛΕΙΤΟΥΡΓΙΑ</h6>
                         </li>
+                        <li class="divider"></li>
                         <li>
-                            <a href="{{ route('client.index') }}"><i class="him-icon zmdi zmdi-account"></i> Πελάτες</a>
+                            <a href="{{ route('client.index') }}"><i class="him-icon zmdi zmdi-account"></i> ΠΕΛΑΤΕΣ</a>
                         </li>
                         <li>
-                            <a href="{{ route('appointment.index') }}"><i class="him-icon zmdi zmdi-view-week"></i> Ραντεβού</a>
+                            <a href="{{ route('appointment.index') }}"><i class="him-icon zmdi zmdi-view-week"></i> ΡΑΝΤΕΒΟΥ</a>
                         </li>
                         <li>
-                            <a href="{{ route('expense.index') }}"><i class="him-icon zmdi zmdi-money"></i> Εξοδολόγιο</a>
+                            <a href="{{ route('expense.index') }}"><i class="him-icon zmdi zmdi-money"></i> ΕΞΟΔΟΛΟΓΙΟ</a>
                         </li>
                         <li>
-                            <a href="{{ route('catalog.index') }}"><i class="him-icon zmdi zmdi-view-headline"></i> Κατάλογος / Προιόντα</a>
+                            <a href="{{ route('catalog.index') }}"><i class="him-icon zmdi zmdi-view-headline"></i> ΚΑΤΑΛΟΓΟΣ / ΠΡΟΙΟΝΤΑ</a>
                         </li>
 
                         @if (Auth::user()->role === 'admin')
@@ -51,22 +52,22 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="{{ route('user.index') }}"><i class="him-icon zmdi zmdi-accounts-list-alt"></i> Χρήστες Συστήματος</a>
+                                <a href="{{ route('user.index') }}"><i class="him-icon zmdi zmdi-accounts-list-alt"></i> ΧΡΗΣΤΕΣ ΣΥΣΤΗΜΑΤΟΣ</a>
                             </li>
                             <li>
-                                <a href="{{ route('schedule.index') }}"><i class="him-icon zmdi zmdi-calendar-alt"></i> Πρόγραμμα Εργασίας</a>
+                                <a href="{{ route('schedule.index') }}"><i class="him-icon zmdi zmdi-calendar-alt"></i> ΠΡΟΓΡΑΜΜΑ ΕΡΓΑΣΙΑΣ</a>
                             </li>
                             <li>
-                                <a href="{{ route('stat.index') }}"><i class="him-icon zmdi zmdi-equalizer"></i> Σύνοψη</a>
+                                <a href="{{ route('stat.index') }}"><i class="him-icon zmdi zmdi-equalizer"></i> ΣΥΝΟΨΗ</a>
                             </li>
                         @endif
 
                         <li>
-                            <h6 class="dropdown-header">ΠΡΟΦΙΛ</h6>
+                            <h6 class="dropdown-header">ΣΥΝΔΕΔΕΜΕΝΟΣ ΧΡΗΣΤΗΣ</h6>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{{ route('auth.logout') }}"><i class="him-icon zmdi zmdi-arrow-right"></i> Αποσύνδεση</a>
+                            <a href="{{ route('auth.logout') }}"><i class="him-icon zmdi zmdi-arrow-right"></i> ΑΠΟΣΥΝΔΕΣΗ</a>
                         </li>
                     </ul>
                 </li>
