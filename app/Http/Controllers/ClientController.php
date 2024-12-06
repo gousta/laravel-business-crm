@@ -153,16 +153,20 @@ class ClientController extends Controller
         return redirect()->route('client.edit', $client->id)->with('status', $this->ok);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function delete(Request $request, $id)
+    {
+        $client = Client::findOrFail($id);
+
+        return view('client.delete', [
+            'client' => $client,
+        ]);
+    }
     public function destroy($id)
     {
-        //
+        $client = Client::findOrFail($id);
+        $client->delete();
+
+        return redirect()->route('client.index')->with('status', $this->deleted);
     }
 
     public function laborStore(LaborCreateRequest $request, $id)

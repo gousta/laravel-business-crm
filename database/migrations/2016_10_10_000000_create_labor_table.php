@@ -19,10 +19,10 @@ class CreateLaborTable extends Migration
             $table->date('date');
 
             $table->integer('client_id')->unsigned();
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
             $table->integer('catalog_id')->unsigned();
-            $table->foreign('catalog_id')->references('id')->on('catalog');
+            $table->foreign('catalog_id')->references('id')->on('catalog')->onDelete('cascade');
 
             $table->smallInteger('price');
 

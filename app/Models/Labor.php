@@ -210,25 +210,18 @@ class Labor extends Model
         switch ($this->dow) {
             case '1':
                 return 'Κυριακή';
-                break;
             case '2':
                 return 'Δευτέρα';
-                break;
             case '3':
                 return 'Τρίτη';
-                break;
             case '4':
                 return 'Τετάρτη';
-                break;
             case '5':
                 return 'Πέμπτη';
-                break;
             case '6':
                 return 'Παρασκευή';
-                break;
             case '7':
                 return 'Σάββατο';
-                break;
         }
     }
 }

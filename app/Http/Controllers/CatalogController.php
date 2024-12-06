@@ -32,7 +32,7 @@ class CatalogController extends Controller
         $item = $request->old();
 
         return view('catalog.create', [
-            'item'       => $item,
+            'item' => $item,
             'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
             'brands' => Catalog::orderBy('brand', 'desc')->distinct('brand')->pluck('brand'),
         ]);
@@ -68,7 +68,7 @@ class CatalogController extends Controller
         $item = Catalog::findOrFail($id);
 
         return view('catalog.show', [
-            'item'       => $item,
+            'item' => $item,
             'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
             'brands' => Catalog::orderBy('brand', 'desc')->distinct('brand')->pluck('brand'),
         ]);
@@ -86,7 +86,7 @@ class CatalogController extends Controller
         $item = Catalog::findOrFail($id);
 
         return view('catalog.edit', [
-            'item'       => $item,
+            'item' => $item,
             'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
             'brands' => Catalog::orderBy('brand', 'desc')->distinct('brand')->pluck('brand'),
         ]);
@@ -108,15 +108,20 @@ class CatalogController extends Controller
         return redirect()->route('catalog.edit', $item->id)->with('status', $this->ok);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function delete(Request $request, $id)
+    {
+        $item = Catalog::findOrFail($id);
+
+        return view('catalog.delete', [
+            'item' => $item,
+        ]);
+    }
+
     public function destroy($id)
     {
-        //
+        $item = Catalog::findOrFail($id);
+        $item->delete();
+
+        return redirect()->route('catalog.index')->with('status', $this->deleted);
     }
 }

@@ -54,10 +54,21 @@
 </div>
 
 
-<div class="text-right">
-    <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
-</div>
+<div class="row">
+    <div class="col-xs-6">
 
+        @if(Auth::user()->role === 'admin' && isset($item, $item->id))
+            <a href="{{ route('catalog.delete', ['id' => $item->id]) }}" class="btn bgm-red">
+                ΑΙΤΗΜΑ ΔΙΑΓΡΑΦΗΣ
+            </a>
+        @endif
+    </div>
+    <div class="col-xs-6">
+        <div class="text-right">
+            <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
+        </div>
+    </div>
+</div>
 
 @push('scripts')
     <script type="text/javascript">

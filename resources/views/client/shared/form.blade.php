@@ -157,8 +157,20 @@
     @endif
 </div>
 
-<div class="text-right">
-    <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
+<div class="row">
+    <div class="col-xs-6">
+
+        @if(Auth::user()->role === 'admin' && isset($client, $client->id))
+            <a href="{{ route('client.delete', ['id' => $client->id]) }}" class="btn bgm-red">
+                ΑΙΤΗΜΑ ΔΙΑΓΡΑΦΗΣ
+            </a>
+        @endif
+    </div>
+    <div class="col-xs-6">
+        <div class="text-right">
+            <button class="btn bgm-crm">ΑΠΟΘΗΚΕΥΣΗ</button>
+        </div>
+    </div>
 </div>
 
 @push('scripts')

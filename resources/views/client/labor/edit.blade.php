@@ -1,4 +1,4 @@
-@extends('layouts.app', ['pageTitle' => 'ΕΠΕΞΕΡΓΑΣΙΑ ΕΡΓΑΣΙΑΣ'])
+@extends('layouts.app', ['pageTitle' => 'ΕΠΕΞΕΡΓΑΣΙΑ'])
 
 @push('backbutton')
     <ul class="hi-menu">

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /**
  * Protected Routing.
  */
@@ -11,6 +13,8 @@ Route::group([
     Route::get('/labor', 'LaborController@index')->name('labor.index');
 
     Route::resource('catalog', 'CatalogController');
+    Route::get('/catalog/{id}/delete', 'CatalogController@delete')->name('catalog.delete');
+
     Route::resource('expense', 'ExpenseController');
     Route::resource('vat', 'VatController');
     Route::resource('user', 'UserController');
@@ -21,6 +25,7 @@ Route::group([
     Route::get('/schedule', 'ScheduleController@index')->name('schedule.index');
 
     Route::resource('client', 'ClientController');
+    Route::get('/client/{id}/delete', 'ClientController@delete')->name('client.delete');
     Route::post('/client/{id}/labor', 'ClientController@laborStore')->name('client.labor.store');
     Route::get('/client/{id}/labor/{laborId}/edit', 'ClientController@laborEdit')->name('client.labor.edit');
     Route::post('/client/{id}/labor/{laborId}', 'ClientController@laborUpdate')->name('client.labor.update');

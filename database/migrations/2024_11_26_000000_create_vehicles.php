@@ -17,7 +17,7 @@ class CreateVehicles extends Migration
             $table->increments('id');
 
             $table->integer('client_id')->unsigned();
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
             $table->string('license_plate')->nullable();
             $table->string('engine_code')->nullable();

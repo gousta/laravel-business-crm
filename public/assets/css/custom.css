@@ -121,11 +121,14 @@ body.modal-open {
 
 .btn:not(.ccta) {
     height: 40px;
+    line-height: 40px;
     font-size: 13px;
     font-weight: 700;
     border-radius: 4px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     vertical-align: middle;
 }
 
